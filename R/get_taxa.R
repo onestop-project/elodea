@@ -20,10 +20,11 @@ get_taxa <- function(datasetKey) {
     taxa_raw %>%
     # Keep only source taxa, not denormed higher classification taxa
     dplyr::filter(origin == "SOURCE") %>%
+    mutate_when_missing(acceptedKey = NA_integer_) %>%
+    mutate_when_missing(accepted = NA_character_) %>%
     dplyr::select(
       key, taxonID, scientificName, acceptedKey, accepted, kingdom, rank
     ) %>%
-    #TODO: column acceptedKey not always present
     dplyr::rename(
       taxonKey = key,
       taxonRank = rank
