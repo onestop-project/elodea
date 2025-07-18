@@ -1,6 +1,6 @@
 Package: elodea
 Title: Validate GRIIS (Global Register of Introduced and Invasive Species) 
-  Checklists.
+  Checklists
 Version: 0.0.0.9000
 Authors@R: 
     person("Sanne", "Govaert", , "sanne.govaert@inbo.be", role = c("aut", "cre"),
