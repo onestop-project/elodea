@@ -75,26 +75,5 @@ get_distributions <- function(datasetKey) {
       source
     )
 
-  # Join taxa and distributions
-  result <- taxa %>%
-    dplyr::full_join(
-      distributions,
-      by = c("taxonKey"),
-      keep = FALSE,
-      multiple = "all",
-      relationship = "many-to-many"
-      ) %>%
-    dplyr::select(
-      taxonKey,
-      taxonID,
-      countryCode,
-      occurrenceStatus,
-      establishmentMeans,
-      degreeOfEstablishment,
-      pathway,
-      eventDate,
-      source
-      )
-
-  return(result)
+  return(distributions)
 }

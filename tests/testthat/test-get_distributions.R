@@ -12,7 +12,6 @@ test_that("get_distributions() returns correct distributions data frame", {
   # Check that the output has the expected columns
   expected_columns <- c(
     "taxonKey",
-    "taxonID",
     "countryCode",
     "occurrenceStatus",
     "establishmentMeans",
