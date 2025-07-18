@@ -12,6 +12,7 @@ test_that("get_taxa() returns correct taxa data frame", {
   # Check that the output has the expected columns
   expected_columns <- c(
     "taxonKey",
+    "nubKey",
     "taxonID",
     "scientificName",
     "acceptedKey",
