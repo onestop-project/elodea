@@ -23,11 +23,12 @@ get_taxa <- function(datasetKey) {
     mutate_when_missing(acceptedKey = NA_integer_) %>%
     mutate_when_missing(accepted = NA_character_) %>%
     dplyr::select(
-      key, nubKey, taxonID, scientificName, acceptedKey, accepted, kingdom, rank
+      "key", "nubKey", "taxonID", "scientificName", "acceptedKey", "accepted",
+      "kingdom", "rank"
     ) %>%
     dplyr::rename(
-      taxonKey = key,
-      taxonRank = rank
+      taxonKey = "key",
+      taxonRank = "rank"
       ) %>%
     dplyr::as_tibble()
   return(taxa)

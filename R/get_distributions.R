@@ -49,12 +49,12 @@ get_distributions <- function(datasetKey) {
   if ("status" %in% names(distributions)) {
     distributions <-
       distributions %>%
-      dplyr::rename(occurrenceStatus = status)
+      dplyr::rename(occurrenceStatus = "status")
   }
   if ("country" %in% names(distributions)) {
     distributions <-
       distributions %>%
-      dplyr::rename(countryCode = country)
+      dplyr::rename(countryCode = "country")
   }
   distributions <-
     distributions %>%
@@ -65,14 +65,14 @@ get_distributions <- function(datasetKey) {
     mutate_when_missing(eventDate = NA_character_) %>%
     mutate_when_missing(source = NA_character_) %>%
     dplyr::select(
-      taxonKey,
-      countryCode,
-      occurrenceStatus,
-      establishmentMeans,
-      degreeOfEstablishment,
-      pathway,
-      eventDate,
-      source
+      "taxonKey",
+      "countryCode",
+      "occurrenceStatus",
+      "establishmentMeans",
+      "degreeOfEstablishment",
+      "pathway",
+      "eventDate",
+      "source"
     )
 
   return(distributions)
