@@ -73,6 +73,16 @@ get_distributions <- function(datasetKey) {
       "pathway",
       "eventDate",
       "source"
+    ) %>%
+    dplyr::mutate(
+      countryCode = toupper("countryCode"),
+      dplyr::across(
+        c(
+          "occurrenceStatus", "establishmentMeans", "degreeOfEstablishment",
+          "pathway"
+        ),
+        tolower
+      )
     )
 
   return(distributions)
