@@ -19,7 +19,7 @@ get_taxa <- function(datasetKey) {
   taxa <-
     taxa_raw %>%
     # Keep only source taxa, not denormed higher classification taxa
-    dplyr::filter(origin == "SOURCE") %>%
+    dplyr::filter("origin" == "SOURCE") %>%
     mutate_when_missing(acceptedKey = NA_integer_) %>%
     mutate_when_missing(accepted = NA_character_) %>%
     dplyr::select(

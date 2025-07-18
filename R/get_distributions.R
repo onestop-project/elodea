@@ -26,7 +26,7 @@
 #' get_distributions(datasetKey)
 get_distributions <- function(datasetKey) {
   taxa <- get_taxa(datasetKey)
-  taxon_keys <- dplyr::pull(taxa, taxonKey)
+  taxon_keys <- dplyr::pull(taxa, "taxonKey")
 
   # Download distributions with progress bar
   progressr::with_progress({
