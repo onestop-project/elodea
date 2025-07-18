@@ -13,7 +13,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
     dplyr,
+    furrr,
     magrittr,
+    progressr,
     rgbif
 Suggests: 
     testthat (>= 3.0.0)
