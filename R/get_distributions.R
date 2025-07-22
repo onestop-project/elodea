@@ -72,7 +72,7 @@ get_distributions <- function(datasetKey) {
       "source"
     ) %>%
     dplyr::mutate(
-      countryCode = toupper("countryCode"),
+      countryCode = toupper(.data$countryCode),
       dplyr::across(
         c(
           "occurrenceStatus", "establishmentMeans", "degreeOfEstablishment",
