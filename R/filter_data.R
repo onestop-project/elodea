@@ -17,7 +17,10 @@
 #' distributions <- get_distributions(datasetKey)
 #' filter_data(taxa, distributions, establishementMeans = c("introduced"))
 filter_data <- function(taxa, distributions,
-                        establishmentMeans = c("introduced", "native")) {
+                        establishmentMeans = c("introduced")) {
+  check_taxa(taxa)
+  #check_distributions(distributions)
+
   # Join taxa and distributions
   df_full_join <- taxa %>%
     dplyr::full_join(
@@ -29,7 +32,7 @@ filter_data <- function(taxa, distributions,
     ) %>%
     dplyr::mutate(
       action = dplyr::case_when(
-        is.na(.data$nubKey) ~ "not_in_backbone",
+        is.na(.data$nubKey) ~ "not_matched_with_backbone",
         !(taxonKey %in% distributions$taxonKey) ~ "no_matching_distribution",
         !is.na(acceptedKey) ~ "merged_with_accepted",
         !.data$establishmentMeans %in% establishmentMeans ~
