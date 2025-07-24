@@ -4,11 +4,7 @@
 \alias{filter_data}
 \title{Filters data}
 \usage{
-filter_data(
-  taxa,
-  distributions,
-  establishmentMeans = c("introduced", "native")
-)
+filter_data(taxa, distributions, establishmentMeans = c("introduced"))
 }
 \arguments{
 \item{taxa}{Data frame as returned by \code{get_taxa()}.}
