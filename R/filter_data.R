@@ -3,7 +3,11 @@
 #' @param taxa Data frame as returned by `get_taxa()`.
 #' @param distributions
 #'
-#' @returns
+#' @returns A list with three data frames:
+#' - `taxa`: Filtered taxa data frame.
+#' - `distributions`: Filtered distributions data frame.
+#' - `notes`: Data frame with notes on taxa that were not included in the
+#' filtered data.
 #' @export
 #'
 #' @examples
