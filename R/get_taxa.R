@@ -12,6 +12,13 @@
 #' # Andorra
 #' taxa_AD <- get_taxa("016c16c3-d907-4c88-97dd-97ad62c8130e")
 get_taxa <- function(datasetKey) {
+  regex <- "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+  if (!grepl(regex, datasetKey)) {
+    cli::cli_abort(
+      "The provided {.arg datasetKey} is not a valid GBIF dataset key.",
+      class = "elodea_error_invalid_datasetkey"
+    )
+  }
   taxa_raw <- rgbif::name_usage(datasetKey = datasetKey, limit = 99999)$data
   taxa <-
     taxa_raw %>%
