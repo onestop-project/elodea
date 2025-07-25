@@ -1,4 +1,4 @@
-#' Gets accepted taxa
+#' Get accepted taxa
 #'
 #' Gets backbone information of the accepted taxa of SYNONYMS, that are missing
 #' from the dataset.

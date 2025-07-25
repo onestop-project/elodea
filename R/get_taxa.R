@@ -1,16 +1,31 @@
 #' Get taxa from checklist
 #'
+#' Gets taxonomic information of a GBIF dataset. Only source taxa are kept,
+#' denormed higher classification taxa are removed. The function
+#' `rgbif::name_usage()` is used under the hood. It returns a `tibble` with 8
+#' variables:
+#' - `taxonKey`: GBIF taxon key
+#' - `nubKey`: GBIF backbone taxon key
+#' - `taxonID`: Taxon ID from the dataset
+#' - `scientificName`: Scientific name of the taxon
+#' - `acceptedKey`: GBIF taxon key of the accepted taxon, if applicable
+#' - `accepted`: Scientific name of the accepted taxon, if applicable
+#' - `kingdom`: Kingdom of the taxon
+#' - `taxonRank`: Taxonomic rank of the taxon
+#'
 #' @param datasetKey GBIF dataset key.
 #'
-#' @returns Taxa from checklist.
+#' @returns A `tibble` with taxonomic information of the dataset.
 #' @export
 #' @examples
-#' # Belgium
-#' taxa_BE <- get_taxa("6d9e952f-948c-4483-9807-575348147c7e")
 #' # Cyprus
 #' taxa_CY <- get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
 #' # Andorra
 #' taxa_AD <- get_taxa("016c16c3-d907-4c88-97dd-97ad62c8130e")
+#' \dontrun{
+#' # Belgium
+#' taxa_BE <- get_taxa("6d9e952f-948c-4483-9807-575348147c7e")
+#' }
 get_taxa <- function(datasetKey) {
   regex <- "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
   if (!grepl(regex, datasetKey)) {

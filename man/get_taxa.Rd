@@ -10,16 +10,31 @@ get_taxa(datasetKey)
 \item{datasetKey}{GBIF dataset key.}
 }
 \value{
-Taxa from checklist.
+A \code{tibble} with taxonomic information of the dataset.
 }
 \description{
-Get taxa from checklist
+Gets taxonomic information of a GBIF dataset. Only source taxa are kept,
+denormed higher classification taxa are removed. The function
+\code{rgbif::name_usage()} is used under the hood. It returns a \code{tibble} with 8
+variables:
+\itemize{
+\item \code{taxonKey}: GBIF taxon key
+\item \code{nubKey}: GBIF backbone taxon key
+\item \code{taxonID}: Taxon ID from the dataset
+\item \code{scientificName}: Scientific name of the taxon
+\item \code{acceptedKey}: GBIF taxon key of the accepted taxon, if applicable
+\item \code{accepted}: Scientific name of the accepted taxon, if applicable
+\item \code{kingdom}: Kingdom of the taxon
+\item \code{taxonRank}: Taxonomic rank of the taxon
+}
 }
 \examples{
-# Belgium
-taxa_BE <- get_taxa("6d9e952f-948c-4483-9807-575348147c7e")
 # Cyprus
 taxa_CY <- get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
 # Andorra
 taxa_AD <- get_taxa("016c16c3-d907-4c88-97dd-97ad62c8130e")
+\dontrun{
+# Belgium
+taxa_BE <- get_taxa("6d9e952f-948c-4483-9807-575348147c7e")
+}
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_distributions.R
 \name{get_distributions}
 \alias{get_distributions}
-\title{Gets distributions}
+\title{Get distributions}
 \usage{
 get_distributions(datasetKey)
 }
@@ -10,27 +10,29 @@ get_distributions(datasetKey)
 \item{datasetKey}{GBIF dataset key.}
 }
 \value{
-A data frame with the following columns:
-\itemize{
-\item taxonKey
-\item taxonID
-\item countryCode
-\item occurrenceStatus
-\item establishmentMeans
-\item degreeOfEstablishment
-\item pathway
-\item eventDate
-\item source
-}
+A \code{tibble} with distributions.
 }
 \description{
-Gets distributions
+Gets the distributions of a GBIF dataset. The function \code{rgbif::name_usage()}
+is used under the hood. It returns a \code{tibble} with 8 variables:
+\itemize{
+\item \code{taxonKey}
+\item \code{countryCode}
+\item \code{occurrenceStatus}
+\item \code{establishmentMeans}
+\item \code{degreeOfEstablishment}
+\item \code{pathway}
+\item \code{eventDate}
+\item \code{source}
+}
 }
 \examples{
-# Belgium
-distributions_BE <- get_distributions("6d9e952f-948c-4483-9807-575348147c7e")
 # Cyprus
 distributions_CY <- get_distributions("2f7ea7d1-a73f-46f6-b790-7339126a999f")
 # Andorra
 distributions_AD <- get_distributions("016c16c3-d907-4c88-97dd-97ad62c8130e")
+\dontrun{
+# Belgium
+distributions_BE <- get_distributions("6d9e952f-948c-4483-9807-575348147c7e")
+}
 }

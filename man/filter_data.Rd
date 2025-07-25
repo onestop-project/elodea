@@ -2,14 +2,17 @@
 % Please edit documentation in R/filter_data.R
 \name{filter_data}
 \alias{filter_data}
-\title{Filters data}
+\title{Filter data}
 \usage{
 filter_data(taxa, distributions, establishmentMeans = c("introduced"))
 }
 \arguments{
 \item{taxa}{Data frame as returned by \code{get_taxa()}.}
 
-\item{distributions}{}
+\item{distributions}{Data frame as returned by \code{get_distributions()}.}
+
+\item{establishmentMeans}{Character vector of \code{establishmentMeans} to filter.
+Defaults to \code{c("introduced")}.}
 }
 \value{
 A list with three data frames:
@@ -21,12 +24,26 @@ filtered data.
 }
 }
 \description{
-Filters data
+Filters taxa and distributions data frames, and returns the filtered data and
+notes.
 }
+\section{Filter details}{
+
+Taxa are removed if
+\itemize{
+\item they are not matched with the GBIF backbone (i.e., \code{nubKey} is \code{NA}),
+\item they do not have a matching distribution (i.e., \code{taxonKey} is not in
+\code{distributions$taxonKey}),
+\item they are synonyms of accepted taxa (i.e., \code{acceptedKey} is not \code{NA}),
+\item they do not have a matching distribution with a provided
+\code{establishmentMeans}.
+}
+}
+
 \examples{
 # Andorra
 datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
 taxa <- get_taxa(datasetKey)
 distributions <- get_distributions(datasetKey)
-filter_data(taxa, distributions, establishementMeans = c("introduced"))
+filter_data(taxa, distributions, establishmentMeans = c("introduced"))
 }
