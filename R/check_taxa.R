@@ -1,6 +1,6 @@
 #' Checks taxa
 #'
-#' @param taxa
+#' @inheritParams get_taxa
 #'
 #' @returns `taxa` invisibly or an error.
 #' @export

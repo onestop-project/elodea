@@ -6,9 +6,6 @@
 \usage{
 check_taxa(taxa)
 }
-\arguments{
-\item{taxa}{}
-}
 \value{
 \code{taxa} invisibly or an error.
 }
