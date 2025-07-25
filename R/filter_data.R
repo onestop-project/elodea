@@ -64,7 +64,8 @@ filter_data <- function(taxa, distributions,
     df_full_join %>%
     dplyr::filter(!is.na(.data$action)) %>%
     dplyr::select(
-      taxonID, taxonKey, scientificName, action, acceptedKey, accepted
+      "taxonID", "taxonKey", "scientificName", "action", "acceptedKey",
+      "accepted"
     )
 
   # Filter out taxa without action
@@ -76,8 +77,8 @@ filter_data <- function(taxa, distributions,
   distributions_filtered <-
     df_filtered %>%
     dplyr::select(
-      taxonKey, countryCode, occurrenceStatus, establishmentMeans,
-      degreeOfEstablishment, pathway, eventDate, source
+      "taxonKey", "countryCode", "occurrenceStatus", "establishmentMeans",
+      "degreeOfEstablishment", "pathway", "eventDate", "source"
     ) %>%
     dplyr::distinct()
 
@@ -85,8 +86,8 @@ filter_data <- function(taxa, distributions,
   taxa_filtered <-
     df_filtered %>%
     dplyr::select(
-      taxonKey, nubKey, taxonID, scientificName, acceptedKey, accepted, kingdom,
-      taxonRank
+      "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
+      "accepted", "kingdom", "taxonRank"
     ) %>%
     dplyr::distinct()
 
