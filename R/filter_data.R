@@ -42,20 +42,25 @@ filter_data <- function(taxa, distributions,
           ),
       )
     )
-
-  df_filtered <-
+  # Add accepted taxa
+  df_full_join <-
     df_full_join %>%
-    dplyr::filter(is.na(.data$action))
+    rbind(get_accepted(df_full_join))
 
-  # Notes
+  # Create notes
   notes <-
     df_full_join %>%
     dplyr::filter(!is.na(.data$action)) %>%
     dplyr::select(
       taxonID, taxonKey, scientificName, action, acceptedKey, accepted
-      )
+    )
 
-  # Distributions
+  # Filter out taxa without action
+  df_filtered <-
+    df_full_join %>%
+    dplyr::filter(is.na(.data$action))
+
+  # Create distributions
   distributions_filtered <-
     df_filtered %>%
     dplyr::select(
@@ -64,7 +69,7 @@ filter_data <- function(taxa, distributions,
     ) %>%
     dplyr::distinct()
 
-  # Taxa
+  # Create taxa
   taxa_filtered <-
     df_filtered %>%
     dplyr::select(
