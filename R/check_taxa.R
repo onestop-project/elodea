@@ -1,7 +1,6 @@
 #' Checks taxa
 #'
-#' @inheritParams get_taxa
-#'
+#' @param taxa Data frame as returned by `get_taxa()`.
 #' @returns `taxa` invisibly or an error.
 #' @export
 check_taxa <- function(taxa) {

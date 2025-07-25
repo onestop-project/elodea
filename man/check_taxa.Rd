@@ -6,6 +6,9 @@
 \usage{
 check_taxa(taxa)
 }
+\arguments{
+\item{taxa}{Data frame as returned by \code{get_taxa()}.}
+}
 \value{
 \code{taxa} invisibly or an error.
 }
