@@ -58,44 +58,57 @@
 #' get_accepted(data)
 get_accepted <- function(data) {
   # Get GBIF backbone taxonomy information for synonyms
-  accepted_bb <-
+  acceptedKeys <-
     data %>%
     dplyr::filter(!is.na(.data$acceptedKey)) %>%
     dplyr::select("acceptedKey") %>%
     dplyr::distinct() %>%
-    dplyr::pull() %>%
-    setdiff(data$nubKey) %>% # Accepted keys missing
-    purrr::map_dfr(
-      ~ rgbif::name_usage(key = .x)$data
-    ) %>%
-    dplyr::rename(
-      taxonKey = "key"
-    )
-  # Join backbone information of accepted taxa with original data
-  accepted_taxa <- data %>%
-    dplyr::filter(!is.na(.data$acceptedKey)) %>%
-    dplyr::select(
-      "acceptedKey", "taxonRank", "countryCode", "occurrenceStatus",
-      "establishmentMeans", "degreeOfEstablishment", "pathway", "eventDate",
-      "source"
-    ) %>%
-    dplyr::left_join(
-      accepted_bb,
-      by = c("acceptedKey" = "taxonKey")
-    ) %>%
-    dplyr::rename(taxonKey = "acceptedKey") %>%
-    dplyr::mutate(
-      taxonID = NA_character_,
-      acceptedKey = NA_character_,
-      accepted = NA_character_,
-      action = NA_character_
+    dplyr::pull()
+
+  if (!is.null(acceptedKeys) && length(acceptedKeys) > 0) {
+    accepted_bb <-
+      setdiff(acceptedKeys, data$nubKey) %>% # Accepted keys missing
+      purrr::map_dfr(
+        ~ rgbif::name_usage(key = .x)$data
       ) %>%
-    dplyr::select(
-      "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
-      "accepted", "kingdom", "taxonRank", "countryCode", "occurrenceStatus",
-      "establishmentMeans", "degreeOfEstablishment", "pathway", "eventDate",
-      "source", "action"
+      dplyr::rename(
+        taxonKey = "key"
       )
+    # Join backbone information of accepted taxa with original data
+    accepted_taxa <- data %>%
+      dplyr::filter(!is.na(.data$acceptedKey)) %>%
+      dplyr::select(
+        "acceptedKey", "taxonRank", "countryCode", "occurrenceStatus",
+        "establishmentMeans", "degreeOfEstablishment", "pathway", "eventDate",
+        "source"
+      ) %>%
+      dplyr::left_join(
+        accepted_bb,
+        by = c("acceptedKey" = "taxonKey")
+      ) %>%
+      dplyr::rename(taxonKey = "acceptedKey") %>%
+      dplyr::mutate(
+        taxonID = NA_character_,
+        acceptedKey = NA_character_,
+        accepted = NA_character_,
+        action = NA_character_
+      ) %>%
+      dplyr::select(
+        "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
+        "accepted", "kingdom", "taxonRank", "countryCode", "occurrenceStatus",
+        "establishmentMeans", "degreeOfEstablishment", "pathway", "eventDate",
+        "source", "action"
+      )
+  } else {
+    # If there are no accepted keys, return an empty data frame
+    col_names <- c(
+      "taxonID", "scientificName", "acceptedKey", "accepted", "kingdom",
+      "taxonRank", "countryCode", "occurrenceStatus", "establishmentMeans",
+      "degreeOfEstablishment", "pathway", "eventDate", "source", "action"
+      )
+    accepted_taxa <- data.frame(matrix(ncol = length(col_names), nrow = 0))
+    colnames(accepted_taxa) <- col_names
+  }
 
   return(accepted_taxa)
 }
