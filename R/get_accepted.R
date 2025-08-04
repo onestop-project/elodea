@@ -89,7 +89,7 @@ get_accepted <- function(data) {
       dplyr::rename(taxonKey = "acceptedKey") %>%
       dplyr::mutate(
         taxonID = NA_character_,
-        acceptedKey = NA_character_,
+        acceptedKey = NA,
         accepted = NA_character_,
         action = NA_character_
       ) %>%
