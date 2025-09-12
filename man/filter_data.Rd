@@ -4,15 +4,12 @@
 \alias{filter_data}
 \title{Filter data}
 \usage{
-filter_data(taxa, distributions, establishmentMeans = c("introduced"))
+filter_data(taxa, distributions)
 }
 \arguments{
 \item{taxa}{Data frame as returned by \code{get_taxa()}.}
 
 \item{distributions}{Data frame as returned by \code{get_distributions()}.}
-
-\item{establishmentMeans}{Character vector of \code{establishmentMeans} to filter.
-Defaults to \code{c("introduced")}.}
 }
 \value{
 A list with three data frames:
@@ -35,8 +32,8 @@ Taxa are removed if
 \item they do not have a matching distribution (i.e., \code{taxonKey} is not in
 \code{distributions$taxonKey}),
 \item they are synonyms of accepted taxa (i.e., \code{acceptedKey} is not \code{NA}),
-\item they do not have a matching distribution with a provided
-\code{establishmentMeans}.
+\item they do not have a matching distribution with
+\code{establishmentMeans == introduced}.
 }
 }
 

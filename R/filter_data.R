@@ -5,8 +5,6 @@
 #'
 #' @param taxa Data frame as returned by `get_taxa()`.
 #' @param distributions Data frame as returned by `get_distributions()`.
-#' @param establishmentMeans Character vector of `establishmentMeans` to filter.
-#' Defaults to `c("introduced")`.
 #'
 #' @returns A list with three data frames:
 #' - `taxa`: Filtered taxa data frame.
@@ -20,16 +18,15 @@
 #' - they do not have a matching distribution (i.e., `taxonKey` is not in
 #' `distributions$taxonKey`),
 #' - they are synonyms of accepted taxa (i.e., `acceptedKey` is not `NA`),
-#' - they do not have a matching distribution with a provided
-#' `establishmentMeans`.
+#' - they do not have a matching distribution with
+#' `establishmentMeans == introduced`.
 #' @examples
 #' # Andorra
 #' datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
 #' taxa <- get_taxa(datasetKey)
 #' distributions <- get_distributions(datasetKey)
 #' filter_data(taxa, distributions, establishmentMeans = c("introduced"))
-filter_data <- function(taxa, distributions,
-                        establishmentMeans = c("introduced")) {
+filter_data <- function(taxa, distributions) {
   check_taxa(taxa)
   #check_distributions(distributions)
 
@@ -47,11 +44,8 @@ filter_data <- function(taxa, distributions,
         is.na(.data$nubKey) ~ "not_matched_with_backbone",
         !(taxonKey %in% distributions$taxonKey) ~ "no_matching_distribution",
         !is.na(acceptedKey) ~ "merged_with_accepted",
-        !.data$establishmentMeans %in% establishmentMeans ~
-          paste0(
-            "establishmentMeans not one of: ",
-            paste(establishmentMeans, collapse = ", ")
-          ),
+        !.data$establishmentMeans != "introduced" ~
+          "establishmentMeans not introduced"
       )
     )
   # Add accepted taxa
