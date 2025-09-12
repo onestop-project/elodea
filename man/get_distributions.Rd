@@ -4,10 +4,13 @@
 \alias{get_distributions}
 \title{Get distributions}
 \usage{
-get_distributions(datasetKey)
+get_distributions(datasetKey, taxa = get_taxa(datasetKey))
 }
 \arguments{
 \item{datasetKey}{GBIF dataset key.}
+
+\item{taxa}{Data frame as returned by \code{get_taxa()}. Defaults to
+\code{get_taxa(datasetKey)}}
 }
 \value{
 A \code{tibble} with distributions.

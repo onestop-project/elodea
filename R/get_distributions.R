@@ -11,6 +11,8 @@
 #' - `eventDate`
 #' - `source`
 #' @inheritParams get_taxa
+#' @param taxa Data frame as returned by `get_taxa()`. Defaults to
+#' `get_taxa(datasetKey)`
 #' @returns A `tibble` with distributions.
 #' @export
 #' @examples
@@ -22,8 +24,7 @@
 #' # Belgium
 #' distributions_BE <- get_distributions("6d9e952f-948c-4483-9807-575348147c7e")
 #' }
-get_distributions <- function(datasetKey) {
-  taxa <- get_taxa(datasetKey)
+get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   taxon_keys <- dplyr::pull(taxa, "taxonKey")
 
   # Download distributions with progress bar
