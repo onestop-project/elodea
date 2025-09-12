@@ -24,7 +24,7 @@
 #' # Andorra
 #' datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
 #' taxa <- get_taxa(datasetKey)
-#' distributions <- get_distributions(datasetKey)
+#' distributions <- get_distributions(datasetKey, taxa)
 #' filter_data(taxa, distributions)
 filter_data <- function(taxa, distributions) {
   check_taxa(taxa)
