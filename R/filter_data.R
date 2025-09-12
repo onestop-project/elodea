@@ -65,7 +65,8 @@ filter_data <- function(taxa, distributions) {
       )
     ) %>%
     dplyr::select(
-      "taxonID", "scientificName", "acceptedKey", "accepted", "kingdom",
+      "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
+      "accepted", "kingdom",
       "taxonRank", "countryCode", "occurrenceStatus", "establishmentMeans",
       "degreeOfEstablishment", "pathway", "eventDate", "source", "action"
     )
