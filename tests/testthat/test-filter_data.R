@@ -3,9 +3,7 @@ test_that("filter_data() returns the expected files for an existing dataset", {
   datasetKey_andorra <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
   taxa <- get_taxa(datasetKey_andorra)
   distributions <- get_distributions(datasetKey_andorra)
-  output <- filter_data(
-    taxa, distributions, establishmentMeans = c("introduced")
-  )
+  output <- filter_data(taxa, distributions)
 
   # The returned output is of type list
   expect_type(output, "list")
