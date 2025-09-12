@@ -41,14 +41,12 @@ get_taxa <- function(datasetKey) {
     dplyr::filter(origin == "SOURCE") %>%
     mutate_when_missing(acceptedKey = NA_integer_) %>%
     mutate_when_missing(accepted = NA_character_) %>%
+    dplyr::mutate(taxonRank = tolower(rank)) %>%
+    dplyr::rename(taxonKey = "key") %>%
     dplyr::select(
-      "key", "nubKey", "taxonID", "scientificName", "acceptedKey", "accepted",
-      "kingdom", "rank"
+      "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
+      "accepted", "kingdom", "taxonRank"
     ) %>%
-    dplyr::rename(
-      taxonKey = "key",
-      taxonRank = "rank"
-      ) %>%
     dplyr::as_tibble()
   return(taxa)
 }
