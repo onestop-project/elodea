@@ -31,3 +31,14 @@ test_that("get_taxa() returns correct taxa data frame", {
   expect_equal(expected_columns, names(taxa_andorra))
   expect_equal(expected_columns, names(taxa_belgium))
 })
+
+test_that("get_taxa() filters on origin", {
+  skip_if_offline()
+  datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e" # Andorra
+  taxa_raw <- rgbif::name_usage(datasetKey = datasetKey, limit = 99999)$data
+  taxa <- get_taxa(datasetKey)
+
+  expect_true("DENORMED_CLASSIFICATION" %in% taxa_raw$origin)
+  expect_false(any(c("kingdom", "phylum") %in% taxa$taxonRank))
+  expect_true(unique(taxa$taxonRank) == "species")
+})
