@@ -17,18 +17,31 @@ A \code{tibble} with distributions.
 }
 \description{
 Gets the distributions of a GBIF dataset. The function \code{rgbif::name_usage()}
-is used under the hood. It returns a \code{tibble} with 8 variables:
+is used under the hood.
+}
+\section{Distributions details}{
+
+\code{get_distributions()} returns a \code{tibble} with 8 variables:
 \itemize{
-\item \code{taxonKey}
-\item \code{countryCode}
-\item \code{occurrenceStatus}
-\item \code{establishmentMeans}
-\item \code{degreeOfEstablishment}
-\item \code{pathway}
-\item \code{eventDate}
-\item \code{source}
+\item \code{taxonKey}: GBIF taxon key
+\item \href{http://rs.tdwg.org/dwc/terms/countryCode}{\code{countryCode}}:  ISO
+3166-1-alpha-2 country code
+\item \href{http://rs.tdwg.org/dwc/terms/occurrenceStatus}{\code{occurrenceStatus}}: A
+statement about the presence or absence of a taxon at a country. When
+\code{occurrenceStatus} is missing, it is set to \code{present}.
+\item \href{http://rs.tdwg.org/dwc/terms/establishmentMeans}{\code{establishmentMeans}}:
+Statement about whether the taxon has been introduced to a given country and
+eventDate through the direct or indirect activity of modern humans.
+\item \href{http://rs.tdwg.org/dwc/terms/pathway}{\code{pathway}}: The process by which a
+taxon came to be in a given country at a given eventDate.
+\item \href{http://rs.tdwg.org/dwc/terms/eventDate}{\code{eventDate}}: The date-time or
+interval during which the \code{occurrenceStatus} is applicable for the taxon in a
+given country.
+\item \href{http://purl.org/dc/terms/source}{\code{source}}: A related resource from which
+the described resource is derived.
 }
 }
+
 \examples{
 # Cyprus
 distributions_CY <- get_distributions("2f7ea7d1-a73f-46f6-b790-7339126a999f")

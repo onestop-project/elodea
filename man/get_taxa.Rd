@@ -15,19 +15,27 @@ A \code{tibble} with taxonomic information of the dataset.
 \description{
 Gets taxonomic information of a GBIF dataset. Only source taxa are kept,
 denormed higher classification taxa are removed. The function
-\code{rgbif::name_usage()} is used under the hood. It returns a \code{tibble} with 8
+\code{rgbif::name_usage()} is used under the hood.
+}
+\section{Taxa details}{
+
+\code{get_taxa()} returns a \code{tibble} with 8
 variables:
 \itemize{
 \item \code{taxonKey}: GBIF taxon key
 \item \code{nubKey}: GBIF backbone taxon key
-\item \code{taxonID}: Taxon ID from the dataset
-\item \code{scientificName}: Scientific name of the taxon
+\item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID from the
+dataset
+\item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Scientific
+name of the taxon
 \item \code{acceptedKey}: GBIF taxon key of the accepted taxon, if applicable
 \item \code{accepted}: Scientific name of the accepted taxon, if applicable
-\item \code{kingdom}: Kingdom of the taxon
-\item \code{taxonRank}: Taxonomic rank of the taxon
+\item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{kingdom}}: Kingdom of the taxon
+\item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{taxonRank}}: Taxonomic rank of
+the taxon
 }
 }
+
 \examples{
 # Cyprus
 taxa_CY <- get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")

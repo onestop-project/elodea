@@ -1,20 +1,30 @@
 #' Get distributions
 #'
 #' Gets the distributions of a GBIF dataset. The function `rgbif::name_usage()`
-#' is used under the hood. It returns a `tibble` with 8 variables:
-#' - `taxonKey`
-#' - `countryCode`
-#' - `occurrenceStatus`
-#' - `establishmentMeans`
-#' - `degreeOfEstablishment`
-#' - `pathway`
-#' - `eventDate`
-#' - `source`
+#' is used under the hood.
 #' @inheritParams get_taxa
 #' @param taxa Data frame as returned by `get_taxa()`. Defaults to
 #' `get_taxa(datasetKey)`
 #' @returns A `tibble` with distributions.
 #' @export
+#' @section Distributions details:
+#' `get_distributions()` returns a `tibble` with 8 variables:
+#' - `taxonKey`: GBIF taxon key
+#' - [`countryCode`](http://rs.tdwg.org/dwc/terms/countryCode):  ISO
+#' 3166-1-alpha-2 country code
+#' - [`occurrenceStatus`](http://rs.tdwg.org/dwc/terms/occurrenceStatus): A
+#' statement about the presence or absence of a taxon at a country. When
+#' `occurrenceStatus` is missing, it is set to `present`.
+#' - [`establishmentMeans`](http://rs.tdwg.org/dwc/terms/establishmentMeans):
+#' Statement about whether the taxon has been introduced to a given country and
+#' eventDate through the direct or indirect activity of modern humans.
+#' - [`pathway`](http://rs.tdwg.org/dwc/terms/pathway): The process by which a
+#' taxon came to be in a given country at a given eventDate.
+#' - [`eventDate`](http://rs.tdwg.org/dwc/terms/eventDate): The date-time or
+#' interval during which the `occurrenceStatus` is applicable for the taxon in a
+#' given country.
+#' - [`source`](http://purl.org/dc/terms/source): A related resource from which
+#' the described resource is derived.
 #' @examples
 #' # Cyprus
 #' distributions_CY <- get_distributions("2f7ea7d1-a73f-46f6-b790-7339126a999f")

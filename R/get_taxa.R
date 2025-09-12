@@ -2,21 +2,24 @@
 #'
 #' Gets taxonomic information of a GBIF dataset. Only source taxa are kept,
 #' denormed higher classification taxa are removed. The function
-#' `rgbif::name_usage()` is used under the hood. It returns a `tibble` with 8
+#' `rgbif::name_usage()` is used under the hood.
+#' @param datasetKey GBIF dataset key.
+#' @returns A `tibble` with taxonomic information of the dataset.
+#' @export
+#' @section Taxa details:
+#' `get_taxa()` returns a `tibble` with 8
 #' variables:
 #' - `taxonKey`: GBIF taxon key
 #' - `nubKey`: GBIF backbone taxon key
-#' - `taxonID`: Taxon ID from the dataset
-#' - `scientificName`: Scientific name of the taxon
+#' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID from the
+#' dataset
+#' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Scientific
+#' name of the taxon
 #' - `acceptedKey`: GBIF taxon key of the accepted taxon, if applicable
 #' - `accepted`: Scientific name of the accepted taxon, if applicable
-#' - `kingdom`: Kingdom of the taxon
-#' - `taxonRank`: Taxonomic rank of the taxon
-#'
-#' @param datasetKey GBIF dataset key.
-#'
-#' @returns A `tibble` with taxonomic information of the dataset.
-#' @export
+#' - [`kingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the taxon
+#' - [`taxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic rank of
+#' the taxon
 #' @examples
 #' # Cyprus
 #' taxa_CY <- get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
