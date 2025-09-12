@@ -42,5 +42,5 @@ Taxa are removed if
 datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
 taxa <- get_taxa(datasetKey)
 distributions <- get_distributions(datasetKey)
-filter_data(taxa, distributions, establishmentMeans = c("introduced"))
+filter_data(taxa, distributions)
 }
