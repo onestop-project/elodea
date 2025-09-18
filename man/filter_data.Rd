@@ -16,8 +16,8 @@ A list with three data frames:
 \itemize{
 \item \code{taxa}: Filtered taxa data frame.
 \item \code{distributions}: Filtered distributions data frame.
-\item \code{notes}: Data frame with notes on taxa that were not included in the
-filtered data.
+\item \code{notes}: Data frame with notes on taxa that were not included or replaced
+in the filtered data.
 }
 }
 \description{
@@ -35,6 +35,9 @@ Taxa are removed if
 \item they do not have a matching distribution with
 \code{establishmentMeans == introduced}.
 }
+
+\code{scientificName} is replaced with the scientific name matching the GBIF
+backbone.
 }
 
 \examples{

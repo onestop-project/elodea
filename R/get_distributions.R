@@ -54,6 +54,20 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
       )
   })
 
+  # Download species profiles with progress bar
+  progressr::with_progress({
+    progress_bar <- progressr::progressor(steps = length(taxon_keys))
+    invasiveness <-
+      furrr::future_map_dfr(
+        taxon_keys,
+        function(x) {
+          progress_bar()
+          get_is_invasive(x)
+        },
+        .options = furrr::furrr_options(seed = TRUE)
+      )
+  })
+
   # Clean distributions
   if ("status" %in% names(distributions)) {
     distributions <-
@@ -67,9 +81,10 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   }
   distributions <-
     distributions %>%
+    dplyr::left_join(invasiveness, by = "taxonKey") %>%
     mutate_when_missing(occurrenceStatus = "present") %>%
     mutate_when_missing(establishmentMeans = NA_character_) %>%
-    mutate_when_missing(degreeOfEstablishment = NA_character_) %>%
+    mutate_when_missing(degreeOfEstablishment = is_invasive) %>%
     mutate_when_missing(pathway = NA_character_) %>%
     mutate_when_missing(eventDate = NA_character_) %>%
     mutate_when_missing(source = NA_character_) %>%
