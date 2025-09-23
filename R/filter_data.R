@@ -8,7 +8,8 @@
 #'
 #' @returns A list with three data frames:
 #' - `taxa`: Filtered taxa data frame.
-#' - `distributions`: Filtered distributions data frame.
+#' - `distributions`: Filtered distributions data frame, with extra column
+#' `nubKey`.
 #' - `notes`: Data frame with notes on taxa that were not included or replaced
 #' in the filtered data.
 #' @export
@@ -102,8 +103,9 @@ filter_data <- function(taxa, distributions) {
   distributions_filtered <-
     df_filtered %>%
     dplyr::select(
-      "taxonKey", "countryCode", "occurrenceStatus", "establishmentMeans",
-      "degreeOfEstablishment", "pathway", "eventDate", "source"
+      "taxonKey", "nubKey", "countryCode", "occurrenceStatus",
+      "establishmentMeans", "degreeOfEstablishment", "pathway", "eventDate",
+      "source"
     ) %>%
     dplyr::distinct()
 

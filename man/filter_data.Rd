@@ -15,7 +15,8 @@ filter_data(taxa, distributions)
 A list with three data frames:
 \itemize{
 \item \code{taxa}: Filtered taxa data frame.
-\item \code{distributions}: Filtered distributions data frame.
+\item \code{distributions}: Filtered distributions data frame, with extra column
+\code{nubKey}.
 \item \code{notes}: Data frame with notes on taxa that were not included or replaced
 in the filtered data.
 }
