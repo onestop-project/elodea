@@ -144,7 +144,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       eventDate = NA_character_,
       source = NA_character_
     ) %>%
-    # 3. All good
+    # 3. `taxonKey` need to be replaced by `acceptedKey`
     dplyr::add_row(
       taxonKey = 148674371,
       countryCode = "AD",
@@ -239,9 +239,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       eventDate = NA_character_,
       source = NA_character_
     ) %>%
-    # 3. All good
+    # 3. `taxonKey` is replaced by `acceptedKey`
     dplyr::add_row(
-      taxonKey = 148674371,
+      taxonKey = 201367230,
       countryCode = "AD",
       occurrenceStatus = "present",
       establishmentMeans = "introduced",
@@ -297,6 +297,6 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
 
   output <- filter_data(taxa, distributions)
   expect_equal(output$taxa, expected_taxa)
-  expect_equal(output$distributions, expected_distributions) # Failing: taxonKey need to be replaced with accepted key
+  expect_equal(output$distributions, expected_distributions)
   expect_equal(output$notes, expected_notes)
 })
