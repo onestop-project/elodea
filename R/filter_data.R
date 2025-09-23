@@ -36,8 +36,8 @@ filter_data <- function(taxa, distributions) {
   # Get unique nubKeys list
   nubkey_list <-
     taxa %>%
-    dplyr::filter(!is.na(nubKey)) %>%
-    dplyr::pull(nubKey) %>%
+    dplyr::filter(!is.na(.data$nubKey)) %>%
+    dplyr::pull(.data$nubKey) %>%
     unique() %>%
     as.list()
 
@@ -60,7 +60,7 @@ filter_data <- function(taxa, distributions) {
         !(taxonKey %in% distributions$taxonKey) ~ "no_matching_distribution",
         !is.na(acceptedKey) ~ "merged_with_accepted",
         .data$establishmentMeans != "introduced" ~
-          "establishmentMeans not introduced",
+          "establishmentMeans_not_introduced",
         .data$source_name != .data$scientificName ~
           "scientificName_replaced_by_backbone_name",
       )
