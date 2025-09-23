@@ -19,7 +19,20 @@ mutate_when_missing <- function(.data,...){
   return(.data)
 }
 
-
+#' Match a list of `nubKey`s to GBIF backbone names
+#'
+#' @param nubkey_list A vector of GBIF backbone taxon keys
+#'
+#' @return A data frame with `nubKey` and `scientificName`.
+#' @noRd
+match_backbone <- function(nubkey_list) {
+  nubkey_list %>%
+    purrr::map_dfr(
+      ~ rgbif::name_usage(key = .x)$data
+    ) %>%
+    dplyr::select("key", "scientificName") %>%
+    dplyr::rename("nubKey" = "key")
+}
 
 #' Get invasiveness status from species profile
 #'
