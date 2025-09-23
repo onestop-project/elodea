@@ -32,6 +32,9 @@ statement about the presence or absence of a taxon at a country. When
 \item \href{http://rs.tdwg.org/dwc/terms/establishmentMeans}{\code{establishmentMeans}}:
 Statement about whether the taxon has been introduced to a given country and
 eventDate through the direct or indirect activity of modern humans.
+\item \href{http://rs.tdwg.org/dwc/terms/degreeOfEstablishment}{\code{degreeOfEstablishment}}:
+The degree to which a taxon survives, reproduces, and expands its range at
+the given country and eventDate.
 \item \href{http://rs.tdwg.org/dwc/terms/pathway}{\code{pathway}}: The process by which a
 taxon came to be in a given country at a given eventDate.
 \item \href{http://rs.tdwg.org/dwc/terms/eventDate}{\code{eventDate}}: The date-time or

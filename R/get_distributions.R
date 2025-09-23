@@ -18,6 +18,9 @@
 #' - [`establishmentMeans`](http://rs.tdwg.org/dwc/terms/establishmentMeans):
 #' Statement about whether the taxon has been introduced to a given country and
 #' eventDate through the direct or indirect activity of modern humans.
+#' - [`degreeOfEstablishment`](http://rs.tdwg.org/dwc/terms/degreeOfEstablishment):
+#' The degree to which a taxon survives, reproduces, and expands its range at
+#' the given country and eventDate.
 #' - [`pathway`](http://rs.tdwg.org/dwc/terms/pathway): The process by which a
 #' taxon came to be in a given country at a given eventDate.
 #' - [`eventDate`](http://rs.tdwg.org/dwc/terms/eventDate): The date-time or
