@@ -66,7 +66,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonRank = "species"
     ) %>%
     # 2. `scientificName` need to be replaced with correct backbone name
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148674355,
       nubKey = 8411684,
       taxonID = "scientificname_different_from_backbone",
@@ -77,7 +77,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonRank = "species"
     ) %>%
     # 3. `key`s and `scientificName` need to be replaced with accepted values
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148674371,
       nubKey = 3204008,
       taxonID = "synonym",
@@ -88,7 +88,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonRank = "species"
     ) %>%
     # 4. Record needs to be removed because `nubKey` is missing
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148746536,
       nubKey = NA,
       taxonID = "nubkey_missing",
@@ -96,6 +96,28 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedKey = NA_real_,
       accepted = NA_character_,
       kingdom = "Plantae",
+      taxonRank = "species"
+    ) %>%
+    # 5. Record needs to be removed because there is no matching distribution
+    dplyr::add_row(
+      taxonKey = 148746476,
+      nubKey = 5265718,
+      taxonID = "establishmeantMeans_not_introduced",
+      scientificName = "Synchytrium endobioticum (Schilb.) Percival",
+      acceptedKey = NA_real_,
+      accepted = NA_character_,
+      kingdom = "Fungi",
+      taxonRank = "species"
+    ) %>%
+    # 6. Record needs to be removed because there is no matching distribution
+    dplyr::add_row(
+      taxonKey = 148746414,
+      nubKey = 2284723,
+      taxonID = "distribution_missing",
+      scientificName = "Urnatella gracilis Leidy, 1851",
+      acceptedKey = NA_real_,
+      accepted = NA_character_,
+      kingdom = "Animalia",
       taxonRank = "species"
     )
 
@@ -112,7 +134,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       source = NA_character_
     ) %>%
     # 2. All good
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148674355,
       countryCode = "AD",
       occurrenceStatus = "present",
@@ -123,7 +145,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       source = NA_character_
     ) %>%
     # 3. All good
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148674371,
       countryCode = "AD",
       occurrenceStatus = "present",
@@ -134,11 +156,23 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       source = NA_character_
     ) %>%
     # 4. Record needs to be removed because `nubKey` is missing
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148746536,
       countryCode = "AT",
       occurrenceStatus = "present",
       establishmentMeans = "introduced",
+      degreeOfEstablishment = NA_character_,
+      pathway = NA_character_,
+      eventDate = NA_character_,
+      source = NA_character_
+    ) %>%
+    # 5. Record needs to be removed because `establishmentMeans` is not
+    # `introduced`
+    dplyr::add_row(
+      taxonKey = 148746476,
+      countryCode = "AT",
+      occurrenceStatus = "present",
+      establishmentMeans = NA_character_,
       degreeOfEstablishment = NA_character_,
       pathway = NA_character_,
       eventDate = NA_character_,
@@ -158,7 +192,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonRank = "species"
     ) %>%
     # 2. `scientificName` is replaced with correct backbone name
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148674355,
       nubKey = 8411684,
       taxonID = "scientificname_different_from_backbone",
@@ -169,7 +203,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonRank = "species"
     ) %>%
     # 3. `key`s and `scientificName` are replaced with accepted values
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 201367230,
       nubKey = 3204007,
       taxonID = NA,
@@ -180,7 +214,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       kingdom = "Chromista",
       taxonRank = "species"
     ) %>%
-    tibble::as_tibble()
+    dplyr::as_tibble()
 
   expected_distributions <-
     # 1. All good
@@ -195,7 +229,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       source = NA_character_
     ) %>%
     # 2. All good
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148674355,
       countryCode = "AD",
       occurrenceStatus = "present",
@@ -206,7 +240,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       source = NA_character_
     ) %>%
     # 3. All good
-    tibble::add_row(
+    dplyr::add_row(
       taxonKey = 148674371,
       countryCode = "AD",
       occurrenceStatus = "present",
@@ -216,7 +250,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       eventDate = NA_character_,
       source = NA_character_
     ) %>%
-    tibble::as_tibble()
+    dplyr::as_tibble()
 
   expected_notes <-
     data.frame(
@@ -227,7 +261,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedKey = NA_real_,
       accepted = NA_character_
     ) %>%
-    tibble::add_row(
+    dplyr::add_row(
       taxonID = "synonym",
       taxonKey = 148674371,
       scientificName = "Pseudoperonospora humuli (Miyabe & Takah.) G.W.Wilson",
@@ -235,7 +269,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedKey = 201367230,
       accepted = "Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev"
     ) %>%
-    tibble::add_row(
+    dplyr::add_row(
       taxonID = "nubkey_missing",
       taxonKey = 148746536,
       scientificName = "Pinus strobus",
@@ -243,10 +277,26 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedKey = NA_real_,
       accepted = NA_character_
     ) %>%
-    tibble::as_tibble()
+    dplyr::add_row(
+      taxonID = "establishmeantMeans_not_introduced",
+      taxonKey = 148746476,
+      scientificName = "Synchytrium endobioticum (Schilb.) Percival",
+      action = "establishmentMeans_missing",
+      acceptedKey = NA_real_,
+      accepted = NA_character_
+    ) %>%
+    dplyr::add_row(
+      taxonID = "distribution_missing",
+      taxonKey = 148746414,
+      scientificName = "Urnatella gracilis Leidy, 1851",
+      action = "no_matching_distribution",
+      acceptedKey = NA_real_,
+      accepted = NA_character_
+    ) %>%
+    dplyr::as_tibble()
 
   output <- filter_data(taxa, distributions)
   expect_equal(output$taxa, expected_taxa)
-  # expect_equal(output$distributions, expected_distributions) # Failing: taxonKey need to be replaced with accepted key
+  expect_equal(output$distributions, expected_distributions) # Failing: taxonKey need to be replaced with accepted key
   expect_equal(output$notes, expected_notes)
 })
