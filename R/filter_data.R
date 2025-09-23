@@ -36,11 +36,12 @@ filter_data <- function(taxa, distributions) {
   # Get unique nubKeys list
   nubkey_list <-
     taxa %>%
+    dplyr::filter(!is.na(nubKey)) %>%
     dplyr::pull(nubKey) %>%
     unique() %>%
     as.list()
 
-  bb <- match_backbone(nubkey_list)
+  backbone_names <- match_backbone(nubkey_list)
 
   # Join taxa and distributions
   df_full_join <- taxa %>%
@@ -52,7 +53,7 @@ filter_data <- function(taxa, distributions) {
       relationship = "many-to-many"
     ) %>%
     dplyr::rename("source_name" = "scientificName") %>%
-    dplyr::left_join(bb, by = c("nubKey")) %>%
+    dplyr::left_join(backbone_names, by = c("nubKey")) %>%
     dplyr::mutate(
       action = dplyr::case_when(
         is.na(.data$nubKey) ~ "not_matched_with_backbone",
@@ -65,21 +66,28 @@ filter_data <- function(taxa, distributions) {
       )
     ) %>%
     dplyr::select(
-      "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
-      "accepted", "kingdom",
-      "taxonRank", "countryCode", "occurrenceStatus", "establishmentMeans",
-      "degreeOfEstablishment", "pathway", "eventDate", "source", "action"
+      "taxonKey", "nubKey", "taxonID", "source_name", "scientificName",
+      "acceptedKey", "accepted", "kingdom", "taxonRank", "countryCode",
+      "occurrenceStatus", "establishmentMeans", "degreeOfEstablishment",
+      "pathway", "eventDate", "source", "action"
     )
 
   # Add accepted taxa
+  accepted <-
+    get_accepted(df_full_join) %>%
+    dplyr::mutate(
+      source_name = NA_character_,
+      .before = "scientificName"
+    )
   df_full_join <-
-    df_full_join %>%
-    rbind(get_accepted(df_full_join))
+    rbind(df_full_join, accepted)
 
   # Create notes
   notes <-
     df_full_join %>%
     dplyr::filter(!is.na(.data$action)) %>%
+    dplyr::select(-"scientificName") %>%
+    dplyr::rename("scientificName" = "source_name") %>%
     dplyr::select(
       "taxonID", "taxonKey", "scientificName", "action", "acceptedKey",
       "accepted"
