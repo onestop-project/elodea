@@ -25,7 +25,7 @@ test_that("filter_data() returns the expected files for an existing dataset", {
     "kingdom",
     "taxonRank"
   )
-  expect_equal(names(taxa), taxa_expected_columns)
+  expect_equal(names(output$taxa), taxa_expected_columns)
 
   # Check that distributions has the expected columns
   distributions_expected_columns <- c(
@@ -39,7 +39,7 @@ test_that("filter_data() returns the expected files for an existing dataset", {
     "eventDate",
     "source"
   )
-  expect_equal(names(distributions), distributions_expected_columns)
+  expect_equal(names(output$distributions), distributions_expected_columns)
 
   # Check that notes has the expected columns
   notes_expected_columns <- c(
