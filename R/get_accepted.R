@@ -59,40 +59,40 @@
 get_accepted <- function(data) {
   # Get GBIF backbone taxonomy information for synonyms
   acceptedKeys <-
-    data %>%
-    dplyr::filter(!is.na(.data$acceptedKey)) %>%
-    dplyr::select("acceptedKey") %>%
-    dplyr::distinct() %>%
+    data |>
+    dplyr::filter(!is.na(.data$acceptedKey)) |>
+    dplyr::select("acceptedKey") |>
+    dplyr::distinct() |>
     dplyr::pull()
 
   if (!is.null(acceptedKeys) && length(acceptedKeys) > 0) {
     accepted_bb <-
-      setdiff(acceptedKeys, data$nubKey) %>% # Accepted keys missing
+      setdiff(acceptedKeys, data$nubKey) |> # Accepted keys missing
       purrr::map_dfr(
         ~ rgbif::name_usage(key = .x)$data
-      ) %>%
+      ) |>
       dplyr::rename(
         taxonKey = "key"
       )
     # Join backbone information of accepted taxa with original data
-    accepted_taxa <- data %>%
-      dplyr::filter(!is.na(.data$acceptedKey)) %>%
+    accepted_taxa <- data |>
+      dplyr::filter(!is.na(.data$acceptedKey)) |>
       dplyr::select(
         "acceptedKey", "taxonRank", "countryCode", "occurrenceStatus",
         "establishmentMeans", "degreeOfEstablishment", "pathway", "eventDate",
         "source"
-      ) %>%
+      ) |>
       dplyr::left_join(
         accepted_bb,
         by = c("acceptedKey" = "taxonKey")
-      ) %>%
-      dplyr::rename(taxonKey = "acceptedKey") %>%
+      ) |>
+      dplyr::rename(taxonKey = "acceptedKey") |>
       dplyr::mutate(
         taxonID = NA_character_,
         acceptedKey = NA,
         accepted = NA_character_,
         action = NA_character_
-      ) %>%
+      ) |>
       dplyr::select(
         "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
         "accepted", "kingdom", "taxonRank", "countryCode", "occurrenceStatus",

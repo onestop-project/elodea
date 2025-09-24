@@ -19,7 +19,7 @@ test_that("check_taxa() returns error on invalid taxa class", {
 test_that("check_taxa() returns error on missing columns", {
   skip_if_offline()
   datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
-  taxa <- get_taxa(datasetKey) %>%
+  taxa <- get_taxa(datasetKey) |>
     dplyr::rename(
       key = "taxonKey",
       rank = "taxonRank"

@@ -36,25 +36,25 @@ filter_data <- function(taxa, distributions) {
 
   # Get unique nubKeys list
   nubkey_list <-
-    taxa %>%
-    dplyr::filter(!is.na(.data$nubKey)) %>%
-    dplyr::pull(.data$nubKey) %>%
-    unique() %>%
+    taxa |>
+    dplyr::filter(!is.na(.data$nubKey)) |>
+    dplyr::pull(.data$nubKey) |>
+    unique() |>
     as.list()
 
   backbone_names <- match_backbone(nubkey_list)
 
   # Join taxa, backbone names and distributions
-  df_full_join <- taxa %>%
+  df_full_join <- taxa |>
     dplyr::full_join(
       distributions,
       by = c("taxonKey"),
       keep = FALSE,
       multiple = "all",
       relationship = "many-to-many"
-    ) %>%
-    dplyr::rename("source_name" = "scientificName") %>%
-    dplyr::left_join(backbone_names, by = c("nubKey")) %>%
+    ) |>
+    dplyr::rename("source_name" = "scientificName") |>
+    dplyr::left_join(backbone_names, by = c("nubKey")) |>
     dplyr::mutate(
       action = dplyr::case_when(
         is.na(.data$nubKey) ~ "not_matched_with_backbone",
@@ -65,7 +65,7 @@ filter_data <- function(taxa, distributions) {
         .data$source_name != .data$scientificName ~
           "scientificName_replaced_by_backbone_name",
       )
-    ) %>%
+    ) |>
     dplyr::select(
       "taxonKey", "nubKey", "taxonID", "source_name", "scientificName",
       "acceptedKey", "accepted", "kingdom", "taxonRank", "countryCode",
@@ -75,7 +75,7 @@ filter_data <- function(taxa, distributions) {
 
   # Add accepted taxa
   accepted <-
-    get_accepted(df_full_join) %>%
+    get_accepted(df_full_join) |>
     dplyr::mutate(
       source_name = NA_character_,
       .before = "scientificName"
@@ -85,10 +85,10 @@ filter_data <- function(taxa, distributions) {
 
   # Create notes
   notes <-
-    df_full_join %>%
-    dplyr::filter(!is.na(.data$action)) %>%
-    dplyr::select(-"scientificName") %>%
-    dplyr::rename("scientificName" = "source_name") %>%
+    df_full_join |>
+    dplyr::filter(!is.na(.data$action)) |>
+    dplyr::select(-"scientificName") |>
+    dplyr::rename("scientificName" = "source_name") |>
     dplyr::select(
       "taxonID", "taxonKey", "scientificName", "action", "acceptedKey",
       "accepted"
@@ -96,26 +96,26 @@ filter_data <- function(taxa, distributions) {
 
   # Filter out taxa without action
   df_filtered <-
-    df_full_join %>%
+    df_full_join |>
     dplyr::filter(is.na(.data$action) | .data$action == "scientificName_replaced_by_backbone_name")
 
   # Create distributions
   distributions_filtered <-
-    df_filtered %>%
+    df_filtered |>
     dplyr::select(
       "taxonKey", "nubKey", "countryCode", "occurrenceStatus",
       "establishmentMeans", "degreeOfEstablishment", "pathway", "eventDate",
       "source"
-    ) %>%
+    ) |>
     dplyr::distinct()
 
   # Create taxa
   taxa_filtered <-
-    df_filtered %>%
+    df_filtered |>
     dplyr::select(
       "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
       "accepted", "kingdom", "taxonRank"
-    ) %>%
+    ) |>
     dplyr::distinct()
 
   # Return list with data frames

@@ -74,23 +74,23 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   # Clean distributions
   if ("status" %in% names(distributions)) {
     distributions <-
-      distributions %>%
+      distributions |>
       dplyr::rename(occurrenceStatus = "status")
   }
   if ("country" %in% names(distributions)) {
     distributions <-
-      distributions %>%
+      distributions |>
       dplyr::rename(countryCode = "country")
   }
   distributions <-
-    distributions %>%
-    dplyr::left_join(invasiveness, by = "taxonKey") %>%
-    mutate_when_missing(occurrenceStatus = "present") %>%
-    mutate_when_missing(establishmentMeans = NA_character_) %>%
-    mutate_when_missing(degreeOfEstablishment = .data$is_invasive) %>%
-    mutate_when_missing(pathway = NA_character_) %>%
-    mutate_when_missing(eventDate = NA_character_) %>%
-    mutate_when_missing(source = NA_character_) %>%
+    distributions |>
+    dplyr::left_join(invasiveness, by = "taxonKey") |>
+    mutate_when_missing(occurrenceStatus = "present") |>
+    mutate_when_missing(establishmentMeans = NA_character_) |>
+    mutate_when_missing(degreeOfEstablishment = .data$is_invasive) |>
+    mutate_when_missing(pathway = NA_character_) |>
+    mutate_when_missing(eventDate = NA_character_) |>
+    mutate_when_missing(source = NA_character_) |>
     dplyr::select(
       "taxonKey",
       "countryCode",
@@ -100,7 +100,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
       "pathway",
       "eventDate",
       "source"
-    ) %>%
+    ) |>
     dplyr::mutate(
       countryCode = toupper(.data$countryCode),
       dplyr::across(
@@ -110,7 +110,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
         ),
         tolower
       )
-    ) %>%
+    ) |>
     dplyr::as_tibble()
 
   return(distributions)

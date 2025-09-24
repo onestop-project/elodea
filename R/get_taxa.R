@@ -39,17 +39,17 @@ get_taxa <- function(datasetKey) {
   }
   taxa_raw <- rgbif::name_usage(datasetKey = datasetKey, limit = 99999)$data
   taxa <-
-    taxa_raw %>%
+    taxa_raw |>
     # Keep only source taxa, not denormed higher classification taxa
-    dplyr::filter(.data$origin == "SOURCE") %>%
-    mutate_when_missing(acceptedKey = NA_integer_) %>%
-    mutate_when_missing(accepted = NA_character_) %>%
-    dplyr::mutate(taxonRank = tolower(rank)) %>%
-    dplyr::rename(taxonKey = "key") %>%
+    dplyr::filter(.data$origin == "SOURCE") |>
+    mutate_when_missing(acceptedKey = NA_integer_) |>
+    mutate_when_missing(accepted = NA_character_) |>
+    dplyr::mutate(taxonRank = tolower(rank)) |>
+    dplyr::rename(taxonKey = "key") |>
     dplyr::select(
       "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
       "accepted", "kingdom", "taxonRank"
-    ) %>%
+    ) |>
     dplyr::as_tibble()
   return(taxa)
 }

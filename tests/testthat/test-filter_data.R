@@ -65,7 +65,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = NA_character_,
       kingdom = "Animalia",
       taxonRank = "species"
-    ) %>%
+    ) |>
     # 2. `scientificName` need to be replaced with correct backbone name
     dplyr::add_row(
       taxonKey = 148674355,
@@ -76,7 +76,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = NA_character_,
       kingdom = "Animalia",
       taxonRank = "species"
-    ) %>%
+    ) |>
     # 3. `key`s and `scientificName` need to be replaced with accepted values
     dplyr::add_row(
       taxonKey = 148674371,
@@ -87,7 +87,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = "Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev",
       kingdom = "Chromista",
       taxonRank = "species"
-    ) %>%
+    ) |>
     # 4. Record needs to be removed because `nubKey` is missing
     dplyr::add_row(
       taxonKey = 148746536,
@@ -98,7 +98,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = NA_character_,
       kingdom = "Plantae",
       taxonRank = "species"
-    ) %>%
+    ) |>
     # 5. Record needs to be removed because there is no matching distribution
     dplyr::add_row(
       taxonKey = 148746476,
@@ -109,7 +109,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = NA_character_,
       kingdom = "Fungi",
       taxonRank = "species"
-    ) %>%
+    ) |>
     # 6. Record needs to be removed because there is no matching distribution
     dplyr::add_row(
       taxonKey = 148746414,
@@ -133,7 +133,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       pathway = NA_character_,
       eventDate = NA_character_,
       source = NA_character_
-    ) %>%
+    ) |>
     # 2. All good
     dplyr::add_row(
       taxonKey = 148674355,
@@ -144,7 +144,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       pathway = NA_character_,
       eventDate = NA_character_,
       source = NA_character_
-    ) %>%
+    ) |>
     # 3. `taxonKey` need to be replaced by `acceptedKey`
     dplyr::add_row(
       taxonKey = 148674371,
@@ -155,7 +155,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       pathway = NA_character_,
       eventDate = NA_character_,
       source = NA_character_
-    ) %>%
+    ) |>
     # 4. Record needs to be removed because `nubKey` is missing
     dplyr::add_row(
       taxonKey = 148746536,
@@ -166,7 +166,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       pathway = NA_character_,
       eventDate = NA_character_,
       source = NA_character_
-    ) %>%
+    ) |>
     # 5. Record needs to be removed because `establishmentMeans` is not
     # `introduced`
     dplyr::add_row(
@@ -191,7 +191,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = NA_character_,
       kingdom = "Animalia",
       taxonRank = "species"
-    ) %>%
+    ) |>
     # 2. `scientificName` is replaced with correct backbone name
     dplyr::add_row(
       taxonKey = 148674355,
@@ -202,7 +202,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = NA_character_,
       kingdom = "Animalia",
       taxonRank = "species"
-    ) %>%
+    ) |>
     # 3. `key`s and `scientificName` are replaced with accepted values
     dplyr::add_row(
       taxonKey = 201367230,
@@ -214,7 +214,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = NA_character_,
       kingdom = "Chromista",
       taxonRank = "species"
-    ) %>%
+    ) |>
     dplyr::as_tibble()
 
   expected_distributions <-
@@ -229,7 +229,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       pathway = NA_character_,
       eventDate = NA_character_,
       source = NA_character_
-    ) %>%
+    ) |>
     # 2. All good
     dplyr::add_row(
       taxonKey = 148674355,
@@ -241,7 +241,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       pathway = NA_character_,
       eventDate = NA_character_,
       source = NA_character_
-    ) %>%
+    ) |>
     # 3. `taxonKey` is replaced by `acceptedKey`
     dplyr::add_row(
       taxonKey = 201367230,
@@ -253,7 +253,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       pathway = NA_character_,
       eventDate = NA_character_,
       source = NA_character_
-    ) %>%
+    ) |>
     dplyr::as_tibble()
 
   expected_notes <-
@@ -264,7 +264,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       action = "scientificName_replaced_by_backbone_name",
       acceptedKey = NA_real_,
       accepted = NA_character_
-    ) %>%
+    ) |>
     dplyr::add_row(
       taxonID = "synonym",
       taxonKey = 148674371,
@@ -272,7 +272,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       action = "merged_with_accepted",
       acceptedKey = 201367230,
       accepted = "Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev"
-    ) %>%
+    ) |>
     dplyr::add_row(
       taxonID = "nubkey_missing",
       taxonKey = 148746536,
@@ -280,7 +280,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       action = "not_matched_with_backbone",
       acceptedKey = NA_real_,
       accepted = NA_character_
-    ) %>%
+    ) |>
     dplyr::add_row(
       taxonID = "establishmeantMeans_not_introduced",
       taxonKey = 148746476,
@@ -288,7 +288,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       action = "establishmentMeans_missing",
       acceptedKey = NA_real_,
       accepted = NA_character_
-    ) %>%
+    ) |>
     dplyr::add_row(
       taxonID = "distribution_missing",
       taxonKey = 148746414,
@@ -296,7 +296,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       action = "no_matching_distribution",
       acceptedKey = NA_real_,
       accepted = NA_character_
-    ) %>%
+    ) |>
     dplyr::as_tibble()
 
   output <- filter_data(taxa, distributions)
