@@ -63,7 +63,7 @@ filter_data <- function(taxa, distributions) {
         is.na(.data$establishmentMeans) ~ "establishmentMeans_missing",
         .data$establishmentMeans != "introduced" ~ "establishmentMeans_not_introduced",
         .data$source_name != .data$scientificName ~
-          "scientificName_replaced_by_backbone_name",
+          "scientificName_replaced_by_backbone_name"
       )
     ) |>
     dplyr::select(
