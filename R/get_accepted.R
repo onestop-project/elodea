@@ -105,7 +105,7 @@ get_accepted <- function(data) {
       "taxonID", "scientificName", "acceptedKey", "accepted", "kingdom",
       "taxonRank", "countryCode", "occurrenceStatus", "establishmentMeans",
       "degreeOfEstablishment", "pathway", "eventDate", "source", "action"
-      )
+    )
     accepted_taxa <- data.frame(matrix(ncol = length(col_names), nrow = 0))
     colnames(accepted_taxa) <- col_names
   }
