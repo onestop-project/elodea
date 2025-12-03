@@ -55,7 +55,7 @@ get_is_invasive <- function(taxonKey) {
     httr::content(resp, as = "text", encoding = "UTF-8")
     )
   is_invasive <- data$extensions$`http://rs.gbif.org/terms/1.0/SpeciesProfile`$`http://rs.gbif.org/terms/1.0/isInvasive`
-  if(is.null(is_invasive)){is_invasive <- NA}
+  if (is.null(is_invasive)){is_invasive <- NA}
   df <- data.frame(taxonKey = taxonKey) |>
     dplyr::mutate(
       is_invasive = dplyr::if_else(is.null(is_invasive), NA, is_invasive)
