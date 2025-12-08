@@ -41,7 +41,7 @@ match_backbone <- function(nubkey_list) {
 #' information is not available, it returns NA.
 #'
 #' @param taxonKey GBIF taxon key.
-#' @return A data frame with 2 colums: taxonKey and is_invasive.
+#' @return A data frame with 2 columns: taxonKey and is_invasive.
 #' @noRd
 #' @examples
 #' \dontrun{
