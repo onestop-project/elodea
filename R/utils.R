@@ -11,7 +11,7 @@
 #' # But does add a column when it doesn't exist yet
 #' mutate_when_missing(cars, space = "The final frontier")
 #' }
-mutate_when_missing <- function(.data,...){
+mutate_when_missing <- function(.data, ...){
   dots <- substitute(list(...))[-1]
   cols_to_check <- names(sapply(dots, deparse))
   columns_to_add <- cols_to_check[!cols_to_check %in% colnames(.data)]
