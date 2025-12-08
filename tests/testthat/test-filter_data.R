@@ -282,7 +282,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       accepted = NA_character_
     ) |>
     dplyr::add_row(
-      taxonID = "establishmeantMeans_not_introduced",
+      taxonID = "establishmentMeans_not_introduced",
       taxonKey = 148746476,
       scientificName = "Synchytrium endobioticum (Schilb.) Percival",
       action = "establishmentMeans_missing",
