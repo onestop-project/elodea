@@ -58,7 +58,7 @@ get_is_invasive <- function(taxonKey) {
   if (is.null(is_invasive)){is_invasive <- NA}
   df <- data.frame(taxonKey = taxonKey) |>
     dplyr::mutate(
-      is_invasive = dplyr::if_else(is.null(is_invasive), NA, is_invasive)
+      is_invasive = is_invasive
     )
   return(df)
 }
