@@ -20,13 +20,13 @@ check_taxa <- function(taxa) {
   missing_columns <- setdiff(required_columns, names(taxa))
 
   if (length(missing_columns) > 0) {
-      cli::cli_abort(
-        c(
-          "{.arg taxa} is missing 1 or more required columns.",
-          "x" = "The following columns are missing: {.val {missing_columns}}."
-        ),
-        class = "elodea_error_taxa_missing_columns"
-      )
+    cli::cli_abort(
+      c(
+        "{.arg taxa} is missing 1 or more required columns.",
+        "x" = "The following columns are missing: {.val {missing_columns}}."
+      ),
+      class = "elodea_error_taxa_missing_columns"
+    )
   }
 
   invisible(taxa)
