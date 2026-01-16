@@ -71,7 +71,7 @@ get_accepted <- function(data) {
       purrr::map(
         ~ rgbif::name_usage(key = .x)$data
       ) |>
-      list_rbind() |>
+      purrr::list_rbind() |>
       dplyr::rename(
         taxonKey = "key"
       )
