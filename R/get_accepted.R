@@ -68,9 +68,10 @@ get_accepted <- function(data) {
   if (!is.null(acceptedKeys) && length(acceptedKeys) > 0) {
     accepted_bb <-
       setdiff(acceptedKeys, data$nubKey) |> # Accepted keys missing
-      purrr::map_dfr(
+      purrr::map(
         ~ rgbif::name_usage(key = .x)$data
       ) |>
+      list_rbind() |>
       dplyr::rename(
         taxonKey = "key"
       )
