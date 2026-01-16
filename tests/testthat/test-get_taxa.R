@@ -40,5 +40,5 @@ test_that("get_taxa() filters on origin", {
 
   expect_true("DENORMED_CLASSIFICATION" %in% taxa_raw$origin)
   expect_false(any(c("kingdom", "phylum") %in% taxa$taxonRank))
-  expect_true(unique(taxa$taxonRank) == "species")
+  expect_true(identical(unique(taxa$taxonRank), "species"))
 })
