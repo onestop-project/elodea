@@ -58,8 +58,8 @@ filter_data <- function(taxa, distributions) {
     dplyr::mutate(
       action = dplyr::case_when(
         is.na(.data$nubKey) ~ "not_matched_with_backbone",
-        !(taxonKey %in% distributions$taxonKey) ~ "no_matching_distribution",
-        !is.na(acceptedKey) ~ "merged_with_accepted",
+        !(.data$taxonKey %in% distributions$taxonKey) ~ "no_matching_distribution",
+        !is.na(.data$acceptedKey) ~ "merged_with_accepted",
         is.na(.data$establishmentMeans) ~ "establishmentMeans_missing",
         .data$establishmentMeans != "introduced" ~ "establishmentMeans_not_introduced",
         .data$source_name != .data$scientificName ~
