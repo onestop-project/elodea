@@ -42,7 +42,7 @@ filter_data <- function(taxa, distributions) {
     unique() |>
     as.list()
 
-  backbone_names <- match_backbone(nubkey_list)
+  backbone_names <- get_backbone_names(nubkey_list)
 
   # Join taxa, backbone names and distributions
   df_full_join <- taxa |>

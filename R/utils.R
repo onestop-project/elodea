@@ -19,13 +19,13 @@ mutate_when_missing <- function(.data, ...){
   return(.data)
 }
 
-#' Match a list of `nubKey`s to GBIF backbone names
+#' Gets GBIF backbone names based on a list of `nubKey`s
 #'
 #' @param nubkey_list A vector of GBIF backbone taxon keys
 #'
 #' @return A data frame with `nubKey` and `scientificName`.
 #' @noRd
-match_backbone <- function(nubkey_list) {
+get_backbone_names <- function(nubkey_list) {
   nubkey_list |>
     purrr::map_dfr(
       ~ rgbif::name_usage(key = .x)$data
