@@ -22,7 +22,7 @@ denormed higher classification taxa are removed. The function
 \code{get_taxa()} returns a \code{tibble} with 8
 variables:
 \itemize{
-\item \code{taxonKey}: GBIF taxon key
+\item \code{taxonKey}: GBIF taxon key within a checklist
 \item \code{nubKey}: GBIF backbone taxon key
 \item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID from the
 dataset
