@@ -83,7 +83,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       nubKey = 3204008,
       taxonID = "synonym",
       scientificName = "Pseudoperonospora humuli (Miyabe & Takah.) G.W.Wilson",
-      acceptedKey = 201367230,
+      acceptedKey = 3204007,
       accepted = "Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev",
       kingdom = "Chromista",
       taxonRank = "species"
@@ -205,7 +205,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     ) |>
     # 3. `key`s and `scientificName` are replaced with accepted values
     dplyr::add_row(
-      taxonKey = 201367230,
+      taxonKey = 3204007,
       nubKey = 3204007,
       taxonID = NA,
       scientificName =
@@ -244,7 +244,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     ) |>
     # 3. `taxonKey` is replaced by `acceptedKey`
     dplyr::add_row(
-      taxonKey = 201367230,
+      taxonKey = 3204007,
       nubKey = 3204007,
       countryCode = "AD",
       occurrenceStatus = "present",
@@ -270,7 +270,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonKey = 148674371,
       scientificName = "Pseudoperonospora humuli (Miyabe & Takah.) G.W.Wilson",
       action = "merged_with_accepted",
-      acceptedKey = 201367230,
+      acceptedKey = 3204007,
       accepted = "Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev"
     ) |>
     dplyr::add_row(
