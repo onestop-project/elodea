@@ -38,7 +38,7 @@
 #'     "Bruchus rufimanus Boheman, 1833",
 #'     "Pseudoperonospora humuli (Miyabe & Takah.) G.W.Wilson"
 #'   ),
-#'   acceptedKey = c(201367222, NA, 201367230),
+#'   acceptedKey = c(315787873, NA, 315787881),
 #'   accepted = c(
 #'     "Pentarthrum confine Broun, 1881",
 #'     NA,
