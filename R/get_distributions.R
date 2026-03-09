@@ -44,7 +44,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   progressr::with_progress({
     progress_bar <- progressr::progressor(steps = length(taxon_keys))
     distributions <-
-      furrr::future_map_dfr(
+      purrr::map_dfr(
         taxon_keys,
         function(x) {
           progress_bar()
@@ -52,8 +52,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
             key = x,
             data = "distribution"
           )$data
-        },
-        .options = furrr::furrr_options(seed = TRUE)
+        }
       )
   })
 
@@ -61,13 +60,12 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   progressr::with_progress({
     progress_bar <- progressr::progressor(steps = length(taxon_keys))
     invasiveness <-
-      furrr::future_map_dfr(
+      purrr::map_dfr(
         taxon_keys,
         function(x) {
           progress_bar()
           get_is_invasive(x)
-        },
-        .options = furrr::furrr_options(seed = TRUE)
+        }
       )
   })
 
