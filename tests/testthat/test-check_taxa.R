@@ -23,7 +23,7 @@ test_that("check_taxa() returns error on missing columns", {
     dplyr::rename(
       key = "taxonKey",
       rank = "taxonRank"
-      )
+    )
   expect_error(
     check_taxa(taxa),
     class = "elodea_error_taxa_missing_columns"
