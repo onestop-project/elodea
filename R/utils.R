@@ -27,9 +27,10 @@ mutate_when_missing <- function(.data, ...){
 #' @noRd
 get_backbone_names <- function(nubkey_list) {
   nubkey_list |>
-    purrr::map_dfr(
+    purrr::map(
       ~ rgbif::name_usage(key = .x)$data
     ) |>
+    purrr::list_rbind() |>
     dplyr::select("key", "scientificName") |>
     dplyr::rename("nubKey" = "key")
 }

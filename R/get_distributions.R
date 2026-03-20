@@ -44,7 +44,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   progressr::with_progress({
     progress_bar <- progressr::progressor(steps = length(taxon_keys))
     distributions <-
-      purrr::map_dfr(
+      purrr::map(
         taxon_keys,
         function(x) {
           progress_bar()
@@ -53,20 +53,22 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
             data = "distribution"
           )$data
         }
-      )
+      ) |>
+      purrr::list_rbind()
   })
 
   # Download species profiles with progress bar
   progressr::with_progress({
     progress_bar <- progressr::progressor(steps = length(taxon_keys))
     invasiveness <-
-      purrr::map_dfr(
+      purrr::map(
         taxon_keys,
         function(x) {
           progress_bar()
           get_is_invasive(x)
         }
-      )
+      ) |>
+      purrr::list_rbind()
   })
 
   # Clean distributions
