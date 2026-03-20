@@ -27,9 +27,9 @@ variables:
 \item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID from the
 dataset
 \item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Scientific
-name of the taxon
-\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID.}{\code{acceptedKey}}: GBIF taxon key of the accepted taxon, if applicable
-\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsage}{\code{accepted}}: Scientific name of the accepted taxon, if applicable
+name of the taxon within the checklist
+\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID.}{\code{acceptedKey}}: GBIF taxon key of the accepted taxon within the checklist, if applicable
+\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsage}{\code{accepted}}: Scientific name of the accepted taxon within the checklist, if applicable
 \item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{kingdom}}: Kingdom of the taxon
 \item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{taxonRank}}: Taxonomic rank of
 the taxon
