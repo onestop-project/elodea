@@ -80,8 +80,7 @@ filter_data <- function(taxa, distributions) {
       source_name = NA_character_,
       .before = "scientificName"
     )
-  df_full_join <-
-    rbind(df_full_join, accepted)
+  df_full_join <- rbind(df_full_join, accepted)
 
   # Create notes
   notes <-
