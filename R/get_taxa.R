@@ -9,7 +9,7 @@
 #' @section Taxa details:
 #' `get_taxa()` returns a `tibble` with 8
 #' variables:
-#' - `taxonKey`: GBIF taxon key within a checklist
+#' - `taxonKey`: GBIF taxon key within the checklist
 #' - `nubKey`: GBIF backbone taxon key
 #' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID from the
 #' dataset
