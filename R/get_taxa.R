@@ -15,8 +15,8 @@
 #' dataset
 #' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Scientific
 #' name of the taxon
-#' - `acceptedKey`: GBIF taxon key of the accepted taxon, if applicable
-#' - `accepted`: Scientific name of the accepted taxon, if applicable
+#' - [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID.): GBIF taxon key of the accepted taxon, if applicable
+#' - [`accepted`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsage): Scientific name of the accepted taxon, if applicable
 #' - [`kingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the taxon
 #' - [`taxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic rank of
 #' the taxon
