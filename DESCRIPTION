@@ -1,12 +1,14 @@
 Package: elodea
-Title: Validate GRIIS (Global Register of Introduced and Invasive Species) 
+Title: Clean and Standardise Published GBIF Checklists
   Checklists
 Version: 0.0.0.9000
 Authors@R: 
     person("Sanne", "Govaert", , "sanne.govaert@inbo.be", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0002-8939-1305", 
-           affiliation = "Research Institute for Nature and Forest (INBO)"))
-Description: What the package does (one paragraph).
+           comment = c(ORCID = "0000-0002-8939-1305", affiliation = "Research Institute for Nature and Forest (INBO)")),
+    person("Damiano", "Oldoni", , "damiano.oldoni@inbo.be", role = "aut",
+           comment = c(ORCID = "0000-0003-3445-7562", affiliation = "Research Institute for Nature and Forest (INBO)"))
+Description: Clean and standardise published GBIF checklists. With `elodea` you
+  can prepare checklists on alien species to create a unified checklist.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
