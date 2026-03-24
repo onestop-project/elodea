@@ -5,7 +5,7 @@
 #' @inheritParams get_taxa
 #' @param taxa Data frame as returned by `get_taxa()`. Defaults to
 #' `get_taxa(datasetKey)`
-#' @returns A `tibble` with distributions.
+#' @return A `tibble` with distributions.
 #' @export
 #' @section Distributions details:
 #' `get_distributions()` returns a `tibble` with 8 variables:

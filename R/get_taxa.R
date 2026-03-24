@@ -4,7 +4,7 @@
 #' denormed higher classification taxa are removed. The function
 #' `rgbif::name_usage()` is used under the hood.
 #' @param datasetKey GBIF dataset key.
-#' @returns A `tibble` with taxonomic information of the dataset.
+#' @return A `tibble` with taxonomic information of the dataset.
 #' @export
 #' @section Taxa details:
 #' `get_taxa()` returns a `tibble` with 8

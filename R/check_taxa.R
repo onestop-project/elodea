@@ -1,7 +1,7 @@
 #' Checks taxa
 #'
 #' @param taxa Data frame as returned by `get_taxa()`.
-#' @returns `taxa` invisibly or an error.
+#' @return `taxa` invisibly or an error.
 #' @export
 check_taxa <- function(taxa) {
   # Check if taxa is a data frame

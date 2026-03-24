@@ -6,7 +6,7 @@
 #' @param taxa Data frame as returned by `get_taxa()`.
 #' @param distributions Data frame as returned by `get_distributions()`.
 #'
-#' @returns A list with three data frames:
+#' @return A list with three data frames:
 #' - `taxa`: Filtered taxa data frame.
 #' - `distributions`: Filtered distributions data frame, with extra column
 #' `nubKey`.
