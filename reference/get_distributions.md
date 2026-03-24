@@ -1,0 +1,72 @@
+# Get distributions
+
+Gets the distributions of a GBIF dataset. The function
+[`rgbif::name_usage()`](https://docs.ropensci.org/rgbif/reference/name_usage.html)
+is used under the hood.
+
+## Usage
+
+``` r
+get_distributions(datasetKey, taxa = get_taxa(datasetKey))
+```
+
+## Arguments
+
+- datasetKey:
+
+  GBIF dataset key.
+
+- taxa:
+
+  Data frame as returned by
+  [`get_taxa()`](https://onestop-project.github.io/elodea/reference/get_taxa.md).
+  Defaults to `get_taxa(datasetKey)`
+
+## Value
+
+A `tibble` with distributions.
+
+## Distributions details
+
+`get_distributions()` returns a `tibble` with 8 variables:
+
+- `taxonKey`: GBIF taxon key
+
+- [`countryCode`](http://rs.tdwg.org/dwc/terms/countryCode): ISO
+  3166-1-alpha-2 country code
+
+- [`occurrenceStatus`](http://rs.tdwg.org/dwc/terms/occurrenceStatus): A
+  statement about the presence or absence of a taxon at a country. When
+  `occurrenceStatus` is missing, it is set to `present`.
+
+- [`establishmentMeans`](http://rs.tdwg.org/dwc/terms/establishmentMeans):
+  Statement about whether the taxon has been introduced to a given
+  country and eventDate through the direct or indirect activity of
+  modern humans.
+
+- [`degreeOfEstablishment`](http://rs.tdwg.org/dwc/terms/degreeOfEstablishment):
+  The degree to which a taxon survives, reproduces, and expands its
+  range at the given country and eventDate.
+
+- [`pathway`](http://rs.tdwg.org/dwc/terms/pathway): The process by
+  which a taxon came to be in a given country at a given eventDate.
+
+- [`eventDate`](http://rs.tdwg.org/dwc/terms/eventDate): The date-time
+  or interval during which the `occurrenceStatus` is applicable for the
+  taxon in a given country.
+
+- [`source`](http://purl.org/dc/terms/source): A related resource from
+  which the described resource is derived.
+
+## Examples
+
+``` r
+# Cyprus
+distributions_CY <- get_distributions("2f7ea7d1-a73f-46f6-b790-7339126a999f")
+# Andorra
+distributions_AD <- get_distributions("016c16c3-d907-4c88-97dd-97ad62c8130e")
+if (FALSE) { # \dontrun{
+# Belgium
+distributions_BE <- get_distributions("6d9e952f-948c-4483-9807-575348147c7e")
+} # }
+```
