@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-The goal of elodea is to ...
+The goal of elodea is to clean and standardise published GBIF checklists. With elodea you can prepare checklists on alien species to create a unified checklist.
 
 ## Installation
 
