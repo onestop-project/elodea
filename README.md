@@ -11,7 +11,7 @@ coverage](https://codecov.io/gh/onestop-project/elodea/graph/badge.svg)](https:/
 [![test-coverage](https://github.com/onestop-project/elodea/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/onestop-project/elodea/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
-The goal of elodea is to …
+The goal of elodea is to clean and standardise published GBIF checklists. With `elodea` you can prepare checklists on alien species to create a unified checklist.
 
 ## Installation
 
