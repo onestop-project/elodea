@@ -45,12 +45,12 @@ remotes::install_github("onestop-project/elodea")
 
 With elodea you can **get** the taxonomic and distribution information of a published GBIF checklist.
 
-Here we get the source taxa and distributions of the [Global Register of Introduced and Invasive Species - Cyprus](https://www.gbif.org/dataset/2f7ea7d1-a73f-46f6-b790-7339126a999f).
+Here we get the source taxa and distributions of the [Global Register of Introduced and Invasive Species - Monaco](https://www.gbif.org/dataset/fbba79dc-ca5b-47ab-9a88-9bdf15a1d11f).
 
 ``` {r}
 library(elodea)
 
-datasetKey <- "2f7ea7d1-a73f-46f6-b790-7339126a999f"
+datasetKey <- "fbba79dc-ca5b-47ab-9a88-9bdf15a1d11f"
 
 taxa <- get_taxa(datasetKey)
 distributions <- get_distributions(datasetKey, taxa)
