@@ -26,11 +26,53 @@ knitr::opts_chunk$set(
 
 The goal of elodea is to clean and standardise published GBIF checklists. With elodea you can prepare checklists on alien species to create a unified checklist.
 
+To get started, see:
+
+- [Function
+  reference](https://onestop-project.github.io/elodea/reference/index.html):
+  overview of all functions.
+
 ## Installation
 
 You can install the development version of elodea from [GitHub](https://github.com/) with:
 
-``` r
+```{r, eval = FALSE}
 # install.packages("remotes")
 remotes::install_github("onestop-project/elodea")
 ```
+
+## Usage
+
+With elodea you can **get** the taxonomic and distribution information of a published GBIF checklist.
+
+Here we get the source taxa and distributions of the [Global Register of Introduced and Invasive Species - Cyprus](https://www.gbif.org/dataset/2f7ea7d1-a73f-46f6-b790-7339126a999f).
+
+``` {r}
+library(elodea)
+
+datasetKey <- "2f7ea7d1-a73f-46f6-b790-7339126a999f"
+
+taxa <- get_taxa(datasetKey)
+distributions <- get_distributions(datasetKey, taxa)
+```
+
+Then you can **filter**/standardise both taxa and distributions with `filter_data()`, which will return a list with three data frames: `taxa`, `distributions` and `notes`. The first two data frames are the filtered taxa and distributions, while the `notes` data frame contains information on the filtering process. Check [`filter_data()`](https://onestop-project.github.io/elodea/reference/filter_data.html) for the filter details.
+
+``` {r}
+filter_data(taxa, distributions)
+```
+
+The notes can help improve the source checklist. The standardised taxa and distribution data can be used to build unified checklists by combining multiple checklists into a single checklist.
+
+## Meta
+
+- We welcome
+  [contributions](https://onestop-project.github.io/elodea/CONTRIBUTING.html)
+  including bug reports.
+- License: MIT
+- Get [citation
+  information](https://onestop-project.github.io/elodea/authors.html#citation)
+  for elodea in R doing `citation("elodea")`.
+- Please note that this project is released with a [Contributor Code of
+  Conduct](https://onestop-project.github.io/elodea/CODE_OF_CONDUCT.html). By
+  participating in this project you agree to abide by its terms.
