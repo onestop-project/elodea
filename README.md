@@ -9,9 +9,16 @@
 [![Codecov test
 coverage](https://codecov.io/gh/onestop-project/elodea/graph/badge.svg)](https://app.codecov.io/gh/onestop-project/elodea)
 [![test-coverage](https://github.com/onestop-project/elodea/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/onestop-project/elodea/actions/workflows/test-coverage.yaml)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Project Status:
+Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 <!-- badges: end -->
 
-The goal of elodea is to clean and standardise published GBIF checklists. With `elodea` you can prepare checklists on alien species to create a unified checklist.
+The goal of elodea is to clean and standardise published GBIF
+checklists. With elodea you can prepare checklists on alien species to
+create a unified checklist.
 
 ## Installation
 
