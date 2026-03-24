@@ -1,6 +1,5 @@
 Package: elodea
 Title: Clean and Standardise Published GBIF Checklists
-  Checklists
 Version: 0.0.0.9000
 Authors@R:c(
     person("Sanne", "Govaert", , "sanne.govaert@inbo.be", role = c("aut", "cre"),
@@ -12,7 +11,7 @@ Authors@R:c(
     person("European Union", role = "fnd", comment = "https://doi.org/10.3030/101180559")
   )
 Description: Clean and standardise published GBIF checklists. With `elodea` you
-  can prepare checklists on alien species to create a unified checklist.
+  can prepare checklists of alien species to create a unified checklist.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
