@@ -2,6 +2,8 @@
 
 ## elodea (development version)
 
+## elodea 0.1.0
+
 - New function
   [`get_taxa()`](https://onestop-project.github.io/elodea/reference/get_taxa.md)
   gets the taxa from a GBIF checklist
