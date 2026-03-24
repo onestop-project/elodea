@@ -1,3 +1,5 @@
+# elodea (development version)
+
 # elodea 0.1.0
 
 * New function `get_taxa()` gets the taxa from a GBIF checklist (#4).

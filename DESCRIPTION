@@ -1,6 +1,6 @@
 Package: elodea
 Title: Clean and Standardise Published GBIF Checklists
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: c(
     person("Sanne", "Govaert", , "sanne.govaert@inbo.be", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-8939-1305", affiliation = "Research Institute for Nature and Forest (INBO)")),
