@@ -53,6 +53,11 @@
 
 <!-- badges: end -->
 <p>The goal of elodea is to clean and standardise published GBIF checklists. With elodea you can prepare checklists on alien species to create a unified checklist.</p>
+<p>To get started, see:</p>
+<ul>
+<li>
+<a href="https://onestop-project.github.io/elodea/reference/index.html">Function reference</a>: overview of all functions.</li>
+</ul>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -60,6 +65,74 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"onestop-project/elodea"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<p>With elodea you can <strong>get</strong> the taxonomic and distribution information of a published GBIF checklist.</p>
+<p>Here we get the source taxa and distributions of the <a href="https://www.gbif.org/dataset/fbba79dc-ca5b-47ab-9a88-9bdf15a1d11f" class="external-link">Global Register of Introduced and Invasive Species - Monaco</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/onestop-project/elodea" class="external-link">elodea</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">datasetKey</span> <span class="op">&lt;-</span> <span class="st">"fbba79dc-ca5b-47ab-9a88-9bdf15a1d11f"</span></span>
+<span></span>
+<span><span class="va">taxa</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_taxa.html">get_taxa</a></span><span class="op">(</span><span class="va">datasetKey</span><span class="op">)</span></span>
+<span><span class="va">distributions</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_distributions.html">get_distributions</a></span><span class="op">(</span><span class="va">datasetKey</span>, <span class="va">taxa</span><span class="op">)</span></span></code></pre></div>
+<p>Then you can <strong>filter</strong>/standardise both taxa and distributions with <code><a href="reference/filter_data.html">filter_data()</a></code>, which will return a list with three data frames: <code>taxa</code>, <code>distributions</code> and <code>notes</code>. The first two data frames are the filtered taxa and distributions, while the <code>notes</code> data frame contains information on the filtering process. Check <a href="https://onestop-project.github.io/elodea/reference/filter_data.html"><code>filter_data()</code></a> for the filter details.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/filter_data.html">filter_data</a></span><span class="op">(</span><span class="va">taxa</span>, <span class="va">distributions</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $taxa</span></span>
+<span><span class="co">#&gt; # A tibble: 11 × 8</span></span>
+<span><span class="co">#&gt;    taxonKey nubKey taxonID scientificName acceptedKey accepted kingdom taxonRank</span></span>
+<span><span class="co">#&gt;       &lt;int&gt;  &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;                &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    </span></span>
+<span><span class="co">#&gt;  1   1.96e8 9.75e6 74020   Phasianus col…          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt;  2   1.96e8 5.16e6 74016   Leptoglossus …          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt;  3   1.96e8 8.00e6 74019   Corythauma ay…          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt;  4   1.96e8 9.30e6 74017   Phenacoccus p…          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt;  5   1.96e8 2.09e6 74015   Crisicoccus p…          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt;  6   1.96e8 8.64e6 74018   Xylosandrus c…          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt;  7   1.96e8 4.29e6 74014   Trachyphloeos…          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt;  8   1.96e8 1.65e6 74010   Aedes albopic…          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt;  9   1.96e8 2.64e6 74012   Caulerpa race…          NA &lt;NA&gt;     Plantae species  </span></span>
+<span><span class="co">#&gt; 10   1.96e8 2.64e6 74011   Caulerpa taxi…          NA &lt;NA&gt;     Plantae species  </span></span>
+<span><span class="co">#&gt; 11   3.16e8 6.28e6 &lt;NA&gt;    Dactylispa pa…          NA &lt;NA&gt;     Animal… species  </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $distributions</span></span>
+<span><span class="co">#&gt; # A tibble: 11 × 9</span></span>
+<span><span class="co">#&gt;     taxonKey  nubKey countryCode occurrenceStatus establishmentMeans</span></span>
+<span><span class="co">#&gt;        &lt;int&gt;   &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;            &lt;chr&gt;             </span></span>
+<span><span class="co">#&gt;  1 196397247 9752149 MC          present          introduced        </span></span>
+<span><span class="co">#&gt;  2 196397252 5156102 MC          present          introduced        </span></span>
+<span><span class="co">#&gt;  3 196397254 8001222 MC          present          introduced        </span></span>
+<span><span class="co">#&gt;  4 196397256 9302212 MC          present          introduced        </span></span>
+<span><span class="co">#&gt;  5 196397257 2094171 MC          present          introduced        </span></span>
+<span><span class="co">#&gt;  6 196397263 8636797 MC          present          introduced        </span></span>
+<span><span class="co">#&gt;  7 196397264 4292054 MC          present          introduced        </span></span>
+<span><span class="co">#&gt;  8 196397267 1651430 MC          present          introduced        </span></span>
+<span><span class="co">#&gt;  9 196397273 2643093 MC          present          introduced        </span></span>
+<span><span class="co">#&gt; 10 196397274 2643172 MC          present          introduced        </span></span>
+<span><span class="co">#&gt; 11 315739672 6275970 MC          present          introduced        </span></span>
+<span><span class="co">#&gt; # ℹ 4 more variables: degreeOfEstablishment &lt;chr&gt;, pathway &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   eventDate &lt;chr&gt;, source &lt;chr&gt;</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $notes</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 6</span></span>
+<span><span class="co">#&gt;   taxonID  taxonKey scientificName                   action acceptedKey accepted</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;                            &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;   </span></span>
+<span><span class="co">#&gt; 1 74013   196397261 Acanthoscelides pallidipennis (… merge…   315739672 Dactyli…</span></span>
+<span><span class="co">#&gt; 2 74018   196397263 Xylosandrus compactus Eichhoff,… scien…          NA &lt;NA&gt;    </span></span>
+<span><span class="co">#&gt; 3 74010   196397267 Aedes albopictus Skuse, 1894     scien…          NA &lt;NA&gt;</span></span></code></pre></div>
+<p>The notes can help improve the source checklist. The standardised taxa and distribution data can be used to build unified checklists by combining multiple checklists into a single checklist.</p>
+</div>
+<div class="section level2">
+<h2 id="meta">Meta<a class="anchor" aria-label="anchor" href="#meta"></a>
+</h2>
+<ul>
+<li>We welcome <a href="https://onestop-project.github.io/elodea/CONTRIBUTING.html">contributions</a> including bug reports.</li>
+<li>License: MIT</li>
+<li>Get <a href="https://onestop-project.github.io/elodea/authors.html#citation">citation information</a> for elodea in R doing <code>citation("elodea")</code>.</li>
+<li>Please note that this project is released with a <a href="https://onestop-project.github.io/elodea/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</li>
+</ul>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">

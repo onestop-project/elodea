@@ -35,7 +35,7 @@ A `tibble` with taxonomic information of the dataset.
 - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName):
   Scientific name of the taxon within the checklist
 
-- [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID.):
+- [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID):
   GBIF taxon key of the accepted taxon within the checklist, if
   applicable
 

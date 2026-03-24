@@ -22,11 +22,13 @@ Source:
 [`DESCRIPTION`](https://github.com/onestop-project/elodea/blob/main/DESCRIPTION)
 
 Govaert S, Oldoni D (2026). *elodea: Clean and Standardise Published
-GBIF Checklists*. R package version 0.0.0.9000.
+GBIF Checklists*. R package version 0.0.0.9000,
+<https://github.com/onestop-project/elodea>.
 
     @Manual{,
       title = {elodea: Clean and Standardise Published GBIF Checklists},
       author = {Sanne Govaert and Damiano Oldoni},
       year = {2026},
       note = {R package version 0.0.0.9000},
+      url = {https://github.com/onestop-project/elodea},
     }
