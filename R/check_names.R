@@ -1,3 +1,31 @@
+#' Checks the scientific names of a checklist
+#'
+#' Checks the scientific names of a tabular checklist against the GBIF backbone
+#' taxonomy. It uses `rgbif::name_backbone_checklist()` under the hood. The
+#' function returns a list with two `tibble`s: `summary` and `full_table`.
+#' The `summary` table contains taxa that are not an exact match or not
+#' accepted, while `full_table` contains the full results of the name matching
+#' process.
+#'
+#'
+#' **Column name** | **Description**
+#' -- | --
+#' rawScientificName | The original scientific name as provided in the raw data file
+#' scientificName | The matching scientific name from the GBIF backbone
+#' matchType | The type of match (e.g. "EXACT", "FUZZY", "HIGHERRANK", "NOMATCH")
+#' confidence | The confidence score of the match
+#' rank | The taxonomic rank of scientificName
+#' status | The taxonomic status of scientificName (e.g. "ACCEPTED", "SYNONYM", "DOUBTFUL")
+#' acceptedUsageKey | The GBIF backbone taxonKey/usageKey/nubkey of the accepted name (if scientificName is a synonym)
+#' acceptedScientificName | The accepted name (if scientificName is a synonym)
+#'
+#' @param checklist A `data.frame`.
+#' @return a list of `tibble`s: `summary` and `full_table`. The `summary` table
+#' contains taxa that are not an exact match or not accepted, while `full_table`
+#' contains the full results of the name matching process.
+#' @export
+#' @examples
+#' check_names(checklist)
 check_names <- function(checklist) {
   if (!"scientific_name" %in% names(checklist)) {
     cli::cli_abort(
