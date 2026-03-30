@@ -35,15 +35,8 @@ test_that("check_names() returns the expected columns in the summary and match t
   expect_identical(colnames(result$full_table), col_names)
 })
 
-test_that("check_names() prints the synonyms and no-matches", {
-  expect_output(
-    check_names(example_checklist),
-    regexp = paste(
-      "Summary",
-      "* 3 synonyms",
-      "* 3 taxa with no exact match",
-      sep = "\n"
-    ),
-    fixed = TRUE
-  )
+test_that("check_names() prints a summary via cli", {
+  testthat::expect_snapshot({
+    result <- check_names(example_checklist)
+  })
 })
