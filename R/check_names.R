@@ -41,14 +41,14 @@ check_names <- function(checklist) {
   match <-
     checklist |>
     dplyr::mutate(
-      scientificName = "scientific_name",
-      rank = "taxon_rank"
+      scientificName = .data$scientific_name,
+      rank = .data$taxon_rank
     ) |>
     rgbif::name_backbone_checklist() |>
     dplyr::rename(rawScientificName = "verbatim_scientific_name") |>
     dplyr::select(
       "rawScientificName", "scientificName", "matchType", "confidence", "rank",
-      "status", "acceptedUsageKey","acceptedScientificName"
+      "status", "acceptedUsageKey", "acceptedScientificName"
     )
 
   # Create summary and statistics
@@ -61,7 +61,7 @@ check_names <- function(checklist) {
 
   cli::cli_h2("Summary")
   cli::cli_ul(c(
-    "{.value {nrow(n_synonyms)}} synonyms",
+    "{.value {nrow(synonyms)}} synonyms",
     "{.value {nrow(no_match)}} taxa with no exact match"
   ))
   cli::cli_h3("Synonyms - rawScientificName: acceptedScientificName")
