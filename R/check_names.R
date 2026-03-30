@@ -41,21 +41,23 @@ check_names <- function(checklist) {
   match <-
     checklist |>
     dplyr::mutate(
-      scientificName = scientific_name,
-      rank = taxon_rank
+      scientificName = "scientific_name",
+      rank = "taxon_rank"
     ) |>
     rgbif::name_backbone_checklist() |>
-    dplyr::rename(rawScientificName = verbatim_scientific_name) |>
+    dplyr::rename(rawScientificName = "verbatim_scientific_name") |>
     dplyr::select(
-      rawScientificName, scientificName, matchType, confidence, rank, status, acceptedUsageKey,
-      acceptedScientificName
+      "rawScientificName", "scientificName", "matchType", "confidence", "rank",
+      "status", "acceptedUsageKey","acceptedScientificName"
     )
 
   # Create summary and statistics
-  summary <- dplyr::filter(match, matchType != "EXACT" | status != "ACCEPTED")
+  summary <- dplyr::filter(
+    match, .data$matchType != "EXACT" | .data$status != "ACCEPTED"
+    )
 
-  synonyms <- dplyr::filter(match, status == "SYNONYM")
-  no_match <- dplyr::filter(match, matchType != "EXACT")
+  synonyms <- dplyr::filter(match, .data$status == "SYNONYM")
+  no_match <- dplyr::filter(match, .data$matchType != "EXACT")
 
   cli::cli_h2("Summary")
   cli::cli_ul(c(
@@ -65,7 +67,7 @@ check_names <- function(checklist) {
   cli::cli_h3("Synonyms - rawScientificName: acceptedScientificName")
   cli::cli_dl(dplyr::pull(synonyms, .data$acceptedScientificName, .data$rawScientificName))
   cli::cli_h3("No match - rawScientificName: best match")
-  cli::cli_dl(dplyr::pull(no_match, .data$scientificName, .data$rawScientificName, ))
+  cli::cli_dl(dplyr::pull(no_match, .data$scientificName, .data$rawScientificName))
 
   return <- list(
     summary = dplyr::as_tibble(summary),
