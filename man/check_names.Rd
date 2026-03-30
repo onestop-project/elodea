@@ -36,5 +36,5 @@ process.
 }
 }
 \examples{
-check_names(checklist)
+check_names(example_checklist)
 }

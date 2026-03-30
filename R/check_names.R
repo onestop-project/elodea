@@ -25,7 +25,7 @@
 #' contains the full results of the name matching process.
 #' @export
 #' @examples
-#' check_names(checklist)
+#' check_names(example_checklist)
 check_names <- function(checklist) {
   if (!"scientific_name" %in% names(checklist)) {
     cli::cli_abort(
