@@ -1,10 +1,10 @@
 test_that("check_names() returns an error on column missing", {
   checklist <-
     example_checklist |>
-    dplyr::rename("scientific.name" = .data$scientific_name)
+    dplyr::rename("scientific.name" = scientific_name)
 
   expect_error(
-    check_names(checklist),
+    suppressMessages(check_names(checklist)),
     class = "elodea_error_scienfic_name_missing"
   )
 })
