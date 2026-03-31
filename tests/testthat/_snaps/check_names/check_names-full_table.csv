@@ -1,0 +1,13 @@
+"rawScientificName","scientificName","matchType","confidence","rank","status","acceptedUsageKey","acceptedScientificName"
+"Amaranthus macrocarpus Benth. var. pallidus Benth.","Amaranthus macrocarpus var. pallidus Benth.","EXACT",100,"VARIETY","SYNONYM","9454901","Amaranthus macrocarpus subsp. pallidus (Benth.) N.Bayón"
+"Amaranthus macrocarpus Benth. var. pallidus Benth.","Amaranthus macrocarpus var. pallidus Benth.","EXACT",100,"VARIETY","SYNONYM","9454901","Amaranthus macrocarpus subsp. pallidus (Benth.) N.Bayón"
+"Cotoneaster x 'Hybridus pendulus'","Plantae","HIGHERRANK",99,"KINGDOM","ACCEPTED",NA,NA
+"Acmella agg.","Acmella Rich. ex Pers.","EXACT",95,"GENUS","ACCEPTED",NA,NA
+"AseroÙ rubra","Fungi","HIGHERRANK",99,"KINGDOM","ACCEPTED",NA,NA
+"Ambystoma macrodactylum (Baird, 1849)","Ambystoma macrodactylum Baird, 1850","EXACT",100,"SPECIES","ACCEPTED",NA,NA
+"Hemidactylus (Oken, 1817)","Hemidactylus Oken, 1817","HIGHERRANK",100,"GENUS","ACCEPTED",NA,NA
+"Ovis gmelinii subsp. musimon (Pallas, 1811)","Ovis gmelinii musimon (Pallas, 1811)","EXACT",100,"SUBSPECIES","SYNONYM","6165157","Ovis aries musimon (Pallas, 1811)"
+"Carassius gibelio (Bloch, 1782)","Carassius gibelio (Bloch, 1782)","EXACT",100,"SPECIES","ACCEPTED",NA,NA
+"Trochoidea elegans","Trochoidea elegans (Gmelin, 1791)","EXACT",100,"SPECIES","ACCEPTED",NA,NA
+"Lepisma saccharina","Lepisma saccharinum Linnaeus, 1758","VARIANT",100,"SPECIES","ACCEPTED",NA,NA
+"Boccardiella ligerica (FerronniÃ¨re, 1898)","Boccardiella ligerica (Ferronnière, 1898)","EXACT",100,"SPECIES","ACCEPTED",NA,NA
