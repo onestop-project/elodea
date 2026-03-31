@@ -17,6 +17,11 @@ example_checklist
 A small example checklist of alien species. The source checklist is maintained
 in an online Google sheet, and published to the web as a CSV file.
 }
+\details{
+\code{example_checklist} is a CSV file with 12 records, including some taxa with
+misspelled names and some with names that are not in the GBIF backbone
+taxonomy, to showcase the functionality of \code{elodea}.
+}
 \examples{
 \dontrun{
 # The data was created with the code below
