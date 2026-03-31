@@ -1,5 +1,8 @@
 # elodea (development version)
 
+* New example_checklist CSV file with 10 taxa, including some with misspelled names and some with names that are not in the GBIF backbone taxonomy (#4).
+* New function `check_names()` checks the names of taxa in a checklist.csv against the GBIF backbone taxonomy (#).
+
 # elodea 0.1.0
 
 * New function `get_taxa()` gets the taxa from a GBIF checklist (#4).
