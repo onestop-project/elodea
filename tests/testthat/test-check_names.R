@@ -35,8 +35,34 @@ test_that("check_names() returns the expected columns in the summary and match t
   expect_identical(colnames(result$full_table), col_names)
 })
 
-test_that("check_names() prints a summary via cli", {
+test_that("check_names() prints the expected summary via cli", {
   testthat::expect_snapshot({
     result <- check_names(example_checklist)
   })
+})
+
+test_that("check_names() returns the expected summary and full_table", {
+  temp_dir <- tempdir()
+  on.exit(unlink(temp_dir, recursive = TRUE))
+
+  result <- suppressMessages(check_names(example_checklist))
+
+  write.csv(
+    result$summary,
+    file.path(temp_dir, "check_names-summary.csv"),
+    row.names = FALSE
+    )
+
+  write.csv(
+    result$full_table,
+    file.path(temp_dir, "check_names-full_table.csv"),
+    row.names = FALSE
+  )
+
+  expect_snapshot_file(
+    file.path(temp_dir, "check_names-summary.csv")
+  )
+  expect_snapshot_file(
+    file.path(temp_dir, "check_names-full_table.csv")
+  )
 })
