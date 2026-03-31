@@ -1,4 +1,4 @@
-# check_names() prints a summary via cli
+# check_names() prints the expected summary via cli
 
     Code
       result <- check_names(example_checklist)
