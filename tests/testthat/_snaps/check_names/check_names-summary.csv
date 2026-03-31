@@ -1,0 +1,8 @@
+"rawScientificName","scientificName","matchType","confidence","rank","status","acceptedUsageKey","acceptedScientificName"
+"Amaranthus macrocarpus Benth. var. pallidus Benth.","Amaranthus macrocarpus var. pallidus Benth.","EXACT",100,"VARIETY","SYNONYM","9454901","Amaranthus macrocarpus subsp. pallidus (Benth.) N.Bayón"
+"Amaranthus macrocarpus Benth. var. pallidus Benth.","Amaranthus macrocarpus var. pallidus Benth.","EXACT",100,"VARIETY","SYNONYM","9454901","Amaranthus macrocarpus subsp. pallidus (Benth.) N.Bayón"
+"Cotoneaster x 'Hybridus pendulus'","Plantae","HIGHERRANK",99,"KINGDOM","ACCEPTED",NA,NA
+"AseroÙ rubra","Fungi","HIGHERRANK",99,"KINGDOM","ACCEPTED",NA,NA
+"Hemidactylus (Oken, 1817)","Hemidactylus Oken, 1817","HIGHERRANK",100,"GENUS","ACCEPTED",NA,NA
+"Ovis gmelinii subsp. musimon (Pallas, 1811)","Ovis gmelinii musimon (Pallas, 1811)","EXACT",100,"SUBSPECIES","SYNONYM","6165157","Ovis aries musimon (Pallas, 1811)"
+"Lepisma saccharina","Lepisma saccharinum Linnaeus, 1758","VARIANT",100,"SPECIES","ACCEPTED",NA,NA
