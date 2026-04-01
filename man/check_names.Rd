@@ -15,15 +15,29 @@ contains taxa that are not an exact match or not accepted, while \code{full_tabl
 contains the full results of the name matching process.
 }
 \description{
-Checks the scientific names of a tabular checklist against the GBIF backbone
-taxonomy. It uses \code{rgbif::name_backbone_checklist()} under the hood. The
-function returns a list with two \code{tibble}s: \code{summary} and \code{full_table}.
-The \code{summary} table contains taxa that are not an exact match or not
-accepted, while \code{full_table} contains the full results of the name matching
-process.
+Checks the scientific names of a checklist against the GBIF backbone
+taxonomy.
 }
 \details{
-\tabular{ll}{
+Matches the scientific names of a tabular checklist against the GBIF backbone
+taxonomy. It uses \code{rgbif::name_backbone_checklist()} under the hood.
+The function uses the following columns from the input checklist to perform
+the matching process:
+\itemize{
+\item \code{scientific_name}
+\item \code{taxon_rank}
+\item \code{kingdom}
+\item \code{phylum}
+\item \code{class}
+\item \code{order}
+\item \code{family}
+\item \code{genus}
+}
+
+The function returns a list with two \code{tibble}s: \code{summary} and \code{full_table}.
+The \code{summary} table contains taxa that are not an exact match or not
+accepted, while \code{full_table} contains the full results of the name matching
+process.\tabular{ll}{
    \strong{Column name} \tab \strong{Description} \cr
    rawScientificName \tab The original scientific name as provided in the raw data file \cr
    scientificName \tab The matching scientific name from the GBIF backbone \cr

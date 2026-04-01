@@ -1,8 +1,22 @@
 #' Checks the scientific names of a checklist
 #'
-#' Checks the scientific names of a tabular checklist against the GBIF backbone
-#' taxonomy. It uses `rgbif::name_backbone_checklist()` under the hood. The
-#' function returns a list with two `tibble`s: `summary` and `full_table`.
+#' Checks the scientific names of a checklist against the GBIF backbone
+#' taxonomy.
+#'
+#' Matches the scientific names of a tabular checklist against the GBIF backbone
+#' taxonomy. It uses `rgbif::name_backbone_checklist()` under the hood.
+#' The function uses the following columns from the input checklist to perform
+#' the matching process:
+#' - `scientific_name`
+#' - `taxon_rank`
+#' - `kingdom`
+#' - `phylum`
+#' - `class`
+#' - `order`
+#' - `family`
+#' - `genus`
+#'
+#' The function returns a list with two `tibble`s: `summary` and `full_table`.
 #' The `summary` table contains taxa that are not an exact match or not
 #' accepted, while `full_table` contains the full results of the name matching
 #' process.
