@@ -10,16 +10,19 @@
 #' `get_taxa()` returns a `tibble` with 8
 #' variables:
 #' - `taxonKey`: GBIF taxon key within the checklist
-#' - `nubKey`: GBIF backbone taxon key
 #' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID from the
 #' dataset
 #' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Scientific
 #' name of the taxon within the checklist
-#' - [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID): GBIF taxon key of the accepted taxon within the checklist, if applicable
-#' - [`accepted`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsage): Scientific name of the accepted taxon within the checklist, if applicable
-#' - [`kingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the taxon
-#' - [`taxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic rank of
-#' the taxon
+#' - [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID): GBIF
+#' taxon key of the accepted taxon, if the source `scientificName` is a synonym
+#' - [`acceptedName`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsage):
+#' Scientific name of the accepted taxon within the checklist, if the source
+#' `scientificName` is a synonym
+#' - [`acceptedKingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the
+#' accepted taxon
+#' - [`acceptedTaxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic
+#' rank of the accepted taxon
 #' @examples
 #' # Cyprus
 #' taxa_CY <- get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
@@ -37,19 +40,58 @@ get_taxa <- function(datasetKey) {
       class = "elodea_error_invalid_datasetkey"
     )
   }
+
+  # Call to GBIF API
   taxa_raw <- rgbif::name_usage(datasetKey = datasetKey, limit = 99999)$data
+
+  # Clean and select relevant columns
   taxa <-
     taxa_raw |>
     # Keep only source taxa, not denormed higher classification taxa
     dplyr::filter(.data$origin == "SOURCE") |>
-    mutate_when_missing(acceptedKey = NA_integer_) |>
-    mutate_when_missing(accepted = NA_character_) |>
-    dplyr::mutate(taxonRank = tolower(rank)) |>
     dplyr::rename(taxonKey = "key") |>
     dplyr::select(
-      "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
-      "accepted", "kingdom", "taxonRank"
+      "taxonKey", "taxonID", "scientificName", "nubKey"
+    )
+
+  # Match `nubKey` with GBIF backbone to retrieve `taxonomicStatus`,
+  # `acceptedKey`, `accepted`, `rank` and `kingdom`
+  nub_keys <- dplyr::pull(taxa, nubKey) |> unique()
+  match_backbone <-
+    get_backbone_names(nub_keys) |>
+    dplyr::mutate(
+      accepted = dplyr::coalesce(.data$accepted, .data$scientificName)
     ) |>
+    dplyr::select(-"scientificName")
+  taxa <- taxa |>
+    dplyr::left_join(
+      match_backbone,
+      by = c("nubKey" = "key")
+    )
+
+  # Match `acceptedKey` with GBIF backbone to retrieve `accepted_taxonRank` and
+  # `accepted_kingdom`
+  acccepted_keys <- dplyr::pull(taxa, acceptedKey) |> unique()
+  accepted_data <-
+    get_backbone_names(acccepted_keys) |>
+    dplyr::select("key", "rank", "kingdom") |>
+    dplyr::rename(
+      acceptedKey = "key",
+      accepted_taxonRank = "rank",
+      accepted_kingdom = "kingdom"
+    )
+
+  taxa |>
+    dplyr::left_join(accepted_data, by = c("acceptedKey")) |>
+    dplyr::rename(acceptedName = "accepted") |>
+    dplyr::mutate(
+      acceptedName = dplyr::coalesce(.data$acceptedName, .data$scientificName),
+      acceptedTaxonRank = dplyr::coalesce(.data$accepted_taxonRank, .data$rank),
+      acceptedKingdom = dplyr::coalesce(.data$accepted_kingdom, .data$kingdom)
+    ) |>
+    dplyr::select(
+      "taxonKey", "taxonID", "scientificName", "taxonomicStatus", "acceptedKey",
+      "acceptedName", "acceptedTaxonRank", "acceptedKingdom"
+      ) |>
     dplyr::as_tibble()
-  return(taxa)
 }
