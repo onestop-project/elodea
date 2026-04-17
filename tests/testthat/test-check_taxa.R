@@ -22,7 +22,7 @@ test_that("check_taxa() returns error on missing columns", {
   taxa <- get_taxa(datasetKey) |>
     dplyr::rename(
       key = "taxonKey",
-      rank = "taxonRank"
+      rank = "acceptedTaxonRank"
     )
   expect_error(
     check_taxa(taxa),

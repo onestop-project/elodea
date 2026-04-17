@@ -20,13 +20,14 @@ test_that("get_taxa() returns correct taxa data frame", {
   # Check that the output has the expected columns
   expected_columns <- c(
     "taxonKey",
-    "nubKey",
     "taxonID",
     "scientificName",
+    "taxonomicStatus",
     "acceptedKey",
-    "accepted",
-    "kingdom",
-    "taxonRank"
+    "acceptedName",
+    "acceptedTaxonRank",
+    "acceptedKingdom"
+
   )
   expect_equal(expected_columns, names(taxa_andorra))
   expect_equal(expected_columns, names(taxa_belgium))
@@ -39,6 +40,6 @@ test_that("get_taxa() filters on origin", {
   taxa <- get_taxa(datasetKey)
 
   expect_true("DENORMED_CLASSIFICATION" %in% taxa_raw$origin)
-  expect_false(any(c("kingdom", "phylum") %in% taxa$taxonRank))
-  expect_true(identical(unique(taxa$taxonRank), "species"))
+  expect_false(any(c("kingdom", "phylum") %in% taxa$acceptedTaxonRank))
+  expect_true(identical(unique(taxa$acceptedTaxonRank), "SPECIES"))
 })

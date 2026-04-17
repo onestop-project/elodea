@@ -14,8 +14,8 @@ check_taxa <- function(taxa) {
 
   # Check required columns
   required_columns <- c(
-    "taxonKey", "nubKey", "taxonID", "scientificName", "acceptedKey",
-    "accepted", "kingdom", "taxonRank"
+    "taxonKey", "taxonID", "scientificName", "acceptedKey",
+    "acceptedName", "acceptedTaxonRank", "acceptedKingdom"
   )
   missing_columns <- setdiff(required_columns, names(taxa))
 
