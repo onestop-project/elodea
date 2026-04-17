@@ -21,18 +21,24 @@ mutate_when_missing <- function(.data, ...){
 
 #' Gets GBIF backbone names based on a list of `nubKey`s
 #'
-#' @param nubkey_list A vector of GBIF backbone taxon keys
+#' @param nub_keys A vector of GBIF backbone taxon keys
 #'
-#' @return A data frame with `nubKey` and `scientificName`.
+#' @return A data frame with `key`, `taxonomicStatus`, `acceptedKey`,
+#' `accepted`, `rank` and `kingdom` columns, if available.
 #' @noRd
-get_backbone_names <- function(nubkey_list) {
-  nubkey_list |>
-    purrr::map(
-      ~ rgbif::name_usage(key = .x)$data
-    ) |>
+#' @examples
+#' nub_keys <- c(1589999, 8411684, 4465638, 1047536, 1047341, 5752155, NA,
+#' 5752143, 1047525, 3204008, 2576553, 3109086, 2891783, 3173338)
+#' get_backbone_names(nub_keys)
+get_backbone_names <- function(nub_keys) {
+  nub_keys |>
+    purrr::discard(is.na) |>
+    purrr::map(~ rgbif::name_usage(key = .x)$data) |>
     purrr::list_rbind() |>
-    dplyr::select("key", "scientificName") |>
-    dplyr::rename("nubKey" = "key")
+    dplyr::select(dplyr::any_of(c(
+      "key", "scientificName", "taxonomicStatus", "acceptedKey", "accepted",
+      "rank", "kingdom"
+    )))
 }
 
 #' Get invasiveness status from species profile
