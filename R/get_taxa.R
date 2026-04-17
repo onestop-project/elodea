@@ -1,28 +1,29 @@
 #' Get taxa from checklist
 #'
-#' Gets taxonomic information of a GBIF dataset. Only source taxa are kept,
+#' Gets taxonomic information of a GBIF checklist. Only source taxa are kept,
 #' denormed higher classification taxa are removed. The function
 #' `rgbif::name_usage()` is used under the hood.
 #' @param datasetKey GBIF dataset key.
 #' @return A `tibble` with taxonomic information of the dataset.
 #' @export
 #' @section Taxa details:
-#' `get_taxa()` returns a `tibble` with 8
-#' variables:
-#' - `taxonKey`: GBIF taxon key within the checklist
-#' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID from the
-#' dataset
-#' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Scientific
-#' name of the taxon within the checklist
+#' `get_taxa()` returns a `tibble` with 8 variables:
+#' - `taxonKey`: GBIF taxon key of `scientificName`.
+#' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
+#' `scientificName`, as provided in the checklist.
+#' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Original
+#' scientific name of the taxon in the checklist.
+#' - `taxonomicStatus`: Taxonomic status of the taxon in the GBIF bacbone
+#' taxonomy. It can be `accepted`, `synonym`, `doubtful` or `NA` if the taxon is
+#' not matched with the backbone.
 #' - [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID): GBIF
-#' taxon key of the accepted taxon, if the source `scientificName` is a synonym
+#' taxon key of the accepted taxon, if the source `scientificName` is a synonym.
 #' - [`acceptedName`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsage):
-#' Scientific name of the accepted taxon within the checklist, if the source
-#' `scientificName` is a synonym
+#' Scientific name of the accepted taxon.
 #' - [`acceptedKingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the
-#' accepted taxon
+#' accepted taxon.
 #' - [`acceptedTaxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic
-#' rank of the accepted taxon
+#' rank of the accepted taxon.
 #' @examples
 #' # Cyprus
 #' taxa_CY <- get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")

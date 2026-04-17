@@ -7,8 +7,9 @@
 #' @param distributions Data frame as returned by `get_distributions()`.
 #'
 #' @return A list with three data frames:
-#' - `taxa`: Filtered taxa data frame.
-#' - `distributions`: Filtered distributions data frame
+#' - `taxa`: Filtered taxa data frame, with different columns than the input
+#' `taxa` data frame.
+#' - `distributions`: Filtered distributions data frame.
 #' - `notes`: Data frame with notes on taxa that were not included or replaced
 #' in the filtered data.
 #' @export
@@ -24,6 +25,17 @@
 #'
 #' `scientificName` is replaced with the scientific name matching the GBIF
 #' backbone.
+#' @section Taxa details:
+#' The `taxa` data frame in the output list has 5 variables:
+#' - `taxonKey`: GBIF taxon key of `scientificName`. This value is replaced with
+#' `acceptedKey` if the taxon is a synonym of an accepted taxon.
+#' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
+#' `scientificName`, as provided in the checklist.
+#' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Scientific
+#' name of the taxon. This value is replaced with `acceptedName` for all records.
+#' - [`kingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the taxon.
+#' - [`taxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic rank of
+#' the taxon.
 #' @examples
 #' # Andorra
 #' datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"

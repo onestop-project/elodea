@@ -13,26 +13,30 @@ get_taxa(datasetKey)
 A \code{tibble} with taxonomic information of the dataset.
 }
 \description{
-Gets taxonomic information of a GBIF dataset. Only source taxa are kept,
+Gets taxonomic information of a GBIF checklist. Only source taxa are kept,
 denormed higher classification taxa are removed. The function
 \code{rgbif::name_usage()} is used under the hood.
 }
 \section{Taxa details}{
 
-\code{get_taxa()} returns a \code{tibble} with 8
-variables:
+\code{get_taxa()} returns a \code{tibble} with 8 variables:
 \itemize{
-\item \code{taxonKey}: GBIF taxon key within the checklist
-\item \code{nubKey}: GBIF backbone taxon key
-\item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID from the
-dataset
-\item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Scientific
-name of the taxon within the checklist
-\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID}{\code{acceptedKey}}: GBIF taxon key of the accepted taxon within the checklist, if applicable
-\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsage}{\code{accepted}}: Scientific name of the accepted taxon within the checklist, if applicable
-\item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{kingdom}}: Kingdom of the taxon
-\item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{taxonRank}}: Taxonomic rank of
-the taxon
+\item \code{taxonKey}: GBIF taxon key of \code{scientificName}.
+\item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
+\code{scientificName}, as provided in the checklist.
+\item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Original
+scientific name of the taxon in the checklist.
+\item \code{taxonomicStatus}: Taxonomic status of the taxon in the GBIF bacbone
+taxonomy. It can be \code{accepted}, \code{synonym}, \code{doubtful} or \code{NA} if the taxon is
+not matched with the backbone.
+\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID}{\code{acceptedKey}}: GBIF
+taxon key of the accepted taxon, if the source \code{scientificName} is a synonym.
+\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsage}{\code{acceptedName}}:
+Scientific name of the accepted taxon.
+\item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{acceptedKingdom}}: Kingdom of the
+accepted taxon.
+\item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{acceptedTaxonRank}}: Taxonomic
+rank of the accepted taxon.
 }
 }
 
