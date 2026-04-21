@@ -43,7 +43,7 @@ get_backbone_names <- function(nub_keys) {
 
 #' Get invasiveness status from species profile
 #'
-#' Sends an request to the GBIF API to fetch verbatim species data. It extracts
+#' Sends a request to the GBIF API to fetch verbatim species data. It extracts
 #' the 'isInvasive' field from the SpeciesProfile extension if present. If the
 #' information is not available, it returns NA.
 #'
