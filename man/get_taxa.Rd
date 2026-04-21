@@ -26,7 +26,7 @@ denormed higher classification taxa are removed. The function
 \code{scientificName}, as provided in the checklist.
 \item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Original
 scientific name of the taxon in the checklist.
-\item \code{taxonomicStatus}: Taxonomic status of the taxon in the GBIF bacbone
+\item \code{taxonomicStatus}: Taxonomic status of the taxon in the GBIF backbone
 taxonomy. It can be \code{accepted}, \code{synonym}, \code{doubtful} or \code{NA} if the taxon is
 not matched with the backbone.
 \item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID}{\code{acceptedKey}}: GBIF

@@ -13,7 +13,7 @@
 #' `scientificName`, as provided in the checklist.
 #' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Original
 #' scientific name of the taxon in the checklist.
-#' - `taxonomicStatus`: Taxonomic status of the taxon in the GBIF bacbone
+#' - `taxonomicStatus`: Taxonomic status of the taxon in the GBIF backbone
 #' taxonomy. It can be `accepted`, `synonym`, `doubtful` or `NA` if the taxon is
 #' not matched with the backbone.
 #' - [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID): GBIF
