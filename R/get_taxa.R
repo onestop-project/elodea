@@ -57,7 +57,7 @@ get_taxa <- function(datasetKey) {
 
   # Match `nubKey` with GBIF backbone to retrieve `taxonomicStatus`,
   # `acceptedKey`, `accepted`, `rank` and `kingdom`
-  nub_keys <- dplyr::pull(taxa, nubKey) |> unique()
+  nub_keys <- dplyr::pull(taxa, "nubKey") |> unique()
   match_backbone <-
     get_backbone_names(nub_keys) |>
     dplyr::mutate(
@@ -72,7 +72,7 @@ get_taxa <- function(datasetKey) {
 
   # Match `acceptedKey` with GBIF backbone to retrieve `accepted_taxonRank` and
   # `accepted_kingdom`
-  acccepted_keys <- dplyr::pull(taxa, acceptedKey) |> unique()
+  acccepted_keys <- dplyr::pull(taxa, "acceptedKey") |> unique()
   accepted_data <-
     get_backbone_names(acccepted_keys) |>
     dplyr::select("key", "rank", "kingdom") |>
