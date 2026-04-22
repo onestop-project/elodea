@@ -1,8 +1,9 @@
 #' Get taxa from checklist
 #'
-#' Gets taxonomic information of a GBIF checklist. Only source taxa are kept,
-#' denormed higher classification taxa are removed. The function
-#' `rgbif::name_usage()` is used under the hood.
+#' Gets taxonomic information of a GBIF checklist and matching GBIF backbone
+#' taxonomy. Only source taxa are kept, denormed higher classification taxa are
+#' removed. The function `rgbif::name_usage()` is used under the hood.
+#'
 #' @param datasetKey GBIF dataset key.
 #' @return A `tibble` with taxonomic information of the dataset.
 #' @export

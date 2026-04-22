@@ -13,9 +13,9 @@ get_taxa(datasetKey)
 A \code{tibble} with taxonomic information of the dataset.
 }
 \description{
-Gets taxonomic information of a GBIF checklist. Only source taxa are kept,
-denormed higher classification taxa are removed. The function
-\code{rgbif::name_usage()} is used under the hood.
+Gets taxonomic information of a GBIF checklist and matching GBIF backbone
+taxonomy. Only source taxa are kept, denormed higher classification taxa are
+removed. The function \code{rgbif::name_usage()} is used under the hood.
 }
 \section{Taxa details}{
 
