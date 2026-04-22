@@ -25,14 +25,8 @@
 #' - [`acceptedTaxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic
 #' rank of the accepted taxon.
 #' @examples
-#' # Cyprus
-#' taxa_CY <- get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
-#' # Andorra
-#' taxa_AD <- get_taxa("016c16c3-d907-4c88-97dd-97ad62c8130e")
-#' \dontrun{
-#' # Belgium
-#' taxa_BE <- get_taxa("6d9e952f-948c-4483-9807-575348147c7e")
-#' }
+#' # Global Register of Introduced and Invasive Species - Cyprus
+#' get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
 get_taxa <- function(datasetKey) {
   regex <- "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
   if (!grepl(regex, datasetKey)) {
