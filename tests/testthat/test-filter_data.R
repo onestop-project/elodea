@@ -57,7 +57,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonID = "all_good",
       scientificName = "Leptinotarsa decemlineata (Say, 1824)",
       taxonomicStatus = "ACCEPTED",
-      acceptedKey = NA_real_,
+      acceptedKey = 1047536,
       acceptedName = "Leptinotarsa decemlineata (Say, 1824)",
       acceptedKingdom = "Animalia",
       acceptedTaxonRank= "species"
@@ -69,7 +69,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonID = "scientificname_different_from_backbone",
       scientificName = "Monochamus sutor (LinnÃ©, 1758)",
       taxonomicStatus = "ACCEPTED",
-      acceptedKey = NA_real_,
+      acceptedKey = 8411684,
       acceptedName = "Monochamus sutor (Linnaeus, 1758)",
       acceptedKingdom = "Animalia",
       acceptedTaxonRank= "species"
@@ -105,7 +105,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonID = "establishmentMeans_not_introduced",
       scientificName = "Synchytrium endobioticum (Schilb.) Percival",
       taxonomicStatus = "ACCEPTED",
-      acceptedKey = NA_real_,
+      acceptedKey = 5265718,
       acceptedName = "Synchytrium endobioticum (Schilb.) Percival",
       acceptedKingdom = "Fungi",
       acceptedTaxonRank= "species"
@@ -117,7 +117,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonID = "distribution_missing",
       scientificName = "Urnatella gracilis Leidy, 1851",
       taxonomicStatus = "ACCEPTED",
-      acceptedKey = NA_real_,
+      acceptedKey = 2284723,
       acceptedName = "Urnatella gracilis Leidy, 1851",
       acceptedKingdom = "Animalia",
       acceptedTaxonRank= "species"
@@ -251,7 +251,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonKey = 148674355,
       scientificName = "Monochamus sutor (LinnÃ©, 1758)",
       action = "scientificName_replaced_by_backbone_name",
-      acceptedKey = NA_real_,
+      acceptedKey = 8411684,
       acceptedName = "Monochamus sutor (Linnaeus, 1758)"
     ) |>
     dplyr::add_row(
@@ -275,7 +275,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonKey = 148746476,
       scientificName = "Synchytrium endobioticum (Schilb.) Percival",
       action = "establishmentMeans_missing",
-      acceptedKey = NA_real_,
+      acceptedKey = 5265718,
       acceptedName = "Synchytrium endobioticum (Schilb.) Percival"
     ) |>
     dplyr::add_row(
@@ -283,7 +283,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonKey = 148746414,
       scientificName = "Urnatella gracilis Leidy, 1851",
       action = "no_matching_distribution",
-      acceptedKey = NA_real_,
+      acceptedKey = 2284723,
       acceptedName = "Urnatella gracilis Leidy, 1851"
     ) |>
     dplyr::as_tibble()

@@ -59,7 +59,7 @@ filter_data <- function(taxa, distributions) {
       action = dplyr::case_when(
         is.na(.data$taxonomicStatus) ~ "not_matched_with_backbone",
         !(.data$taxonKey %in% distributions$taxonKey) ~ "no_matching_distribution",
-        !is.na(.data$acceptedKey) ~ "merged_with_accepted",
+        .data$taxonomicStatus != "ACCEPTED" ~ "merged_with_accepted",
         is.na(.data$establishmentMeans) ~ "establishmentMeans_missing",
         .data$establishmentMeans != "introduced" ~ "establishmentMeans_not_introduced",
         .data$scientificName != .data$acceptedName ~
@@ -91,7 +91,9 @@ filter_data <- function(taxa, distributions) {
     df_full_join |>
     dplyr::filter(is.na(.data$action) | .data$action %in% c("scientificName_replaced_by_backbone_name", "merged_with_accepted")) |>
     dplyr::mutate(
-      taxonKey = dplyr::coalesce(.data$acceptedKey, .data$taxonKey),
+      taxonKey = dplyr::if_else(
+        .data$taxonomicStatus != "ACCEPTED", .data$acceptedKey, .data$taxonKey
+        ),
       scientificName = .data$acceptedName
     )
 

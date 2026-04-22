@@ -56,6 +56,7 @@ get_taxa <- function(datasetKey) {
   match_backbone <-
     get_backbone_names(nub_keys) |>
     dplyr::mutate(
+      acceptedKey = dplyr::coalesce(.data$acceptedKey, .data$key),
       accepted = dplyr::coalesce(.data$accepted, .data$scientificName)
     ) |>
     dplyr::select(-"scientificName")
