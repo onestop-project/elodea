@@ -21,4 +21,11 @@ test_that("get_distributions() returns correct distributions data frame", {
     "source"
   )
   expect_equal(expected_columns, names(distr_andorra))
+
+  # Write output for snapshot
+  directory <- withr::local_tempdir(pattern = "andorra")
+  path <- file.path(directory, "distributions.csv")
+  readr::write_csv(distr_andorra, path, na = "")
+
+  expect_snapshot_file(path)
 })

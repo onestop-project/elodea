@@ -49,6 +49,20 @@ test_that("filter_data() returns the expected files for an existing dataset", {
     "acceptedName"
   )
   expect_equal(names(output$notes), notes_expected_columns)
+
+  # Write output for snapshot
+  directory <- withr::local_tempdir(pattern = "finland")
+  taxa_path <- file.path(directory, "taxa.csv")
+  distributions_path <- file.path(directory, "distributions.csv")
+  notes_path <- file.path(directory, "notes.csv")
+  readr::write_csv(output$taxa, taxa_path, na = "")
+  readr::write_csv(output$distributions, distributions_path, na = "")
+  readr::write_csv(output$notes, notes_path, na = "")
+
+  # Test snapshots
+  expect_snapshot_file(taxa_path)
+  expect_snapshot_file(distributions_path)
+  expect_snapshot_file(notes_path)
 })
 
 test_that("filter_data() returns the expected output for a dummy dataset", {

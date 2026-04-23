@@ -29,6 +29,13 @@ test_that("get_taxa() returns correct taxa data frame", {
 
   )
   expect_equal(expected_columns, names(taxa_andorra))
+
+  # Write output for snapshot
+  directory <- withr::local_tempdir(pattern = "andorra")
+  path <- file.path(directory, "taxa.csv")
+  readr::write_csv(taxa_andorra, path, na = "")
+
+  expect_snapshot_file(path)
 })
 
 test_that("get_taxa() filters on origin", {
