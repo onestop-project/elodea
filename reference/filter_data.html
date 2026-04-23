@@ -59,9 +59,9 @@ notes.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A list with three data frames:</p><ul><li><p><code>taxa</code>: Filtered taxa data frame.</p></li>
-<li><p><code>distributions</code>: Filtered distributions data frame, with extra column
-<code>nubKey</code>.</p></li>
+    <p>A list with three data frames:</p><ul><li><p><code>taxa</code>: Filtered taxa data frame, with different columns than the input
+<code>taxa</code> data frame.</p></li>
+<li><p><code>distributions</code>: Filtered distributions data frame.</p></li>
 <li><p><code>notes</code>: Data frame with notes on taxa that were not included or replaced
 in the filtered data.</p></li>
 </ul></div>
@@ -69,7 +69,8 @@ in the filtered data.</p></li>
     <h2 id="filter-details">Filter details<a class="anchor" aria-label="anchor" href="#filter-details"></a></h2>
 
 
-<p>Taxa are removed if</p><ul><li><p>they are not matched with the GBIF backbone (i.e., <code>nubKey</code> is <code>NA</code>),</p></li>
+<p>Taxa are removed if</p><ul><li><p>they are not matched with the GBIF backbone (i.e., <code>taxonomicStatus</code> is
+<code>NA</code>),</p></li>
 <li><p>they do not have a matching distribution (i.e., <code>taxonKey</code> is not in
 <code>distributions$taxonKey</code>),</p></li>
 <li><p>they are synonyms of accepted taxa (i.e., <code>acceptedKey</code> is not <code>NA</code>),</p></li>
@@ -78,6 +79,20 @@ in the filtered data.</p></li>
 </ul><p><code>scientificName</code> is replaced with the scientific name matching the GBIF
 backbone.</p>
     </div>
+    <div class="section level2">
+    <h2 id="taxa-details">Taxa details<a class="anchor" aria-label="anchor" href="#taxa-details"></a></h2>
+
+
+<p>The <code>taxa</code> data frame in the output list has 5 variables:</p><ul><li><p><code>taxonKey</code>: GBIF taxon key of <code>scientificName</code>. This value is replaced with
+<code>acceptedKey</code> if the taxon is a synonym of an accepted taxon.</p></li>
+<li><p><a href="http://rs.tdwg.org/dwc/terms/taxonID" class="external-link"><code>taxonID</code></a>: Taxon ID of
+<code>scientificName</code>, as provided in the checklist.</p></li>
+<li><p><a href="http://rs.tdwg.org/dwc/terms/scientificName" class="external-link"><code>scientificName</code></a>: Scientific
+name of the taxon. This value is replaced with <code>acceptedName</code> for all records.</p></li>
+<li><p><a href="http://rs.tdwg.org/dwc/terms/kingdom" class="external-link"><code>kingdom</code></a>: Kingdom of the taxon.</p></li>
+<li><p><a href="http://rs.tdwg.org/dwc/terms/taxonRank" class="external-link"><code>taxonRank</code></a>: Taxonomic rank of
+the taxon.</p></li>
+</ul></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
@@ -87,53 +102,53 @@ backbone.</p>
 <span class="r-in"><span><span class="va">distributions</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_distributions.html">get_distributions</a></span><span class="op">(</span><span class="va">datasetKey</span>, <span class="va">taxa</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">filter_data</span><span class="op">(</span><span class="va">taxa</span>, <span class="va">distributions</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $taxa</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    taxonKey nubKey taxonID scientificName acceptedKey accepted kingdom taxonRank</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   1.49<span style="color: #949494;">e</span>8 1.59<span style="color: #949494;">e</span>6 20012   Trachyopella …          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Animal… species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   1.49<span style="color: #949494;">e</span>8 8.41<span style="color: #949494;">e</span>6 20009   Monochamus su…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Animal… species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   1.49<span style="color: #949494;">e</span>8 1.05<span style="color: #949494;">e</span>6 20008   Leptinotarsa …          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Animal… species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   1.49<span style="color: #949494;">e</span>8 1.05<span style="color: #949494;">e</span>6 20004   Callosobruchu…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Animal… species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   1.49<span style="color: #949494;">e</span>8 5.75<span style="color: #949494;">e</span>6 20001   Bruchus pisor…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Animal… species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   1.49<span style="color: #949494;">e</span>8 5.75<span style="color: #949494;">e</span>6 20002   Bruchus rufim…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Animal… species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   1.49<span style="color: #949494;">e</span>8 1.05<span style="color: #949494;">e</span>6 20000   Acanthoscelid…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Animal… species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   1.49<span style="color: #949494;">e</span>8 2.58<span style="color: #949494;">e</span>6 20005   Entoleuca mam…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Fungi   species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   1.49<span style="color: #949494;">e</span>8 3.11<span style="color: #949494;">e</span>6 20011   Senecio inaeq…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Plantae species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   1.49<span style="color: #949494;">e</span>8 2.89<span style="color: #949494;">e</span>6 20007   Impatiens bal…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Plantae species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>   1.49<span style="color: #949494;">e</span>8 3.17<span style="color: #949494;">e</span>6 20003   Buddleja davi…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Plantae species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>   3.16<span style="color: #949494;">e</span>8 1.18<span style="color: #949494;">e</span>6 <span style="color: #BB0000;">NA</span>      Pentarthrum c…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Animal… species  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>   3.16<span style="color: #949494;">e</span>8 3.20<span style="color: #949494;">e</span>6 <span style="color: #BB0000;">NA</span>      Pseudoperonos…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       Chromi… species  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     taxonKey taxonID scientificName                            kingdom taxonRank</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 148<span style="text-decoration: underline;">674</span>352 20012   Trachyopella straminea Roháček &amp; Marshal… Animal… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 148<span style="text-decoration: underline;">674</span>355 20009   Monochamus sutor (Linnaeus, 1758)         Animal… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   1<span style="text-decoration: underline;">179</span>369 20006   Pentarthrum confine Broun, 1881           Animal… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 148<span style="text-decoration: underline;">674</span>360 20008   Leptinotarsa decemlineata (Say, 1824)     Animal… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 148<span style="text-decoration: underline;">674</span>361 20004   Callosobruchus chinensis (Linnaeus, 1758) Animal… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 148<span style="text-decoration: underline;">674</span>362 20001   Bruchus pisorum Linnaeus, 1758            Animal… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 148<span style="text-decoration: underline;">674</span>363 20002   Bruchus rufimanus Boheman, 1833           Animal… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 148<span style="text-decoration: underline;">674</span>364 20000   Acanthoscelides obtectus (Say, 1831)      Animal… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   3<span style="text-decoration: underline;">204</span>007 20010   Pseudoperonospora cubensis (Berk. &amp; M.A.… Chromi… SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 148<span style="text-decoration: underline;">674</span>377 20005   Entoleuca mammata (Wahlenb.) J.D.Rogers … Fungi   SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 148<span style="text-decoration: underline;">674</span>383 20011   Senecio inaequidens DC.                   Plantae SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 148<span style="text-decoration: underline;">674</span>386 20007   Impatiens balfourii Hook.fil.             Plantae SPECIES  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 148<span style="text-decoration: underline;">674</span>389 20003   Buddleja davidii Franch.                  Plantae SPECIES  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $distributions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     taxonKey  nubKey countryCode occurrenceStatus establishmentMeans</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 148<span style="text-decoration: underline;">674</span>352 1<span style="text-decoration: underline;">589</span>999 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 148<span style="text-decoration: underline;">674</span>355 8<span style="text-decoration: underline;">411</span>684 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 148<span style="text-decoration: underline;">674</span>360 1<span style="text-decoration: underline;">047</span>536 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 148<span style="text-decoration: underline;">674</span>361 1<span style="text-decoration: underline;">047</span>341 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 148<span style="text-decoration: underline;">674</span>362 5<span style="text-decoration: underline;">752</span>155 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 148<span style="text-decoration: underline;">674</span>363 5<span style="text-decoration: underline;">752</span>143 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 148<span style="text-decoration: underline;">674</span>364 1<span style="text-decoration: underline;">047</span>525 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 148<span style="text-decoration: underline;">674</span>377 2<span style="text-decoration: underline;">576</span>553 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 148<span style="text-decoration: underline;">674</span>383 3<span style="text-decoration: underline;">109</span>086 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 148<span style="text-decoration: underline;">674</span>386 2<span style="text-decoration: underline;">891</span>783 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 148<span style="text-decoration: underline;">674</span>389 3<span style="text-decoration: underline;">173</span>338 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 315<span style="text-decoration: underline;">787</span>873 1<span style="text-decoration: underline;">179</span>369 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 315<span style="text-decoration: underline;">787</span>881 3<span style="text-decoration: underline;">204</span>007 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     taxonKey countryCode occurrenceStatus establishmentMeans</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 148<span style="text-decoration: underline;">674</span>352 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 148<span style="text-decoration: underline;">674</span>355 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   1<span style="text-decoration: underline;">179</span>369 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 148<span style="text-decoration: underline;">674</span>360 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 148<span style="text-decoration: underline;">674</span>361 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 148<span style="text-decoration: underline;">674</span>362 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 148<span style="text-decoration: underline;">674</span>363 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 148<span style="text-decoration: underline;">674</span>364 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   3<span style="text-decoration: underline;">204</span>007 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 148<span style="text-decoration: underline;">674</span>377 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 148<span style="text-decoration: underline;">674</span>383 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 148<span style="text-decoration: underline;">674</span>386 AD          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 148<span style="text-decoration: underline;">674</span>389 AD          present          introduced        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: degreeOfEstablishment &lt;chr&gt;, pathway &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   eventDate &lt;chr&gt;, source &lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $notes</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   taxonID  taxonKey scientificName                   action acceptedKey accepted</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 20012   148<span style="text-decoration: underline;">674</span>352 Trachyopella straminea Rohacek … scien…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 20009   148<span style="text-decoration: underline;">674</span>355 Monochamus sutor (LinnÃ©, 1758)  scien…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 20006   148<span style="text-decoration: underline;">674</span>358 Euophryum confine (Broun, 1880)  merge…   315<span style="text-decoration: underline;">787</span>873 Pentart…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 20001   148<span style="text-decoration: underline;">674</span>362 Bruchus pisorum (Linnaeus, 1758) scien…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 20010   148<span style="text-decoration: underline;">674</span>371 Pseudoperonospora humuli (Miyab… merge…   315<span style="text-decoration: underline;">787</span>881 Pseudop…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 20007   148<span style="text-decoration: underline;">674</span>386 Impatiens balfourii Hook.f.      scien…          <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   taxonID  taxonKey scientificName               action acceptedKey acceptedName</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 20012   148<span style="text-decoration: underline;">674</span>352 Trachyopella straminea Roha… scien…     1<span style="text-decoration: underline;">589</span>999 Trachyopell…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 20009   148<span style="text-decoration: underline;">674</span>355 Monochamus sutor (LinnÃ©, 1… scien…     8<span style="text-decoration: underline;">411</span>684 Monochamus …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 20006   148<span style="text-decoration: underline;">674</span>358 Euophryum confine (Broun, 1… merge…     1<span style="text-decoration: underline;">179</span>369 Pentarthrum…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 20001   148<span style="text-decoration: underline;">674</span>362 Bruchus pisorum (Linnaeus, … scien…     5<span style="text-decoration: underline;">752</span>155 Bruchus pis…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 20010   148<span style="text-decoration: underline;">674</span>371 Pseudoperonospora humuli (M… merge…     3<span style="text-decoration: underline;">204</span>007 Pseudoperon…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 20007   148<span style="text-decoration: underline;">674</span>386 Impatiens balfourii Hook.f.  scien…     2<span style="text-decoration: underline;">891</span>783 Impatiens b…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
