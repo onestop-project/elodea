@@ -27,6 +27,7 @@ Imports:
     rgbif,
     rlang
 Suggests: 
+    readr,
     testthat (>= 3.0.0),
     vcr,
     withr
