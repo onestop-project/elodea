@@ -35,6 +35,8 @@ get_backbone_names <- function(nub_keys) {
     purrr::discard(is.na) |>
     purrr::map(~ rgbif::name_usage(key = .x)$data) |>
     purrr::list_rbind() |>
+    mutate_when_missing("acceptedKey" = NA_integer_) |>
+    mutate_when_missing("accepted" = NA_character_) |>
     dplyr::select(dplyr::any_of(c(
       "key", "scientificName", "taxonomicStatus", "acceptedKey", "accepted",
       "rank", "kingdom"
