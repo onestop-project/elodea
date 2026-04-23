@@ -1,8 +1,10 @@
 test_that("filter_data() returns the expected files for an existing dataset", {
   skip_if_offline()
-  datasetKey_andorra <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
-  taxa <- get_taxa(datasetKey_andorra)
-  distributions <- get_distributions(datasetKey_andorra, taxa)
+  vcr::local_cassette("filter_finland")
+
+  datasetKey_finland <- "b79c5ba3-d447-4a73-bcbf-557f3241eeb2"
+  taxa <- get_taxa(datasetKey_finland)
+  distributions <- get_distributions(datasetKey_finland, taxa)
   output <- filter_data(taxa, distributions)
 
   # The returned output is of type list
@@ -47,6 +49,20 @@ test_that("filter_data() returns the expected files for an existing dataset", {
     "acceptedName"
   )
   expect_equal(names(output$notes), notes_expected_columns)
+
+  # Write output for snapshot
+  directory <- withr::local_tempdir(pattern = "finland")
+  taxa_path <- file.path(directory, "taxa.csv")
+  distributions_path <- file.path(directory, "distributions.csv")
+  notes_path <- file.path(directory, "notes.csv")
+  readr::write_csv(output$taxa, taxa_path, na = "")
+  readr::write_csv(output$distributions, distributions_path, na = "")
+  readr::write_csv(output$notes, notes_path, na = "")
+
+  # Test snapshots
+  expect_snapshot_file(taxa_path)
+  expect_snapshot_file(distributions_path)
+  expect_snapshot_file(notes_path)
 })
 
 test_that("filter_data() returns the expected output for a dummy dataset", {

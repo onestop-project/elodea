@@ -1,0 +1,2 @@
+# Use LF for csv to allow cross-platform comparison of tests/testthat/_snaps
+*.csv eol=lf

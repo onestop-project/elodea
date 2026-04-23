@@ -1,0 +1,14 @@
+taxonKey,taxonID,scientificName,taxonomicStatus,acceptedKey,acceptedName,acceptedTaxonRank,acceptedKingdom
+148674352,20012,"Trachyopella straminea Rohacek & Marshall, 1985",ACCEPTED,1589999,"Trachyopella straminea Roháček & Marshall, 1985",SPECIES,Animalia
+148674355,20009,"Monochamus sutor (LinnÃ©, 1758)",ACCEPTED,8411684,"Monochamus sutor (Linnaeus, 1758)",SPECIES,Animalia
+148674358,20006,"Euophryum confine (Broun, 1880)",HOMOTYPIC_SYNONYM,1179369,"Pentarthrum confine Broun, 1881",SPECIES,Animalia
+148674360,20008,"Leptinotarsa decemlineata (Say, 1824)",ACCEPTED,1047536,"Leptinotarsa decemlineata (Say, 1824)",SPECIES,Animalia
+148674361,20004,"Callosobruchus chinensis (Linnaeus, 1758)",ACCEPTED,1047341,"Callosobruchus chinensis (Linnaeus, 1758)",SPECIES,Animalia
+148674362,20001,"Bruchus pisorum (Linnaeus, 1758)",ACCEPTED,5752155,"Bruchus pisorum Linnaeus, 1758",SPECIES,Animalia
+148674363,20002,"Bruchus rufimanus Boheman, 1833",ACCEPTED,5752143,"Bruchus rufimanus Boheman, 1833",SPECIES,Animalia
+148674364,20000,"Acanthoscelides obtectus (Say, 1831)",ACCEPTED,1047525,"Acanthoscelides obtectus (Say, 1831)",SPECIES,Animalia
+148674371,20010,Pseudoperonospora humuli (Miyabe & Takah.) G.W.Wilson,SYNONYM,3204007,Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev,SPECIES,Chromista
+148674377,20005,Entoleuca mammata (Wahlenb.) J.D.Rogers & Y.M.Ju,ACCEPTED,2576553,Entoleuca mammata (Wahlenb.) J.D.Rogers & Y.M.Ju,SPECIES,Fungi
+148674383,20011,Senecio inaequidens DC.,ACCEPTED,3109086,Senecio inaequidens DC.,SPECIES,Plantae
+148674386,20007,Impatiens balfourii Hook.f.,ACCEPTED,2891783,Impatiens balfourii Hook.fil.,SPECIES,Plantae
+148674389,20003,Buddleja davidii Franch.,ACCEPTED,3173338,Buddleja davidii Franch.,SPECIES,Plantae
