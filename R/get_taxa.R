@@ -8,7 +8,7 @@
 #' @return A `tibble` with taxonomic information of the dataset.
 #' @export
 #' @section Taxa details:
-#' `get_taxa()` returns a `tibble` with 8 variables:
+#' `get_taxa()` returns a `tibble` with 8 columns:
 #' - `taxonKey`: GBIF taxon key of `scientificName`.
 #' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
 #' `scientificName`, as provided in the checklist.

@@ -19,7 +19,7 @@ removed. The function \code{rgbif::name_usage()} is used under the hood.
 }
 \section{Taxa details}{
 
-\code{get_taxa()} returns a \code{tibble} with 8 variables:
+\code{get_taxa()} returns a \code{tibble} with 8 columns:
 \itemize{
 \item \code{taxonKey}: GBIF taxon key of \code{scientificName}.
 \item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
