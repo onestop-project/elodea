@@ -1,0 +1,815 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species?offset=0&limit=99999&datasetKey=016c16c3-d907-4c88-97dd-97ad62c8130e
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 869761191 820119731
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '29554'
+      connection: keep-alive
+    body:
+      string: '{"offset":0,"limit":1000,"endOfRecords":true,"results":[{"key":148674352,"nubKey":1589999,"nameKey":11344225,"taxonID":"20012","kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Sphaeroceridae","species":"Trachyopella
+        straminea","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787869,"familyKey":315787870,"speciesKey":148674352,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787870,"parent":"Sphaeroceridae","scientificName":"Trachyopella
+        straminea Rohacek & Marshall, 1985","canonicalName":"Trachyopella straminea","authorship":"Rohacek
+        & Marshall, 1985","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.190+00:00","issues":[],"class":"Insecta"},{"key":148674355,"nubKey":8411684,"nameKey":19101036,"taxonID":"20009","kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Cerambycidae","species":"Monochamus
+        sutor","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787874,"speciesKey":148674355,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787874,"parent":"Cerambycidae","scientificName":"Monochamus
+        sutor (LinnÃ©, 1758)","canonicalName":"Monochamus sutor","authorship":"","nameType":"DOUBTFUL","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.207+00:00","issues":["PARTIALLY_PARSABLE"],"class":"Insecta"},{"key":148674358,"nubKey":4465638,"nameKey":4261891,"taxonID":"20006","kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Curculionidae","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787872,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787872,"parent":"Curculionidae","acceptedKey":315787873,"accepted":"Pentarthrum
+        confine Broun, 1881","scientificName":"Euophryum confine (Broun, 1880)","canonicalName":"Euophryum
+        confine","authorship":"(Broun, 1880) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"SYNONYM","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.201+00:00","issues":[],"class":"Insecta"},{"key":148674360,"nubKey":1047536,"nameKey":6193681,"taxonID":"20008","kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","species":"Leptinotarsa
+        decemlineata","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787875,"speciesKey":148674360,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787875,"parent":"Chrysomelidae","scientificName":"Leptinotarsa
+        decemlineata (Say, 1824)","canonicalName":"Leptinotarsa decemlineata","authorship":"(Say,
+        1824) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.215+00:00","issues":[],"class":"Insecta"},{"key":148674361,"nubKey":1047341,"nameKey":1842021,"taxonID":"20004","kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","species":"Callosobruchus
+        chinensis","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787875,"speciesKey":148674361,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787875,"parent":"Chrysomelidae","scientificName":"Callosobruchus
+        chinensis (Linnaeus, 1758)","canonicalName":"Callosobruchus chinensis","authorship":"(Linnaeus,
+        1758) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.213+00:00","issues":[],"class":"Insecta"},{"key":148674362,"nubKey":5752155,"nameKey":1672442,"taxonID":"20001","kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","species":"Bruchus
+        pisorum","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787875,"speciesKey":148674362,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787875,"parent":"Chrysomelidae","scientificName":"Bruchus
+        pisorum (Linnaeus, 1758)","canonicalName":"Bruchus pisorum","authorship":"(Linnaeus,
+        1758) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.221+00:00","issues":[],"class":"Insecta"},{"key":148674363,"nubKey":5752143,"nameKey":1672604,"taxonID":"20002","kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","species":"Bruchus
+        rufimanus","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787875,"speciesKey":148674363,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787875,"parent":"Chrysomelidae","scientificName":"Bruchus
+        rufimanus Boheman, 1833","canonicalName":"Bruchus rufimanus","authorship":"Boheman,
+        1833","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.218+00:00","issues":[],"class":"Insecta"},{"key":148674364,"nubKey":1047525,"nameKey":91820,"taxonID":"20000","kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","species":"Acanthoscelides
+        obtectus","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787875,"speciesKey":148674364,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787875,"parent":"Chrysomelidae","scientificName":"Acanthoscelides
+        obtectus (Say, 1831)","canonicalName":"Acanthoscelides obtectus","authorship":"(Say,
+        1831) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.224+00:00","issues":[],"class":"Insecta"},{"key":148674371,"nubKey":3204008,"nameKey":17151677,"taxonID":"20010","kingdom":"Chromista","phylum":"Oomycota","order":"Peronosporales","family":"Peronosporaceae","kingdomKey":315787876,"phylumKey":315787877,"classKey":315787878,"orderKey":315787879,"familyKey":315787880,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787880,"parent":"Peronosporaceae","acceptedKey":315787881,"accepted":"Pseudoperonospora
+        cubensis (Berk. & M.A.Curtis) Rostovzev","scientificName":"Pseudoperonospora
+        humuli (Miyabe & Takah.) G.W.Wilson","canonicalName":"Pseudoperonospora humuli","authorship":"(Miyabe
+        & Takah.) G.W.Wilson","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"SYNONYM","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.243+00:00","issues":[],"class":"Peronosporea"},{"key":148674377,"nubKey":2576553,"nameKey":3975207,"taxonID":"20005","kingdom":"Fungi","phylum":"Ascomycota","order":"Xylariales","family":"Xylariaceae","species":"Entoleuca
+        mammata","kingdomKey":315787882,"phylumKey":315787883,"classKey":315787884,"orderKey":315787885,"familyKey":315787886,"speciesKey":148674377,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787886,"parent":"Xylariaceae","scientificName":"Entoleuca
+        mammata (Wahlenb.) J.D.Rogers & Y.M.Ju","canonicalName":"Entoleuca mammata","authorship":"(Wahlenb.)
+        J.D.Rogers & Y.M.Ju","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.258+00:00","issues":[],"class":"Sordariomycetes"},{"key":148674383,"nubKey":3109086,"nameKey":10293916,"taxonID":"20011","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","species":"Senecio
+        inaequidens","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787892,"familyKey":315787893,"speciesKey":148674383,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787893,"parent":"Asteraceae","scientificName":"Senecio
+        inaequidens DC.","canonicalName":"Senecio inaequidens","authorship":"DC.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.280+00:00","issues":[],"class":"Magnoliopsida"},{"key":148674386,"nubKey":2891783,"nameKey":5561861,"taxonID":"20007","kingdom":"Plantae","phylum":"Tracheophyta","order":"Ericales","family":"Balsaminaceae","species":"Impatiens
+        balfourii","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787890,"familyKey":315787891,"speciesKey":148674386,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787891,"parent":"Balsaminaceae","scientificName":"Impatiens
+        balfourii Hook.f.","canonicalName":"Impatiens balfourii","authorship":"Hook.f.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.273+00:00","issues":[],"class":"Magnoliopsida"},{"key":148674389,"nubKey":3173338,"nameKey":1697462,"taxonID":"20003","kingdom":"Plantae","phylum":"Tracheophyta","order":"Lamiales","family":"Scrophulariaceae","species":"Buddleja
+        davidii","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787894,"familyKey":315787895,"speciesKey":148674389,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787895,"parent":"Scrophulariaceae","scientificName":"Buddleja
+        davidii Franch.","canonicalName":"Buddleja davidii","authorship":"Franch.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.288+00:00","issues":[],"class":"Magnoliopsida"},{"key":315787866,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":315787866,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":16,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.177+00:00","issues":[]},{"key":315787867,"nubKey":54,"nameKey":1009885,"kingdom":"Animalia","phylum":"Arthropoda","kingdomKey":315787866,"phylumKey":315787867,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787866,"parent":"Animalia","scientificName":"Arthropoda","canonicalName":"Arthropoda","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":15,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.180+00:00","issues":[]},{"key":315787868,"nubKey":216,"nameKey":5709440,"kingdom":"Animalia","phylum":"Arthropoda","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787867,"parent":"Arthropoda","scientificName":"Insecta","canonicalName":"Insecta","authorship":"","nameType":"SCIENTIFIC","rank":"CLASS","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":14,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.182+00:00","issues":[],"class":"Insecta"},{"key":315787869,"nubKey":811,"nameKey":3600820,"kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787869,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787868,"parent":"Insecta","scientificName":"Diptera","canonicalName":"Diptera","authorship":"","nameType":"SCIENTIFIC","rank":"ORDER","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":2,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.185+00:00","issues":[],"class":"Insecta"},{"key":315787870,"nubKey":6924,"nameKey":10546722,"kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Sphaeroceridae","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787869,"familyKey":315787870,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787869,"parent":"Diptera","scientificName":"Sphaeroceridae","canonicalName":"Sphaeroceridae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":1,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.187+00:00","issues":[],"class":"Insecta"},{"key":315787871,"nubKey":1470,"nameKey":2702504,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787868,"parent":"Insecta","scientificName":"Coleoptera","canonicalName":"Coleoptera","authorship":"","nameType":"SCIENTIFIC","rank":"ORDER","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":10,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.193+00:00","issues":[],"class":"Insecta"},{"key":315787872,"nubKey":4239,"nameKey":3115979,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Curculionidae","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787872,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787871,"parent":"Coleoptera","scientificName":"Curculionidae","canonicalName":"Curculionidae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":1,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.195+00:00","issues":[],"class":"Insecta"},{"key":315787873,"nubKey":1179369,"nameKey":8386290,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Curculionidae","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787872,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787872,"parent":"Curculionidae","scientificName":"Pentarthrum
+        confine Broun, 1881","canonicalName":"Pentarthrum confine","authorship":"Broun,
+        1881","nameType":"SCIENTIFIC","origin":"VERBATIM_ACCEPTED","taxonomicStatus":"DOUBTFUL","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.198+00:00","issues":[],"class":"Insecta"},{"key":315787874,"nubKey":5602,"nameKey":2184084,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Cerambycidae","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787874,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787871,"parent":"Coleoptera","scientificName":"Cerambycidae","canonicalName":"Cerambycidae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":1,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.204+00:00","issues":[],"class":"Insecta"},{"key":315787875,"nubKey":7780,"nameKey":2465531,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","kingdomKey":315787866,"phylumKey":315787867,"classKey":315787868,"orderKey":315787871,"familyKey":315787875,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787871,"parent":"Coleoptera","scientificName":"Chrysomelidae","canonicalName":"Chrysomelidae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":5,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.210+00:00","issues":[],"class":"Insecta"},{"key":315787876,"nubKey":4,"nameKey":2443554,"kingdom":"Chromista","kingdomKey":315787876,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","scientificName":"Chromista","canonicalName":"Chromista","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":5,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.227+00:00","issues":[]},{"key":315787877,"nubKey":32,"nameKey":7811234,"kingdom":"Chromista","phylum":"Oomycota","kingdomKey":315787876,"phylumKey":315787877,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787876,"parent":"Chromista","scientificName":"Oomycota","canonicalName":"Oomycota","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":4,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.230+00:00","issues":[]},{"key":315787878,"nubKey":8179345,"nameKey":8445092,"kingdom":"Chromista","phylum":"Oomycota","kingdomKey":315787876,"phylumKey":315787877,"classKey":315787878,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787877,"parent":"Oomycota","scientificName":"Peronosporea","canonicalName":"Peronosporea","authorship":"","nameType":"SCIENTIFIC","rank":"CLASS","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":3,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.233+00:00","issues":[],"class":"Peronosporea"},{"key":315787879,"nubKey":1259,"nameKey":8445072,"kingdom":"Chromista","phylum":"Oomycota","order":"Peronosporales","kingdomKey":315787876,"phylumKey":315787877,"classKey":315787878,"orderKey":315787879,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787878,"parent":"Peronosporea","scientificName":"Peronosporales","canonicalName":"Peronosporales","authorship":"","nameType":"SCIENTIFIC","rank":"ORDER","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":2,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.235+00:00","issues":[],"class":"Peronosporea"},{"key":315787880,"nubKey":4785,"nameKey":8445055,"kingdom":"Chromista","phylum":"Oomycota","order":"Peronosporales","family":"Peronosporaceae","kingdomKey":315787876,"phylumKey":315787877,"classKey":315787878,"orderKey":315787879,"familyKey":315787880,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787879,"parent":"Peronosporales","scientificName":"Peronosporaceae","canonicalName":"Peronosporaceae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":1,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.237+00:00","issues":[],"class":"Peronosporea"},{"key":315787881,"nubKey":3204007,"nameKey":9406666,"kingdom":"Chromista","phylum":"Oomycota","order":"Peronosporales","family":"Peronosporaceae","kingdomKey":315787876,"phylumKey":315787877,"classKey":315787878,"orderKey":315787879,"familyKey":315787880,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787880,"parent":"Peronosporaceae","scientificName":"Pseudoperonospora
+        cubensis (Berk. & M.A.Curtis) Rostovzev","canonicalName":"Pseudoperonospora
+        cubensis","authorship":"(Berk. & M.A.Curtis) Rostovzev","nameType":"SCIENTIFIC","origin":"VERBATIM_ACCEPTED","taxonomicStatus":"DOUBTFUL","nomenclaturalStatus":[],"numDescendants":0,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.240+00:00","issues":[],"class":"Peronosporea"},{"key":315787882,"nubKey":5,"nameKey":4537781,"kingdom":"Fungi","kingdomKey":315787882,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","scientificName":"Fungi","canonicalName":"Fungi","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":5,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.246+00:00","issues":[]},{"key":315787883,"nubKey":95,"nameKey":1035984,"kingdom":"Fungi","phylum":"Ascomycota","kingdomKey":315787882,"phylumKey":315787883,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787882,"parent":"Fungi","scientificName":"Ascomycota","canonicalName":"Ascomycota","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":4,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.248+00:00","issues":[]},{"key":315787884,"nubKey":320,"nameKey":10499922,"kingdom":"Fungi","phylum":"Ascomycota","kingdomKey":315787882,"phylumKey":315787883,"classKey":315787884,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787883,"parent":"Ascomycota","scientificName":"Sordariomycetes","canonicalName":"Sordariomycetes","authorship":"","nameType":"SCIENTIFIC","rank":"CLASS","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":3,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.250+00:00","issues":[],"class":"Sordariomycetes"},{"key":315787885,"nubKey":1298,"nameKey":11913751,"kingdom":"Fungi","phylum":"Ascomycota","order":"Xylariales","kingdomKey":315787882,"phylumKey":315787883,"classKey":315787884,"orderKey":315787885,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787884,"parent":"Sordariomycetes","scientificName":"Xylariales","canonicalName":"Xylariales","authorship":"","nameType":"SCIENTIFIC","rank":"ORDER","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":2,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.253+00:00","issues":[],"class":"Sordariomycetes"},{"key":315787886,"nubKey":4168,"nameKey":11912436,"kingdom":"Fungi","phylum":"Ascomycota","order":"Xylariales","family":"Xylariaceae","kingdomKey":315787882,"phylumKey":315787883,"classKey":315787884,"orderKey":315787885,"familyKey":315787886,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787885,"parent":"Xylariales","scientificName":"Xylariaceae","canonicalName":"Xylariaceae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":1,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.255+00:00","issues":[],"class":"Sordariomycetes"},{"key":315787887,"nubKey":6,"nameKey":8837865,"kingdom":"Plantae","kingdomKey":315787887,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","scientificName":"Plantae","canonicalName":"Plantae","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":11,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.261+00:00","issues":[]},{"key":315787888,"nubKey":7707728,"nameKey":11335748,"kingdom":"Plantae","phylum":"Tracheophyta","kingdomKey":315787887,"phylumKey":315787888,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787887,"parent":"Plantae","scientificName":"Tracheophyta","canonicalName":"Tracheophyta","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":10,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.263+00:00","issues":[]},{"key":315787889,"nubKey":220,"nameKey":6628031,"kingdom":"Plantae","phylum":"Tracheophyta","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787888,"parent":"Tracheophyta","scientificName":"Magnoliopsida","canonicalName":"Magnoliopsida","authorship":"","nameType":"SCIENTIFIC","rank":"CLASS","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":9,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.265+00:00","issues":[],"class":"Magnoliopsida"},{"key":315787890,"nubKey":1353,"nameKey":4092073,"kingdom":"Plantae","phylum":"Tracheophyta","order":"Ericales","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787890,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787889,"parent":"Magnoliopsida","scientificName":"Ericales","canonicalName":"Ericales","authorship":"","nameType":"SCIENTIFIC","rank":"ORDER","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":2,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.268+00:00","issues":[],"class":"Magnoliopsida"},{"key":315787891,"nubKey":6699,"nameKey":1329039,"kingdom":"Plantae","phylum":"Tracheophyta","order":"Ericales","family":"Balsaminaceae","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787890,"familyKey":315787891,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787890,"parent":"Ericales","scientificName":"Balsaminaceae","canonicalName":"Balsaminaceae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":1,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.270+00:00","issues":[],"class":"Magnoliopsida"},{"key":315787892,"nubKey":414,"nameKey":1099555,"kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787892,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787889,"parent":"Magnoliopsida","scientificName":"Asterales","canonicalName":"Asterales","authorship":"","nameType":"SCIENTIFIC","rank":"ORDER","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":2,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.276+00:00","issues":[],"class":"Magnoliopsida"},{"key":315787893,"nubKey":3065,"nameKey":1099341,"kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787892,"familyKey":315787893,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787892,"parent":"Asterales","scientificName":"Asteraceae","canonicalName":"Asteraceae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":1,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.278+00:00","issues":[],"class":"Magnoliopsida"},{"key":315787894,"nubKey":408,"nameKey":5980513,"kingdom":"Plantae","phylum":"Tracheophyta","order":"Lamiales","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787894,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787889,"parent":"Magnoliopsida","scientificName":"Lamiales","canonicalName":"Lamiales","authorship":"","nameType":"SCIENTIFIC","rank":"ORDER","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":2,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.283+00:00","issues":[],"class":"Magnoliopsida"},{"key":315787895,"nubKey":2390,"nameKey":10231555,"kingdom":"Plantae","phylum":"Tracheophyta","order":"Lamiales","family":"Scrophulariaceae","kingdomKey":315787887,"phylumKey":315787888,"classKey":315787889,"orderKey":315787894,"familyKey":315787895,"datasetKey":"016c16c3-d907-4c88-97dd-97ad62c8130e","parentKey":315787894,"parent":"Lamiales","scientificName":"Scrophulariaceae","canonicalName":"Scrophulariaceae","authorship":"","nameType":"SCIENTIFIC","rank":"FAMILY","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":1,"lastCrawled":"2026-03-04T06:12:26.765+00:00","lastInterpreted":"2026-03-04T06:51:11.285+00:00","issues":[],"class":"Magnoliopsida"}]}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1589999?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320339 856687173
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '940'
+      connection: keep-alive
+    body:
+      string: '{"key":1589999,"nubKey":1589999,"nameKey":50940309,"taxonID":"gbif:1589999","sourceTaxonKey":182798526,"kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Sphaeroceridae","genus":"Trachyopella","species":"Trachyopella
+        straminea","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":811,"familyKey":6924,"genusKey":1589968,"speciesKey":1589999,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1589968,"parent":"Trachyopella","scientificName":"Trachyopella
+        straminea Roháček & Marshall, 1985","canonicalName":"Trachyopella straminea","authorship":"Roháček
+        & Marshall, 1985","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":2,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:33:51.516+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/8411684?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320340 856687175
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '997'
+      connection: keep-alive
+    body:
+      string: '{"key":8411684,"nubKey":8411684,"nameKey":7145127,"taxonID":"gbif:8411684","sourceTaxonKey":174260561,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Cerambycidae","genus":"Monochamus","species":"Monochamus
+        sutor","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":5602,"genusKey":7372826,"speciesKey":8411684,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":7372826,"parent":"Monochamus","basionymKey":11103196,"basionym":"Cerambyx
+        sutor Linnaeus, 1761","scientificName":"Monochamus sutor (Linnaeus, 1758)","canonicalName":"Monochamus
+        sutor","vernacularName":"Pine Sawyer","authorship":"(Linnaeus, 1758) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:39:35.080+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/4465638?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320341 856687177
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1193'
+      connection: keep-alive
+    body:
+      string: '{"key":4465638,"nubKey":4465638,"nameKey":4261891,"taxonID":"gbif:4465638","sourceTaxonKey":100214546,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Curculionidae","genus":"Pentarthrum","species":"Pentarthrum
+        confine","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":4239,"genusKey":1179247,"speciesKey":1179369,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7a9bccd4-32fc-420e-a73b-352b92267571","parentKey":1179247,"parent":"Pentarthrum","acceptedKey":1179369,"accepted":"Pentarthrum
+        confine Broun, 1881","basionymKey":1179369,"basionym":"Pentarthrum confine
+        Broun, 1881","scientificName":"Euophryum confine (Broun, 1880)","canonicalName":"Euophryum
+        confine","vernacularName":"New Zealand weevil","authorship":"(Broun, 1880)
+        ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"HOMOTYPIC_SYNONYM","nomenclaturalStatus":[],"remarks":"Originally
+        found in sources as accepted taxon within Euophryum T.Broun, 1909","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:36:22.188+00:00","issues":["CONFLICTING_BASIONYM_COMBINATION"],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1047536?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320342 856687179
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1025'
+      connection: keep-alive
+    body:
+      string: '{"key":1047536,"nubKey":1047536,"nameKey":6193681,"taxonID":"gbif:1047536","sourceTaxonKey":181184156,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Leptinotarsa","species":"Leptinotarsa
+        decemlineata","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":7587586,"speciesKey":1047536,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"2d59e5db-57ad-41ff-97d6-11f5fb264527","parentKey":7587586,"parent":"Leptinotarsa","basionymKey":9044035,"basionym":"Doryphora
+        decemlineata Say, 1824","scientificName":"Leptinotarsa decemlineata (Say,
+        1824)","canonicalName":"Leptinotarsa decemlineata","vernacularName":"Colorado
+        Beetle","authorship":"(Say, 1824) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:42.489+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1047341?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320343 856687181
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1035'
+      connection: keep-alive
+    body:
+      string: '{"key":1047341,"nubKey":1047341,"nameKey":1842021,"taxonID":"gbif:1047341","sourceTaxonKey":181184176,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Callosobruchus","species":"Callosobruchus
+        chinensis","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":1047339,"speciesKey":1047341,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"2d59e5db-57ad-41ff-97d6-11f5fb264527","parentKey":1047339,"parent":"Callosobruchus","basionymKey":5011618,"basionym":"Curculio
+        chinensis Linnaeus, 1758","scientificName":"Callosobruchus chinensis (Linnaeus,
+        1758)","canonicalName":"Callosobruchus chinensis","vernacularName":"Cowpea
+        Beetle","authorship":"(Linnaeus, 1758) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:44.649+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/5752155?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320344 856687183
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1010'
+      connection: keep-alive
+    body:
+      string: '{"key":5752155,"nubKey":5752155,"nameKey":24225028,"taxonID":"gbif:5752155","sourceTaxonKey":181184180,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Bruchus","species":"Bruchus
+        pisorum","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":3262781,"speciesKey":5752155,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"2d59e5db-57ad-41ff-97d6-11f5fb264527","parentKey":3262781,"parent":"Bruchus","basionymKey":4461622,"basionym":"Dermestes
+        pisorum Linnaeus, 1758","scientificName":"Bruchus pisorum Linnaeus, 1758","canonicalName":"Bruchus
+        pisorum","vernacularName":"Pea Beetle","authorship":"Linnaeus, 1758","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:41.382+00:00","issues":["PUBLISHED_BEFORE_GENUS"],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/5752143?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320345 856687185
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '922'
+      connection: keep-alive
+    body:
+      string: '{"key":5752143,"nubKey":5752143,"nameKey":1672604,"taxonID":"gbif:5752143","sourceTaxonKey":117908034,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Bruchus","species":"Bruchus
+        rufimanus","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":3262781,"speciesKey":5752143,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"a43ec6d8-7b8a-4868-ad74-56b824c75698","parentKey":3262781,"parent":"Bruchus","scientificName":"Bruchus
+        rufimanus Boheman, 1833","canonicalName":"Bruchus rufimanus","vernacularName":"Bean
+        Beetle","authorship":"Boheman, 1833","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:41.389+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1047525?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320346 856687187
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1046'
+      connection: keep-alive
+    body:
+      string: '{"key":1047525,"nubKey":1047525,"nameKey":91820,"taxonID":"gbif:1047525","sourceTaxonKey":181184182,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Acanthoscelides","species":"Acanthoscelides
+        obtectus","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":1047479,"speciesKey":1047525,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"2d59e5db-57ad-41ff-97d6-11f5fb264527","parentKey":1047479,"parent":"Acanthoscelides","basionymKey":5807011,"basionym":"Bruchus
+        obtectus Say, 1831","scientificName":"Acanthoscelides obtectus (Say, 1831)","canonicalName":"Acanthoscelides
+        obtectus","vernacularName":"Common Bean Weevil","authorship":"(Say, 1831)
+        ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:44.534+00:00","issues":["ORIGINAL_NAME_DERIVED"],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/3204008?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320347 856687189
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1231'
+      connection: keep-alive
+    body:
+      string: '{"key":3204008,"nubKey":3204008,"nameKey":17151677,"taxonID":"gbif:3204008","sourceTaxonKey":172304303,"kingdom":"Chromista","phylum":"Oomycota","order":"Peronosporales","family":"Peronosporaceae","genus":"Pseudoperonospora","species":"Pseudoperonospora
+        cubensis","kingdomKey":4,"phylumKey":32,"classKey":8179345,"orderKey":1259,"familyKey":4785,"genusKey":3203994,"speciesKey":3204007,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":3203994,"parent":"Pseudoperonospora","acceptedKey":3204007,"accepted":"Pseudoperonospora
+        cubensis (Berk. & M.A.Curtis) Rostovzev","basionymKey":3204013,"basionym":"Peronoplasmopara
+        humuli Miyabe & Takah.","scientificName":"Pseudoperonospora humuli (Miyabe
+        & Takah.) G.W.Wilson","canonicalName":"Pseudoperonospora humuli","authorship":"(Miyabe
+        & Takah.) G.W.Wilson","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"SYNONYM","nomenclaturalStatus":[],"remarks":"","publishedIn":"G.W.
+        Wilson. In: Mycologia 6(4): 194. (1914).","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:54:46.243+00:00","issues":["ORIGINAL_NAME_DERIVED"],"class":"Peronosporea"}'
+  recorded_at: 2026-04-23 13:49:00
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/2576553?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320348 856687191
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1059'
+      connection: keep-alive
+    body:
+      string: '{"key":2576553,"nubKey":2576553,"nameKey":3975207,"taxonID":"gbif:2576553","sourceTaxonKey":172115990,"kingdom":"Fungi","phylum":"Ascomycota","order":"Xylariales","family":"Xylariaceae","genus":"Entoleuca","species":"Entoleuca
+        mammata","kingdomKey":5,"phylumKey":95,"classKey":320,"orderKey":1298,"familyKey":4168,"genusKey":2576550,"speciesKey":2576553,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":2576550,"parent":"Entoleuca","basionymKey":2576558,"basionym":"Sphaeria
+        mammata Wahlenb.","scientificName":"Entoleuca mammata (Wahlenb.) J.D.Rogers
+        & Y.M.Ju","canonicalName":"Entoleuca mammata","authorship":"(Wahlenb.) J.D.Rogers
+        & Y.M.Ju","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"(1996).
+        Mycotaxon 59: 446.","numDescendants":4,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:56:51.389+00:00","issues":["ORIGINAL_NAME_DERIVED"],"class":"Sordariomycetes"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/3109086?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320349 856687193
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '946'
+      connection: keep-alive
+    body:
+      string: '{"key":3109086,"nubKey":3109086,"nameKey":10293916,"taxonID":"gbif:3109086","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","genus":"Senecio","species":"Senecio
+        inaequidens","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":414,"familyKey":3065,"genusKey":3106738,"speciesKey":3109086,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":3106738,"parent":"Senecio","scientificName":"Senecio
+        inaequidens DC.","canonicalName":"Senecio inaequidens","vernacularName":"Narrow-leaved
+        Ragwort","authorship":"DC.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"DC.
+        (1837). In: Prodr. 6: 401.","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T23:06:13.966+00:00","issues":[],"class":"Magnoliopsida"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/2891783?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320350 856687195
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '980'
+      connection: keep-alive
+    body:
+      string: '{"key":2891783,"nubKey":2891783,"nameKey":41039172,"taxonID":"gbif:2891783","kingdom":"Plantae","phylum":"Tracheophyta","order":"Ericales","family":"Balsaminaceae","genus":"Impatiens","species":"Impatiens
+        balfourii","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":1353,"familyKey":6699,"genusKey":2891766,"speciesKey":2891783,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":2891766,"parent":"Impatiens","scientificName":"Impatiens
+        balfourii Hook.fil.","canonicalName":"Impatiens balfourii","vernacularName":"Balfour''s
+        Touch-Me-Not","authorship":"Hook.fil.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"Hook.
+        fil. (1903). In: Bot. Mag.: Tab. 7878.","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T23:08:07.400+00:00","issues":[],"class":"Magnoliopsida"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/3173338?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320351 856687197
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '978'
+      connection: keep-alive
+    body:
+      string: '{"key":3173338,"nubKey":3173338,"nameKey":1697462,"taxonID":"gbif:3173338","kingdom":"Plantae","phylum":"Tracheophyta","order":"Lamiales","family":"Scrophulariaceae","genus":"Buddleja","species":"Buddleja
+        davidii","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":408,"familyKey":2390,"genusKey":3173330,"speciesKey":3173338,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":3173330,"parent":"Buddleja","scientificName":"Buddleja
+        davidii Franch.","canonicalName":"Buddleja davidii","vernacularName":"Butterfly-bush","authorship":"Franch.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"Franch.
+        (1887). In: Nouv. Arch. Mus. Hist. Nat., Ser. 2, 10: 65.","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T23:02:51.966+00:00","issues":[],"class":"Magnoliopsida"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1589999?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320352 856687173
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '940'
+      connection: keep-alive
+    body:
+      string: '{"key":1589999,"nubKey":1589999,"nameKey":50940309,"taxonID":"gbif:1589999","sourceTaxonKey":182798526,"kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Sphaeroceridae","genus":"Trachyopella","species":"Trachyopella
+        straminea","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":811,"familyKey":6924,"genusKey":1589968,"speciesKey":1589999,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1589968,"parent":"Trachyopella","scientificName":"Trachyopella
+        straminea Roháček & Marshall, 1985","canonicalName":"Trachyopella straminea","authorship":"Roháček
+        & Marshall, 1985","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":2,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:33:51.516+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/8411684?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320353 856687175
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '997'
+      connection: keep-alive
+    body:
+      string: '{"key":8411684,"nubKey":8411684,"nameKey":7145127,"taxonID":"gbif:8411684","sourceTaxonKey":174260561,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Cerambycidae","genus":"Monochamus","species":"Monochamus
+        sutor","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":5602,"genusKey":7372826,"speciesKey":8411684,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":7372826,"parent":"Monochamus","basionymKey":11103196,"basionym":"Cerambyx
+        sutor Linnaeus, 1761","scientificName":"Monochamus sutor (Linnaeus, 1758)","canonicalName":"Monochamus
+        sutor","vernacularName":"Pine Sawyer","authorship":"(Linnaeus, 1758) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:39:35.080+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1179369?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320354 856687201
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '927'
+      connection: keep-alive
+    body:
+      string: '{"key":1179369,"nubKey":1179369,"nameKey":8386290,"taxonID":"gbif:1179369","sourceTaxonKey":175620058,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Curculionidae","genus":"Pentarthrum","species":"Pentarthrum
+        confine","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":4239,"genusKey":1179247,"speciesKey":1179369,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1179247,"parent":"Pentarthrum","scientificName":"Pentarthrum
+        confine Broun, 1881","canonicalName":"Pentarthrum confine","vernacularName":"Weevil","authorship":"Broun,
+        1881","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:36:22.186+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1047536?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320355 856687179
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1025'
+      connection: keep-alive
+    body:
+      string: '{"key":1047536,"nubKey":1047536,"nameKey":6193681,"taxonID":"gbif:1047536","sourceTaxonKey":181184156,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Leptinotarsa","species":"Leptinotarsa
+        decemlineata","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":7587586,"speciesKey":1047536,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"2d59e5db-57ad-41ff-97d6-11f5fb264527","parentKey":7587586,"parent":"Leptinotarsa","basionymKey":9044035,"basionym":"Doryphora
+        decemlineata Say, 1824","scientificName":"Leptinotarsa decemlineata (Say,
+        1824)","canonicalName":"Leptinotarsa decemlineata","vernacularName":"Colorado
+        Beetle","authorship":"(Say, 1824) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:42.489+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1047341?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320356 856687181
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1035'
+      connection: keep-alive
+    body:
+      string: '{"key":1047341,"nubKey":1047341,"nameKey":1842021,"taxonID":"gbif:1047341","sourceTaxonKey":181184176,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Callosobruchus","species":"Callosobruchus
+        chinensis","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":1047339,"speciesKey":1047341,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"2d59e5db-57ad-41ff-97d6-11f5fb264527","parentKey":1047339,"parent":"Callosobruchus","basionymKey":5011618,"basionym":"Curculio
+        chinensis Linnaeus, 1758","scientificName":"Callosobruchus chinensis (Linnaeus,
+        1758)","canonicalName":"Callosobruchus chinensis","vernacularName":"Cowpea
+        Beetle","authorship":"(Linnaeus, 1758) ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:44.649+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/5752155?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320357 856687183
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1010'
+      connection: keep-alive
+    body:
+      string: '{"key":5752155,"nubKey":5752155,"nameKey":24225028,"taxonID":"gbif:5752155","sourceTaxonKey":181184180,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Bruchus","species":"Bruchus
+        pisorum","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":3262781,"speciesKey":5752155,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"2d59e5db-57ad-41ff-97d6-11f5fb264527","parentKey":3262781,"parent":"Bruchus","basionymKey":4461622,"basionym":"Dermestes
+        pisorum Linnaeus, 1758","scientificName":"Bruchus pisorum Linnaeus, 1758","canonicalName":"Bruchus
+        pisorum","vernacularName":"Pea Beetle","authorship":"Linnaeus, 1758","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:41.382+00:00","issues":["PUBLISHED_BEFORE_GENUS"],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/5752143?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320358 856687185
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '922'
+      connection: keep-alive
+    body:
+      string: '{"key":5752143,"nubKey":5752143,"nameKey":1672604,"taxonID":"gbif:5752143","sourceTaxonKey":117908034,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Bruchus","species":"Bruchus
+        rufimanus","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":3262781,"speciesKey":5752143,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"a43ec6d8-7b8a-4868-ad74-56b824c75698","parentKey":3262781,"parent":"Bruchus","scientificName":"Bruchus
+        rufimanus Boheman, 1833","canonicalName":"Bruchus rufimanus","vernacularName":"Bean
+        Beetle","authorship":"Boheman, 1833","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:41.389+00:00","issues":[],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/1047525?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320359 856687187
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1046'
+      connection: keep-alive
+    body:
+      string: '{"key":1047525,"nubKey":1047525,"nameKey":91820,"taxonID":"gbif:1047525","sourceTaxonKey":181184182,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Chrysomelidae","genus":"Acanthoscelides","species":"Acanthoscelides
+        obtectus","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":7780,"genusKey":1047479,"speciesKey":1047525,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"2d59e5db-57ad-41ff-97d6-11f5fb264527","parentKey":1047479,"parent":"Acanthoscelides","basionymKey":5807011,"basionym":"Bruchus
+        obtectus Say, 1831","scientificName":"Acanthoscelides obtectus (Say, 1831)","canonicalName":"Acanthoscelides
+        obtectus","vernacularName":"Common Bean Weevil","authorship":"(Say, 1831)
+        ","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:41:44.534+00:00","issues":["ORIGINAL_NAME_DERIVED"],"class":"Insecta"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/3204007?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:40 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320360 856687208
+      age: '260'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1177'
+      connection: keep-alive
+    body:
+      string: '{"key":3204007,"nubKey":3204007,"nameKey":9406666,"taxonID":"gbif:3204007","sourceTaxonKey":172304291,"kingdom":"Chromista","phylum":"Oomycota","order":"Peronosporales","family":"Peronosporaceae","genus":"Pseudoperonospora","species":"Pseudoperonospora
+        cubensis","kingdomKey":4,"phylumKey":32,"classKey":8179345,"orderKey":1259,"familyKey":4785,"genusKey":3203994,"speciesKey":3204007,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":3203994,"parent":"Pseudoperonospora","basionymKey":3204010,"basionym":"Peronospora
+        cubensis Berk. & M.A.Curtis","scientificName":"Pseudoperonospora cubensis
+        (Berk. & M.A.Curtis) Rostovzev","canonicalName":"Pseudoperonospora cubensis","vernacularName":"Cucurbit
+        Downy Mildew","authorship":"(Berk. & M.A.Curtis) Rostovzev","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"Rostovzev.
+        In: Annals Inst. Agron. Moscow 92: 425. (1903).","numDescendants":3,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:54:46.211+00:00","issues":[],"class":"Peronosporea"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/2576553?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320361 856687191
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '1059'
+      connection: keep-alive
+    body:
+      string: '{"key":2576553,"nubKey":2576553,"nameKey":3975207,"taxonID":"gbif:2576553","sourceTaxonKey":172115990,"kingdom":"Fungi","phylum":"Ascomycota","order":"Xylariales","family":"Xylariaceae","genus":"Entoleuca","species":"Entoleuca
+        mammata","kingdomKey":5,"phylumKey":95,"classKey":320,"orderKey":1298,"familyKey":4168,"genusKey":2576550,"speciesKey":2576553,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":2576550,"parent":"Entoleuca","basionymKey":2576558,"basionym":"Sphaeria
+        mammata Wahlenb.","scientificName":"Entoleuca mammata (Wahlenb.) J.D.Rogers
+        & Y.M.Ju","canonicalName":"Entoleuca mammata","authorship":"(Wahlenb.) J.D.Rogers
+        & Y.M.Ju","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"(1996).
+        Mycotaxon 59: 446.","numDescendants":4,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:56:51.389+00:00","issues":["ORIGINAL_NAME_DERIVED"],"class":"Sordariomycetes"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/3109086?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320362 856687193
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '946'
+      connection: keep-alive
+    body:
+      string: '{"key":3109086,"nubKey":3109086,"nameKey":10293916,"taxonID":"gbif:3109086","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","genus":"Senecio","species":"Senecio
+        inaequidens","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":414,"familyKey":3065,"genusKey":3106738,"speciesKey":3109086,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":3106738,"parent":"Senecio","scientificName":"Senecio
+        inaequidens DC.","canonicalName":"Senecio inaequidens","vernacularName":"Narrow-leaved
+        Ragwort","authorship":"DC.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"DC.
+        (1837). In: Prodr. 6: 401.","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T23:06:13.966+00:00","issues":[],"class":"Magnoliopsida"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/2891783?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320363 856687195
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '980'
+      connection: keep-alive
+    body:
+      string: '{"key":2891783,"nubKey":2891783,"nameKey":41039172,"taxonID":"gbif:2891783","kingdom":"Plantae","phylum":"Tracheophyta","order":"Ericales","family":"Balsaminaceae","genus":"Impatiens","species":"Impatiens
+        balfourii","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":1353,"familyKey":6699,"genusKey":2891766,"speciesKey":2891783,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":2891766,"parent":"Impatiens","scientificName":"Impatiens
+        balfourii Hook.fil.","canonicalName":"Impatiens balfourii","vernacularName":"Balfour''s
+        Touch-Me-Not","authorship":"Hook.fil.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"Hook.
+        fil. (1903). In: Bot. Mag.: Tab. 7878.","numDescendants":0,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T23:08:07.400+00:00","issues":[],"class":"Magnoliopsida"}'
+  recorded_at: 2026-04-23 13:49:01
+- request:
+    method: GET
+    uri: https://api.gbif.org/v1/species/3173338?offset=0&limit=100
+  response:
+    status: 200
+    headers:
+      status: HTTP/1.1 200 OK
+      vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      x-content-type-options: nosniff
+      x-xss-protection: 1; mode=block
+      pragma: no-cache
+      expires: '0'
+      x-frame-options: DENY
+      content-type: application/json
+      date: Thu, 23 Apr 2026 13:44:39 GMT
+      cache-control: public, max-age=3601
+      x-varnish: 760320364 856687197
+      age: '261'
+      via: 1.1 varnish (Varnish/6.6)
+      accept-ranges: bytes
+      content-length: '978'
+      connection: keep-alive
+    body:
+      string: '{"key":3173338,"nubKey":3173338,"nameKey":1697462,"taxonID":"gbif:3173338","kingdom":"Plantae","phylum":"Tracheophyta","order":"Lamiales","family":"Scrophulariaceae","genus":"Buddleja","species":"Buddleja
+        davidii","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":408,"familyKey":2390,"genusKey":3173330,"speciesKey":3173338,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":3173330,"parent":"Buddleja","scientificName":"Buddleja
+        davidii Franch.","canonicalName":"Buddleja davidii","vernacularName":"Butterfly-bush","authorship":"Franch.","nameType":"SCIENTIFIC","rank":"SPECIES","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"Franch.
+        (1887). In: Nouv. Arch. Mus. Hist. Nat., Ser. 2, 10: 65.","numDescendants":1,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T23:02:51.966+00:00","issues":[],"class":"Magnoliopsida"}'
+  recorded_at: 2026-04-23 13:49:01
+recorded_with: VCR-vcr/2.1.0
