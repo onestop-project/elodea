@@ -14,9 +14,9 @@ filter_data(taxa, distributions)
 \value{
 A list with three data frames:
 \itemize{
-\item \code{taxa}: Filtered taxa data frame.
-\item \code{distributions}: Filtered distributions data frame, with extra column
-\code{nubKey}.
+\item \code{taxa}: Filtered taxa data frame, with different columns than the input
+\code{taxa} data frame.
+\item \code{distributions}: Filtered distributions data frame.
 \item \code{notes}: Data frame with notes on taxa that were not included or replaced
 in the filtered data.
 }
@@ -29,7 +29,8 @@ notes.
 
 Taxa are removed if
 \itemize{
-\item they are not matched with the GBIF backbone (i.e., \code{nubKey} is \code{NA}),
+\item they are not matched with the GBIF backbone (i.e., \code{taxonomicStatus} is
+\code{NA}),
 \item they do not have a matching distribution (i.e., \code{taxonKey} is not in
 \code{distributions$taxonKey}),
 \item they are synonyms of accepted taxa (i.e., \code{acceptedKey} is not \code{NA}),
@@ -39,6 +40,22 @@ Taxa are removed if
 
 \code{scientificName} is replaced with the scientific name matching the GBIF
 backbone.
+}
+
+\section{Taxa details}{
+
+The \code{taxa} data frame in the output list has 5 variables:
+\itemize{
+\item \code{taxonKey}: GBIF taxon key of \code{scientificName}. This value is replaced with
+\code{acceptedKey} if the taxon is a synonym of an accepted taxon.
+\item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
+\code{scientificName}, as provided in the checklist.
+\item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Scientific
+name of the taxon. This value is replaced with \code{acceptedName} for all records.
+\item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{kingdom}}: Kingdom of the taxon.
+\item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{taxonRank}}: Taxonomic rank of
+the taxon.
+}
 }
 
 \examples{
