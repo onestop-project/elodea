@@ -7,16 +7,13 @@
 filter_data(taxa, distributions, filter_establishmentMeans = "introduced")
 }
 \arguments{
-\item{taxa}{Data frame as returned by \code{get_taxa()}.}
+\item{taxa}{Data frame as returned by \code{\link[=get_taxa]{get_taxa()}}.}
 
-\item{distributions}{Data frame as returned by \code{get_distributions()}.}
+\item{distributions}{Data frame as returned by \code{\link[=get_distributions]{get_distributions()}}.}
 
-\item{filter_establishmentMeans}{Establishment means to filter on. Only taxa
+\item{filter_establishmentMeans}{EstablishmentMeans to filter on. Only taxa
 with matching distributions with \code{establishmentMeans} in this vector will be
-retained. Default is "introduced". Set to \code{NULL} to not filter on
-\code{establishmentMeans}. Possible values are "native", "introduced",
-"nativeReintroduced", \code{introducedAssistedColonisation}, "vagrant",
-"uncertain", and "nativeEndemic".}
+retained. Default is "introduced".}
 }
 \value{
 A list with three data frames:
@@ -32,6 +29,14 @@ in the filtered data.
 Filters taxa and distributions data frames, and returns the filtered data and
 notes.
 }
+\section{Filter on \code{establishmentMeans}}{
+
+Set to \code{NULL} to not filter on \code{establishmentMeans}.
+Possible values are "native", "introduced", "nativeReintroduced",
+"introducedAssistedColonisation", "vagrant", "uncertain", and
+"nativeEndemic".
+}
+
 \section{Filter details}{
 
 Taxa are removed if
@@ -40,10 +45,14 @@ Taxa are removed if
 \code{NA}),
 \item they do not have a matching distribution (i.e., \code{taxonKey} is not in
 \code{distributions$taxonKey}),
-\item they are synonyms of accepted taxa (i.e., \code{acceptedKey} is not \code{NA}),
-\item they do not have a matching distribution with
-\code{establishmentMeans == introduced}.
+\item they do not have a matching distribution with \code{establishmentMeans} in
+\code{filter_establishmentMeans}.
 }
+
+Synonyms are replaced by the accepted taxa they are synonyms of (i.e.,
+\code{taxonomicStatus} is either "synonym", "ambiguous synonym",
+"heterotypic synonym", "homotypic synonym", "misapplied" or
+"proparte synonym).
 
 \code{scientificName} is replaced with the scientific name matching the GBIF
 backbone.
