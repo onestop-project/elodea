@@ -1,3 +1,55 @@
+test_that("filter_data() returns error on invalid `establishmentMeans`", {
+  skip_if_offline()
+  vcr::local_cassette("filter_finland")
+
+  datasetKey_finland <- "b79c5ba3-d447-4a73-bcbf-557f3241eeb2"
+  taxa <- get_taxa(datasetKey_finland)
+  distributions <- get_distributions(datasetKey_finland, taxa)
+
+  expect_error(
+    filter_data(
+      taxa, distributions, filter_establishmentMeans = "native introduced"
+      ),
+     class = "elodea_error_invalid_establishmentMeans"
+  )
+
+  expect_error(
+    filter_data(
+      taxa, distributions, c("introduced", "native introduced")
+    ),
+    class = "elodea_error_invalid_establishmentMeans"
+  )
+
+  expect_error(
+    filter_data(
+      taxa, distributions, filter_establishmentMeans = NA_character_
+    ),
+    class = "elodea_error_invalid_establishmentMeans"
+  )
+})
+
+test_that("filter_data() filters on establishmentMeans", {
+  skip_if_offline()
+  vcr::local_cassette("filter_finland")
+
+  datasetKey_finland <- "b79c5ba3-d447-4a73-bcbf-557f3241eeb2"
+  taxa <- get_taxa(datasetKey_finland)
+  distributions <- get_distributions(datasetKey_finland, taxa)
+
+  expect_no_error(filter_data(taxa, distributions))
+  expect_no_error(
+    filter_data(
+      taxa, distributions, filter_establishmentMeans = c("introduced", "native")
+      )
+  )
+  expect_no_error(
+    filter_data(taxa, distributions, filter_establishmentMeans = "native")
+  )
+  expect_no_error(
+    filter_data(taxa, distributions, filter_establishmentMeans = NULL)
+  )
+})
+
 test_that("filter_data() returns the expected files for an existing dataset", {
   skip_if_offline()
   vcr::local_cassette("filter_finland")
@@ -290,7 +342,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       taxonID = "establishmentMeans_not_introduced",
       taxonKey = 148746476,
       scientificName = "Synchytrium endobioticum (Schilb.) Percival",
-      action = "establishmentMeans_missing",
+      action = "filtered_on_establishmentMeans" ,
       acceptedKey = 5265718,
       acceptedName = "Synchytrium endobioticum (Schilb.) Percival"
     ) |>
@@ -308,4 +360,32 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
   expect_equal(output$taxa, expected_taxa)
   expect_equal(output$distributions, expected_distributions)
   expect_equal(output$notes, expected_notes)
+})
+
+test_that("filter_data() filters on establishmentMeans", {
+  skip_if_offline()
+  vcr::local_cassette("filter_ants")
+
+  datasetKey <- "32afaa9d-a27f-4885-b30c-ce08c34e1efb"
+  taxa <- get_taxa(datasetKey)
+  distributions <- get_distributions(datasetKey, taxa)
+  output_native <- filter_data(
+    taxa, distributions, filter_establishmentMeans = c("native")
+  )
+  output_native_and_introduced <- filter_data(
+    taxa, distributions, filter_establishmentMeans = c("native", "introduced")
+  )
+  output_null <- filter_data(
+    taxa, distributions, filter_establishmentMeans = NULL
+  )
+
+  expect_equal(unique(output_native$distributions$establishmentMeans), "native")
+  expect_equal(
+    unique(output_native_and_introduced$distributions$establishmentMeans),
+    c("native", "introduced")
+    )
+  expect_equal(
+    unique(output_null$distributions$establishmentMeans),
+    c("native", "introduced")
+  )
 })
