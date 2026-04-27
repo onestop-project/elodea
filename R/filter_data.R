@@ -109,6 +109,11 @@ filter_data <- function(taxa, distributions,
   notes <-
     df_full_join |>
     dplyr::filter(!is.na(.data$action)) |>
+    dplyr::mutate(
+      acceptedName = dplyr::if_else(
+        .data$action == "not_matched_with_backbone", NA_character_, .data$acceptedName
+      )
+    ) |>
     dplyr::select(
       "taxonID", "taxonKey", "scientificName", "action", "acceptedKey",
       "acceptedName"
