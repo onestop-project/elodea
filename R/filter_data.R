@@ -72,6 +72,11 @@ filter_data <- function(taxa, distributions,
     }
   }
 
+  synonyms <- c(
+    "AMBIGUOUS_SYNONYM", "HETEROTYPIC_SYNONYM", "HOMOTYPIC_SYNONYM",
+    "MISAPPLIED", "PROPARTE_SYNONYM", "SYNONYM"
+    )
+
   # Join taxa and distributions
   df_full_join <- taxa |>
     dplyr::full_join(
@@ -86,7 +91,7 @@ filter_data <- function(taxa, distributions,
         is.na(.data$taxonomicStatus) ~ "not_matched_with_backbone",
         !(.data$taxonKey %in% distributions$taxonKey) ~
           "no_matching_distribution",
-        .data$taxonomicStatus != "ACCEPTED" ~ "merged_with_accepted",
+        .data$taxonomicStatus %in% synonyms ~ "merged_with_accepted",
         !(.data$establishmentMeans %in% filter_establishmentMeans) &
           !is.null(filter_establishmentMeans) ~
           "filtered_on_establishmentMeans",
