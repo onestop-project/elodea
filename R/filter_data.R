@@ -5,6 +5,12 @@
 #'
 #' @param taxa Data frame as returned by `get_taxa()`.
 #' @param distributions Data frame as returned by `get_distributions()`.
+#' @param filter_establishmentMeans Establishment means to filter on. Only taxa
+#' with matching distributions with `establishmentMeans` in this vector will be
+#' retained. Default is "introduced". Set to `NULL` to not filter on
+#' `establishmentMeans`. Possible values are "native", "introduced",
+#' "nativeReintroduced", `introducedAssistedColonisation`, "vagrant",
+#' "uncertain", and "nativeEndemic".
 #'
 #' @return A list with three data frames:
 #' - `taxa`: Filtered taxa data frame, with different columns than the input
@@ -42,9 +48,29 @@
 #' taxa <- get_taxa(datasetKey)
 #' distributions <- get_distributions(datasetKey, taxa)
 #' filter_data(taxa, distributions)
-filter_data <- function(taxa, distributions) {
+filter_data <- function(taxa, distributions,
+                        filter_establishmentMeans = "introduced") {
+
   check_taxa(taxa)
   #check_distributions(distributions)
+
+  establishmentMeans_values <- c(
+    "native", "introduced", "nativeReintroduced",
+    "introducedAssistedColonisation", "vagrant", "uncertain", "nativeEndemic"
+  )
+
+  if (!is.null(filter_establishmentMeans)) {
+    if (!all(filter_establishmentMeans %in% establishmentMeans_values)) {
+      cli::cli_abort(
+        c(
+          "x" = "Invalid {.arg filter_establishmentMeans} value.",
+          "i" = "{.arg filter_establishmentMeans} must be NULL or a vector of the
+         following: {establishmentMeans_values}."
+        ),
+        class = "elodea_error_invalid_establishmentMeans"
+      )
+    }
+  }
 
   # Join taxa and distributions
   df_full_join <- taxa |>
@@ -58,10 +84,12 @@ filter_data <- function(taxa, distributions) {
     dplyr::mutate(
       action = dplyr::case_when(
         is.na(.data$taxonomicStatus) ~ "not_matched_with_backbone",
-        !(.data$taxonKey %in% distributions$taxonKey) ~ "no_matching_distribution",
+        !(.data$taxonKey %in% distributions$taxonKey) ~
+          "no_matching_distribution",
         .data$taxonomicStatus != "ACCEPTED" ~ "merged_with_accepted",
-        is.na(.data$establishmentMeans) ~ "establishmentMeans_missing",
-        .data$establishmentMeans != "introduced" ~ "establishmentMeans_not_introduced",
+        !(.data$establishmentMeans %in% filter_establishmentMeans) &
+          !is.null(filter_establishmentMeans) ~
+          "filtered_on_establishmentMeans",
         .data$scientificName != .data$acceptedName ~
           "scientificName_replaced_by_backbone_name"
       )
@@ -89,11 +117,15 @@ filter_data <- function(taxa, distributions) {
   # Filter out taxa without action
   df_filtered <-
     df_full_join |>
-    dplyr::filter(is.na(.data$action) | .data$action %in% c("scientificName_replaced_by_backbone_name", "merged_with_accepted")) |>
+    dplyr::filter(
+      is.na(.data$action) | .data$action %in% c(
+        "scientificName_replaced_by_backbone_name", "merged_with_accepted"
+        )
+      ) |>
     dplyr::mutate(
       taxonKey = dplyr::if_else(
         .data$taxonomicStatus != "ACCEPTED", .data$acceptedKey, .data$taxonKey
-        ),
+      ),
       scientificName = .data$acceptedName
     )
 

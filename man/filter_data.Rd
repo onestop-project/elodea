@@ -4,12 +4,19 @@
 \alias{filter_data}
 \title{Filter data}
 \usage{
-filter_data(taxa, distributions)
+filter_data(taxa, distributions, filter_establishmentMeans = "introduced")
 }
 \arguments{
 \item{taxa}{Data frame as returned by \code{get_taxa()}.}
 
 \item{distributions}{Data frame as returned by \code{get_distributions()}.}
+
+\item{filter_establishmentMeans}{Establishment means to filter on. Only taxa
+with matching distributions with \code{establishmentMeans} in this vector will be
+retained. Default is "introduced". Set to \code{NULL} to not filter on
+\code{establishmentMeans}. Possible values are "native", "introduced",
+"nativeReintroduced", \code{introducedAssistedColonisation}, "vagrant",
+"uncertain", and "nativeEndemic".}
 }
 \value{
 A list with three data frames:
