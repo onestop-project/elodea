@@ -12,3 +12,8 @@ reference:
 - title: Filter functions
   contents:
   - has_concept("filter functions")
+
+authors:
+  OneSTOP:
+    href: "https://www.onestop-project.eu/"
+    html: "<img src='man/figures/logo-onestop.png' width=72>"
