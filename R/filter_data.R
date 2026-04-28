@@ -20,7 +20,7 @@
 #' @section Filter on `establishmentMeans`:
 #' Set to `NULL` to not filter on `establishmentMeans`.
 #' Possible values are "native", "introduced", "nativeReintroduced",
-#' "introducedAssistedColonisation", "vagrant", "uncertain", and
+#' "introducedAssistedColonisation", "vagrant", "uncertain" and
 #' "nativeEndemic".
 #'
 #' @section Filter details:

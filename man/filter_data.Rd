@@ -33,7 +33,7 @@ notes.
 
 Set to \code{NULL} to not filter on \code{establishmentMeans}.
 Possible values are "native", "introduced", "nativeReintroduced",
-"introducedAssistedColonisation", "vagrant", "uncertain", and
+"introducedAssistedColonisation", "vagrant", "uncertain" and
 "nativeEndemic".
 }
 
