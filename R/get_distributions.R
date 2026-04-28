@@ -6,6 +6,7 @@
 #' @param taxa Data frame as returned by `get_taxa()`. Defaults to
 #' `get_taxa(datasetKey)`
 #' @return A `tibble` with distributions.
+#' @family download functions
 #' @export
 #' @section Distributions details:
 #' `get_distributions()` returns a `tibble` with 8 variables:

@@ -15,6 +15,7 @@
 #' - `distributions`: Filtered distributions data frame.
 #' - `notes`: Data frame with notes on taxa that were not included or replaced
 #' in the filtered data.
+#' @family filter functions
 #' @export
 #' @section Filter on `establishmentMeans`:
 #' Set to `NULL` to not filter on `establishmentMeans`.

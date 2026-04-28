@@ -81,3 +81,4 @@ taxa <- get_taxa(datasetKey)
 distributions <- get_distributions(datasetKey, taxa)
 filter_data(taxa, distributions)
 }
+\concept{filter functions}

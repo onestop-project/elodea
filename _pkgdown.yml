@@ -4,3 +4,11 @@ template:
 
 navbar:
   bg: dark
+
+reference:
+- title: Download functions
+  contents:
+  - has_concept("download functions")
+- title: Filter functions
+  contents:
+  - has_concept("filter functions")
