@@ -57,62 +57,67 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
       ) |>
       purrr::list_rbind()
   })
+  if (length(distributions) == 0) {
+    cli::cli_alert_warning(
+      "No distributions found for dataset {datasetKey}."
+    )
+  } else {
+    # Download species profiles with progress bar
+    progressr::with_progress({
+      progress_bar <- progressr::progressor(steps = length(taxon_keys))
+      invasiveness <-
+        purrr::map(
+          taxon_keys,
+          function(x) {
+            progress_bar()
+            get_is_invasive(x)
+          }
+        ) |>
+        purrr::list_rbind()
+    })
 
-  # Download species profiles with progress bar
-  progressr::with_progress({
-    progress_bar <- progressr::progressor(steps = length(taxon_keys))
-    invasiveness <-
-      purrr::map(
-        taxon_keys,
-        function(x) {
-          progress_bar()
-          get_is_invasive(x)
-        }
+    # Clean distributions
+    if ("status" %in% names(distributions)) {
+      distributions <-
+        distributions |>
+        dplyr::rename(occurrenceStatus = "status")
+    }
+    if ("country" %in% names(distributions)) {
+      distributions <-
+        distributions |>
+        dplyr::rename(countryCode = "country")
+    }
+    distributions <-
+      distributions |>
+      dplyr::left_join(invasiveness, by = "taxonKey") |>
+      mutate_when_missing(occurrenceStatus = "present") |>
+      mutate_when_missing(establishmentMeans = NA_character_) |>
+      mutate_when_missing(degreeOfEstablishment = .data$is_invasive) |>
+      mutate_when_missing(pathway = NA_character_) |>
+      mutate_when_missing(eventDate = NA_character_) |>
+      mutate_when_missing(source = NA_character_) |>
+      dplyr::select(
+        "taxonKey",
+        "countryCode",
+        "occurrenceStatus",
+        "establishmentMeans",
+        "degreeOfEstablishment",
+        "pathway",
+        "eventDate",
+        "source"
       ) |>
-      purrr::list_rbind()
-  })
+      dplyr::mutate(
+        countryCode = toupper(.data$countryCode),
+        dplyr::across(
+          c(
+            "occurrenceStatus", "establishmentMeans", "degreeOfEstablishment",
+            "pathway"
+          ),
+          tolower
+        )
+      ) |>
+      dplyr::as_tibble()
 
-  # Clean distributions
-  if ("status" %in% names(distributions)) {
-    distributions <-
-      distributions |>
-      dplyr::rename(occurrenceStatus = "status")
+    return(distributions)
   }
-  if ("country" %in% names(distributions)) {
-    distributions <-
-      distributions |>
-      dplyr::rename(countryCode = "country")
-  }
-  distributions <-
-    distributions |>
-    dplyr::left_join(invasiveness, by = "taxonKey") |>
-    mutate_when_missing(occurrenceStatus = "present") |>
-    mutate_when_missing(establishmentMeans = NA_character_) |>
-    mutate_when_missing(degreeOfEstablishment = .data$is_invasive) |>
-    mutate_when_missing(pathway = NA_character_) |>
-    mutate_when_missing(eventDate = NA_character_) |>
-    mutate_when_missing(source = NA_character_) |>
-    dplyr::select(
-      "taxonKey",
-      "countryCode",
-      "occurrenceStatus",
-      "establishmentMeans",
-      "degreeOfEstablishment",
-      "pathway",
-      "eventDate",
-      "source"
-    ) |>
-    dplyr::mutate(
-      countryCode = toupper(.data$countryCode),
-      dplyr::across(
-        c(
-          "occurrenceStatus", "establishmentMeans", "degreeOfEstablishment",
-          "pathway"
-        ),
-        tolower
-      )
-    ) |>
-    dplyr::as_tibble()
-
-  return(distributions)
 }
