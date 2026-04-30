@@ -16,18 +16,21 @@
 #' - `family`
 #' - `genus`
 #' Only `scientific_name` is required, while the other columns are optional.
+#' Note that scientific names with author details usually get better matches.
 #'
 #' The function returns an extended checklist data frame, including all original
-#' columns and adding (or replacing) the following columns:
+#' columns and adding (or replacing) columns with the results
+#' of the matching process. These all start with "bb_" (standing for backbone)
+#' and have the following meaning:
 #'
 #' **Column name** | **Description**
 #' -- | --
 #' bb_scientificName | The matching scientific name from the GBIF backbone
 #' bb_matchType | The type of match (e.g. "EXACT", "FUZZY", "HIGHERRANK", "NOMATCH")
 #' bb_confidence | The confidence score of the match
-#' bb_rank | The taxonomic rank of scientificName
-#' bb_status | The taxonomic status of scientificName (e.g. "ACCEPTED", "SYNONYM", "DOUBTFUL")
-#' bb_acceptedUsageKey | The GBIF backbone taxonKey/usageKey/nubkey of the accepted name (if scientificName is a synonym)
+#' bb_rank | The taxonomic rank of `bb_scientificName`
+#' bb_status | The taxonomic status of `bb_scientificName` (e.g. "ACCEPTED", "SYNONYM", "DOUBTFUL")
+#' bb_acceptedUsageKey | The GBIF backbone taxonKey/usageKey/nubkey of the `bb_acceptedScientificName`
 #' bb_acceptedScientificName | The accepted name (if scientificName is a synonym)
 #'
 #' "bb" stands for "backbone".
@@ -37,7 +40,13 @@
 #' the GBIF backbone matching process.
 #' @export
 #' @examples
-#' check_names(example_checklist)
+#' check_names(example_checklist) |> View()
+#' # Show all taxa that are not accepted
+#' library(dplyr)
+#' checklist <- check_names(example_checklist)
+#' filter(checklist, .data$bb_status != "ACCEPTED") |> View()
+#' # Show taxa without exact match
+#' no_match <- filter(checklist, .data$bb_matchType != "EXACT")
 check_names <- function(checklist) {
   if (!"scientific_name" %in% names(checklist)) {
     cli::cli_abort(

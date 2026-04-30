@@ -32,17 +32,20 @@ the matching process:
 \item \code{family}
 \item \code{genus}
 Only \code{scientific_name} is required, while the other columns are optional.
+Note that scientific names with author details usually get better matches.
 }
 
 The function returns an extended checklist data frame, including all original
-columns and adding (or replacing) the following columns:\tabular{ll}{
+columns and adding (or replacing) columns with the results
+of the matching process. These all start with "bb_" (standing for backbone)
+and have the following meaning:\tabular{ll}{
    \strong{Column name} \tab \strong{Description} \cr
    bb_scientificName \tab The matching scientific name from the GBIF backbone \cr
    bb_matchType \tab The type of match (e.g. "EXACT", "FUZZY", "HIGHERRANK", "NOMATCH") \cr
    bb_confidence \tab The confidence score of the match \cr
-   bb_rank \tab The taxonomic rank of scientificName \cr
-   bb_status \tab The taxonomic status of scientificName (e.g. "ACCEPTED", "SYNONYM", "DOUBTFUL") \cr
-   bb_acceptedUsageKey \tab The GBIF backbone taxonKey/usageKey/nubkey of the accepted name (if scientificName is a synonym) \cr
+   bb_rank \tab The taxonomic rank of \code{bb_scientificName} \cr
+   bb_status \tab The taxonomic status of \code{bb_scientificName} (e.g. "ACCEPTED", "SYNONYM", "DOUBTFUL") \cr
+   bb_acceptedUsageKey \tab The GBIF backbone taxonKey/usageKey/nubkey of the \code{bb_acceptedScientificName} \cr
    bb_acceptedScientificName \tab The accepted name (if scientificName is a synonym) \cr
 }
 
