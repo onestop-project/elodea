@@ -6,6 +6,7 @@
 #'
 #' @param datasetKey GBIF dataset key.
 #' @return A `tibble` with taxonomic information of the dataset.
+#' @family download functions
 #' @export
 #' @section Taxa details:
 #' `get_taxa()` returns a `tibble` with 8 columns:

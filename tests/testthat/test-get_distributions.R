@@ -28,3 +28,16 @@ test_that("get_distributions() returns correct distributions data frame", {
 
   expect_snapshot_file(path)
 })
+
+test_that("get_distributions() returns message when distributions are missing", {
+  skip_if_offline()
+  vcr::local_cassette("distributions_union")
+
+  # Species of Union concern
+  datasetKey <- "79d65658-526c-4c78-9d24-1870d67f8439"
+  expect_message(
+    get_distributions(datasetKey),
+    paste("No distributions found for dataset", datasetKey)
+  )
+
+})
