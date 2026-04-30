@@ -47,3 +47,20 @@ test_that("check_names() returns the expected output", {
     file.path(temp_dir, "check_names.csv")
   )
 })
+
+test_that("check_names() overwrites the 'bb_' columns if present", {
+  checklist <- example_checklist |>
+    dplyr::mutate(
+      bb_scientificName = "test",
+      bb_matchType = "test",
+      bb_confidence = 0,
+      bb_rank = "test",
+      bb_status = "test",
+      bb_acceptedUsageKey = 0,
+      bb_acceptedScientificName = "test"
+    )
+  result_modified <- suppressMessages(check_names(checklist))
+  result_original <- suppressMessages(check_names(example_checklist))
+
+  expect_equal(result_modified, result_original)
+  })
