@@ -9,30 +9,21 @@ test_that("check_names() returns an error on column missing", {
   )
 })
 
-test_that("check_names() returns a list of data frames", {
-  result <- suppressMessages(check_names(example_checklist))
-
-  expect_identical(names(result), c("summary", "full_table"))
-  expect_s3_class(result$summary, "tbl")
-  expect_s3_class(result$full_table, "tbl")
-})
-
 test_that("check_names() returns the expected columns in the summary and match tables", {
   result <- suppressMessages(check_names(example_checklist))
 
   col_names <- c(
-    "rawScientificName",
-    "scientificName",
-    "matchType",
-    "confidence",
-    "rank",
-    "status",
-    "acceptedUsageKey",
-    "acceptedScientificName"
+    names(example_checklist),
+    "bb_scientificName",
+    "bb_matchType",
+    "bb_confidence",
+    "bb_rank",
+    "bb_status",
+    "bb_acceptedUsageKey",
+    "bb_acceptedScientificName"
   )
 
-  expect_identical(colnames(result$summary), col_names)
-  expect_identical(colnames(result$full_table), col_names)
+  expect_identical(colnames(result), col_names)
 })
 
 test_that("check_names() prints the expected summary via cli", {
@@ -41,28 +32,18 @@ test_that("check_names() prints the expected summary via cli", {
   })
 })
 
-test_that("check_names() returns the expected summary and full_table", {
+test_that("check_names() returns the expected output", {
   temp_dir <- tempdir()
   on.exit(unlink(temp_dir, recursive = TRUE))
 
   result <- suppressMessages(check_names(example_checklist))
-
   write.csv(
-    result$summary,
-    file.path(temp_dir, "check_names-summary.csv"),
-    row.names = FALSE
-    )
-
-  write.csv(
-    result$full_table,
-    file.path(temp_dir, "check_names-full_table.csv"),
+    result,
+    file.path(temp_dir, "check_names.csv"),
     row.names = FALSE
   )
 
   expect_snapshot_file(
-    file.path(temp_dir, "check_names-summary.csv")
-  )
-  expect_snapshot_file(
-    file.path(temp_dir, "check_names-full_table.csv")
+    file.path(temp_dir, "check_names.csv")
   )
 })

@@ -10,9 +10,8 @@ check_names(checklist)
 \item{checklist}{A \code{data.frame}.}
 }
 \value{
-a list of \code{tibble}s: \code{summary} and \code{full_table}. The \code{summary} table
-contains taxa that are not an exact match or not accepted, while \code{full_table}
-contains the full results of the name matching process.
+The extended checklist data frame with the additional columns from
+the GBIF backbone matching process.
 }
 \description{
 Checks the scientific names of a checklist against the GBIF backbone
@@ -32,22 +31,23 @@ the matching process:
 \item \code{order}
 \item \code{family}
 \item \code{genus}
+Only \code{scientific_name} is required, while the other columns are optional.
 }
 
-The function returns a list with two \code{tibble}s: \code{summary} and \code{full_table}.
-The \code{summary} table contains taxa that are not an exact match or not
-accepted, while \code{full_table} contains the full results of the name matching
-process.\tabular{ll}{
+The function returns an extended checklist data frame, including all original
+columns and adding (or replacing) the following columns:\tabular{ll}{
    \strong{Column name} \tab \strong{Description} \cr
-   rawScientificName \tab The original scientific name as provided in the raw data file \cr
-   scientificName \tab The matching scientific name from the GBIF backbone \cr
-   matchType \tab The type of match (e.g. "EXACT", "FUZZY", "HIGHERRANK", "NOMATCH") \cr
-   confidence \tab The confidence score of the match \cr
-   rank \tab The taxonomic rank of scientificName \cr
-   status \tab The taxonomic status of scientificName (e.g. "ACCEPTED", "SYNONYM", "DOUBTFUL") \cr
-   acceptedUsageKey \tab The GBIF backbone taxonKey/usageKey/nubkey of the accepted name (if scientificName is a synonym) \cr
-   acceptedScientificName \tab The accepted name (if scientificName is a synonym) \cr
+   bb_scientificName \tab The matching scientific name from the GBIF backbone \cr
+   bb_matchType \tab The type of match (e.g. "EXACT", "FUZZY", "HIGHERRANK", "NOMATCH") \cr
+   bb_confidence \tab The confidence score of the match \cr
+   bb_rank \tab The taxonomic rank of scientificName \cr
+   bb_status \tab The taxonomic status of scientificName (e.g. "ACCEPTED", "SYNONYM", "DOUBTFUL") \cr
+   bb_acceptedUsageKey \tab The GBIF backbone taxonKey/usageKey/nubkey of the accepted name (if scientificName is a synonym) \cr
+   bb_acceptedScientificName \tab The accepted name (if scientificName is a synonym) \cr
 }
+
+
+"bb" stands for "backbone".
 }
 \examples{
 check_names(example_checklist)
