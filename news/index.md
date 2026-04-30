@@ -12,6 +12,11 @@
 - [`filter_data()`](https://onestop-project.github.io/elodea/reference/filter_data.md)
   now returns fewer columns
   ([\#19](https://github.com/onestop-project/elodea/issues/19)).
+- [`filter_data()`](https://onestop-project.github.io/elodea/reference/filter_data.md)
+  has a new argument `filter_establishmentMeans` that allows custom
+  filtering taxa based on establishmentMeans (e.g. native, introduced),
+  instead of built-in filtering on “introduced” taxa
+  ([\#24](https://github.com/onestop-project/elodea/issues/24)).
 
 ## elodea 0.1.0
 

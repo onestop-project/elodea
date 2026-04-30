@@ -6,7 +6,7 @@ data and notes.
 ## Usage
 
 ``` r
-filter_data(taxa, distributions)
+filter_data(taxa, distributions, filter_establishmentMeans = "introduced")
 ```
 
 ## Arguments
@@ -21,6 +21,12 @@ filter_data(taxa, distributions)
   Data frame as returned by
   [`get_distributions()`](https://onestop-project.github.io/elodea/reference/get_distributions.md).
 
+- filter_establishmentMeans:
+
+  EstablishmentMeans to filter on. Only taxa with matching distributions
+  with `establishmentMeans` in this vector will be retained. Default is
+  "introduced".
+
 ## Value
 
 A list with three data frames:
@@ -33,6 +39,13 @@ A list with three data frames:
 - `notes`: Data frame with notes on taxa that were not included or
   replaced in the filtered data.
 
+## Filter on `establishmentMeans`
+
+Set to `NULL` to not filter on `establishmentMeans`. Possible values are
+"native", "introduced", "nativeReintroduced",
+"introducedAssistedColonisation", "vagrant", "uncertain" and
+"nativeEndemic".
+
 ## Filter details
 
 Taxa are removed if
@@ -43,10 +56,12 @@ Taxa are removed if
 - they do not have a matching distribution (i.e., `taxonKey` is not in
   `distributions$taxonKey`),
 
-- they are synonyms of accepted taxa (i.e., `acceptedKey` is not `NA`),
+- they do not have a matching distribution with `establishmentMeans` in
+  `filter_establishmentMeans`.
 
-- they do not have a matching distribution with
-  `establishmentMeans == introduced`.
+Synonyms are replaced by the accepted taxa they are synonyms of (i.e.,
+`taxonomicStatus` is either "synonym", "ambiguous synonym", "heterotypic
+synonym", "homotypic synonym", "misapplied" or "proparte synonym).
 
 `scientificName` is replaced with the scientific name matching the GBIF
 backbone.

@@ -58,6 +58,11 @@ A `tibble` with distributions.
 - [`source`](http://purl.org/dc/terms/source): A related resource from
   which the described resource is derived.
 
+## See also
+
+Other download functions:
+[`get_taxa()`](https://onestop-project.github.io/elodea/reference/get_taxa.md)
+
 ## Examples
 
 ``` r

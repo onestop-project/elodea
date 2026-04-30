@@ -51,6 +51,11 @@ A `tibble` with taxonomic information of the dataset.
 - [`acceptedTaxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank):
   Taxonomic rank of the accepted taxon.
 
+## See also
+
+Other download functions:
+[`get_distributions()`](https://onestop-project.github.io/elodea/reference/get_distributions.md)
+
 ## Examples
 
 ``` r
