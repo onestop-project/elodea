@@ -55,3 +55,8 @@ distributions_AD <- get_distributions("016c16c3-d907-4c88-97dd-97ad62c8130e")
 distributions_BE <- get_distributions("6d9e952f-948c-4483-9807-575348147c7e")
 }
 }
+\seealso{
+Other download functions: 
+\code{\link{get_taxa}()}
+}
+\concept{download functions}

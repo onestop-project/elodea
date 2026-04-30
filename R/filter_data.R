@@ -3,8 +3,11 @@
 #' Filters taxa and distributions data frames, and returns the filtered data and
 #' notes.
 #'
-#' @param taxa Data frame as returned by `get_taxa()`.
-#' @param distributions Data frame as returned by `get_distributions()`.
+#' @param taxa Data frame as returned by [get_taxa()].
+#' @param distributions Data frame as returned by [get_distributions()].
+#' @param filter_establishmentMeans EstablishmentMeans to filter on. Only taxa
+#' with matching distributions with `establishmentMeans` in this vector will be
+#' retained. Default is "introduced".
 #'
 #' @return A list with three data frames:
 #' - `taxa`: Filtered taxa data frame, with different columns than the input
@@ -12,16 +15,27 @@
 #' - `distributions`: Filtered distributions data frame.
 #' - `notes`: Data frame with notes on taxa that were not included or replaced
 #' in the filtered data.
+#' @family filter functions
 #' @export
+#' @section Filter on `establishmentMeans`:
+#' Set to `NULL` to not filter on `establishmentMeans`.
+#' Possible values are "native", "introduced", "nativeReintroduced",
+#' "introducedAssistedColonisation", "vagrant", "uncertain" and
+#' "nativeEndemic".
+#'
 #' @section Filter details:
 #' Taxa are removed if
 #' - they are not matched with the GBIF backbone (i.e., `taxonomicStatus` is
 #' `NA`),
 #' - they do not have a matching distribution (i.e., `taxonKey` is not in
 #' `distributions$taxonKey`),
-#' - they are synonyms of accepted taxa (i.e., `acceptedKey` is not `NA`),
-#' - they do not have a matching distribution with
-#' `establishmentMeans == introduced`.
+#' - they do not have a matching distribution with `establishmentMeans` in
+#' `filter_establishmentMeans`.
+#'
+#' Synonyms are replaced by the accepted taxa they are synonyms of (i.e.,
+#' `taxonomicStatus` is either "synonym", "ambiguous synonym",
+#' "heterotypic synonym", "homotypic synonym", "misapplied" or
+#' "proparte synonym).
 #'
 #' `scientificName` is replaced with the scientific name matching the GBIF
 #' backbone.
@@ -42,9 +56,34 @@
 #' taxa <- get_taxa(datasetKey)
 #' distributions <- get_distributions(datasetKey, taxa)
 #' filter_data(taxa, distributions)
-filter_data <- function(taxa, distributions) {
+filter_data <- function(taxa, distributions,
+                        filter_establishmentMeans = "introduced") {
+
   check_taxa(taxa)
   #check_distributions(distributions)
+
+  establishmentMeans_values <- c(
+    "native", "introduced", "nativeReintroduced",
+    "introducedAssistedColonisation", "vagrant", "uncertain", "nativeEndemic"
+  )
+
+  if (!is.null(filter_establishmentMeans)) {
+    if (!all(filter_establishmentMeans %in% establishmentMeans_values)) {
+      cli::cli_abort(
+        c(
+          "x" = "Invalid {.arg filter_establishmentMeans} value.",
+          "i" = "{.arg filter_establishmentMeans} must be NULL or a vector of the
+         following: {establishmentMeans_values}."
+        ),
+        class = "elodea_error_invalid_establishmentMeans"
+      )
+    }
+  }
+
+  synonyms <- c(
+    "AMBIGUOUS_SYNONYM", "HETEROTYPIC_SYNONYM", "HOMOTYPIC_SYNONYM",
+    "MISAPPLIED", "PROPARTE_SYNONYM", "SYNONYM"
+    )
 
   # Join taxa and distributions
   df_full_join <- taxa |>
@@ -58,10 +97,12 @@ filter_data <- function(taxa, distributions) {
     dplyr::mutate(
       action = dplyr::case_when(
         is.na(.data$taxonomicStatus) ~ "not_matched_with_backbone",
-        !(.data$taxonKey %in% distributions$taxonKey) ~ "no_matching_distribution",
-        .data$taxonomicStatus != "ACCEPTED" ~ "merged_with_accepted",
-        is.na(.data$establishmentMeans) ~ "establishmentMeans_missing",
-        .data$establishmentMeans != "introduced" ~ "establishmentMeans_not_introduced",
+        !(.data$taxonKey %in% distributions$taxonKey) ~
+          "no_matching_distribution",
+        .data$taxonomicStatus %in% synonyms ~ "merged_with_accepted",
+        !(.data$establishmentMeans %in% filter_establishmentMeans) &
+          !is.null(filter_establishmentMeans) ~
+          "filtered_on_establishmentMeans",
         .data$scientificName != .data$acceptedName ~
           "scientificName_replaced_by_backbone_name"
       )
@@ -81,6 +122,11 @@ filter_data <- function(taxa, distributions) {
   notes <-
     df_full_join |>
     dplyr::filter(!is.na(.data$action)) |>
+    dplyr::mutate(
+      acceptedName = dplyr::if_else(
+        .data$action == "not_matched_with_backbone", NA_character_, .data$acceptedName
+      )
+    ) |>
     dplyr::select(
       "taxonID", "taxonKey", "scientificName", "action", "acceptedKey",
       "acceptedName"
@@ -89,11 +135,15 @@ filter_data <- function(taxa, distributions) {
   # Filter out taxa without action
   df_filtered <-
     df_full_join |>
-    dplyr::filter(is.na(.data$action) | .data$action %in% c("scientificName_replaced_by_backbone_name", "merged_with_accepted")) |>
+    dplyr::filter(
+      is.na(.data$action) | .data$action %in% c(
+        "scientificName_replaced_by_backbone_name", "merged_with_accepted"
+        )
+      ) |>
     dplyr::mutate(
       taxonKey = dplyr::if_else(
         .data$taxonomicStatus != "ACCEPTED", .data$acceptedKey, .data$taxonKey
-        ),
+      ),
       scientificName = .data$acceptedName
     )
 

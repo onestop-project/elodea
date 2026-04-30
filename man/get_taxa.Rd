@@ -44,3 +44,8 @@ rank of the accepted taxon.
 # Global Register of Introduced and Invasive Species - Cyprus
 get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
 }
+\seealso{
+Other download functions: 
+\code{\link{get_distributions}()}
+}
+\concept{download functions}
