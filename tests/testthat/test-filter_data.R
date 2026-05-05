@@ -82,6 +82,7 @@ test_that("filter_data() returns the expected files for an existing dataset", {
   # Check that distributions has the expected columns
   distributions_expected_columns <- c(
     "taxonKey",
+    "nubKey",
     "countryCode",
     "occurrenceStatus",
     "establishmentMeans",
@@ -287,6 +288,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 1. All good
     data.frame(
       taxonKey = 148674360,
+      nubKey = 1047536,
       countryCode = "AD",
       occurrenceStatus = "present",
       establishmentMeans = "introduced",
@@ -298,6 +300,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 2. All good
     dplyr::add_row(
       taxonKey = 148674355,
+      nubKey = 8411684,
       countryCode = "AD",
       occurrenceStatus = "present",
       establishmentMeans = "introduced",
@@ -309,6 +312,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 3. `taxonKey` is replaced by `acceptedKey`
     dplyr::add_row(
       taxonKey = 3204007,
+      nubKey = 3204007,
       countryCode = "AD",
       occurrenceStatus = "present",
       establishmentMeans = "introduced",

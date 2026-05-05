@@ -151,7 +151,7 @@ filter_data <- function(taxa, distributions,
   distributions_filtered <-
     df_filtered |>
     dplyr::select(
-      "taxonKey", "countryCode", "occurrenceStatus", "establishmentMeans",
+      "taxonKey", "nubKey", "countryCode", "occurrenceStatus", "establishmentMeans",
       "degreeOfEstablishment", "pathway", "eventDate", "source"
     ) |>
     dplyr::distinct()
