@@ -22,6 +22,7 @@ removed. The function \code{rgbif::name_usage()} is used under the hood.
 \code{get_taxa()} returns a \code{tibble} with 8 columns:
 \itemize{
 \item \code{taxonKey}: GBIF taxon key of \code{scientificName}.
+\item \code{nubKey}: GBIF backbone taxon key
 \item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
 \code{scientificName}, as provided in the checklist.
 \item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Original
@@ -32,7 +33,8 @@ not matched with the backbone.
 \item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID}{\code{acceptedKey}}: GBIF
 taxon key of the accepted taxon, if the source \code{scientificName} is a synonym.
 \item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsage}{\code{acceptedName}}:
-Scientific name of the accepted taxon.
+Scientific name of the accepted taxon. Is equal to \code{nubKey} if
+\code{scientificName} is the accepted name in the GBIF backbone.
 \item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{acceptedKingdom}}: Kingdom of the
 accepted taxon.
 \item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{acceptedTaxonRank}}: Taxonomic

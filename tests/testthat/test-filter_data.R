@@ -71,6 +71,7 @@ test_that("filter_data() returns the expected files for an existing dataset", {
   # Check that taxa has the expected columns
   taxa_expected_columns <- c(
     "taxonKey",
+    "nubKey",
     "taxonID",
     "scientificName",
     "kingdom",
@@ -119,9 +120,10 @@ test_that("filter_data() returns the expected files for an existing dataset", {
 
 test_that("filter_data() returns the expected output for a dummy dataset", {
   taxa <-
-    # 1. All good, nubkey = 1047536
+    # 1. All good
     data.frame(
       taxonKey = 148674360,
+      nubKey = 1047536,
       taxonID = "all_good",
       scientificName = "Leptinotarsa decemlineata (Say, 1824)",
       taxonomicStatus = "ACCEPTED",
@@ -131,9 +133,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedTaxonRank= "species"
     ) |>
     # 2. `scientificName` need to be replaced with correct backbone name
-    # nubkey = 8411684
     dplyr::add_row(
       taxonKey = 148674355,
+      nubKey = 8411684,
       taxonID = "scientificname_different_from_backbone",
       scientificName = "Monochamus sutor (LinnÃ©, 1758)",
       taxonomicStatus = "ACCEPTED",
@@ -143,9 +145,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedTaxonRank= "species"
     ) |>
     # 3. `key`s and `scientificName` need to be replaced with accepted values
-    # nubkey = 3204008
     dplyr::add_row(
       taxonKey = 148674371,
+      nubKey = 3204007,
       taxonID = "synonym",
       scientificName = "Pseudoperonospora humuli (Miyabe & Takah.) G.W.Wilson",
       taxonomicStatus = "SYNONYM",
@@ -158,6 +160,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # nubkey = NA
     dplyr::add_row(
       taxonKey = 148746536,
+      nubKey = NA,
       taxonID = "nubkey_missing",
       scientificName = "Pinus strobus",
       taxonomicStatus = NA_character_,
@@ -167,9 +170,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedTaxonRank= "species"
     ) |>
     # 5. Record needs to be removed because there is no matching distribution,
-    # nubkey = 5265718
     dplyr::add_row(
       taxonKey = 148746476,
+      nubKey = 5265718,
       taxonID = "establishmentMeans_not_introduced",
       scientificName = "Synchytrium endobioticum (Schilb.) Percival",
       taxonomicStatus = "ACCEPTED",
@@ -179,9 +182,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedTaxonRank= "species"
     ) |>
     # 6. Record needs to be removed because there is no matching distribution
-    # nubkey = 2284723
     dplyr::add_row(
       taxonKey = 148746414,
+      nubKey = 2284723,
       taxonID = "distribution_missing",
       scientificName = "Urnatella gracilis Leidy, 1851",
       taxonomicStatus = "ACCEPTED",
@@ -253,6 +256,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 1. All good
     data.frame(
       taxonKey = 148674360,
+      nubKey = 1047536,
       taxonID = "all_good",
       scientificName = "Leptinotarsa decemlineata (Say, 1824)",
       kingdom = "Animalia",
@@ -261,6 +265,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 2. `scientificName` is replaced with correct backbone name
     dplyr::add_row(
       taxonKey = 148674355,
+      nubKey = 8411684,
       taxonID = "scientificname_different_from_backbone",
       scientificName = "Monochamus sutor (Linnaeus, 1758)",
       kingdom = "Animalia",
@@ -269,6 +274,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 3. `key`s and `scientificName` are replaced with accepted values
     dplyr::add_row(
       taxonKey = 3204007,
+      nubKey = 3204007,
       taxonID = "synonym",
       scientificName =
         "Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev",

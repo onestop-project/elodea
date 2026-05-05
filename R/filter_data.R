@@ -25,8 +25,7 @@
 #'
 #' @section Filter details:
 #' Taxa are removed if
-#' - they are not matched with the GBIF backbone (i.e., `taxonomicStatus` is
-#' `NA`),
+#' - they are not matched with the GBIF backbone (i.e., `nubKey` is `NA`),
 #' - they do not have a matching distribution (i.e., `taxonKey` is not in
 #' `distributions$taxonKey`),
 #' - they do not have a matching distribution with `establishmentMeans` in
@@ -40,9 +39,10 @@
 #' `scientificName` is replaced with the scientific name matching the GBIF
 #' backbone.
 #' @section Taxa details:
-#' The `taxa` data frame in the output list has 5 variables:
+#' The `taxa` data frame in the output list has 6 variables:
 #' - `taxonKey`: GBIF taxon key of `scientificName`. This value is replaced with
 #' `acceptedKey` if the taxon is a synonym of an accepted taxon.
+#' - `nubKey`: GBIF backbone taxon key.
 #' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
 #' `scientificName`, as provided in the checklist.
 #' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Scientific
@@ -96,7 +96,7 @@ filter_data <- function(taxa, distributions,
     ) |>
     dplyr::mutate(
       action = dplyr::case_when(
-        is.na(.data$taxonomicStatus) ~ "not_matched_with_backbone",
+        is.na(.data$nubKey) ~ "not_matched_with_backbone",
         !(.data$taxonKey %in% distributions$taxonKey) ~
           "no_matching_distribution",
         .data$taxonomicStatus %in% synonyms ~ "merged_with_accepted",
@@ -112,7 +112,7 @@ filter_data <- function(taxa, distributions,
       taxonRank = "acceptedTaxonRank"
     ) |>
     dplyr::select(
-      "taxonKey", "taxonID", "scientificName", "taxonomicStatus",
+      "taxonKey", "nubKey", "taxonID", "scientificName", "taxonomicStatus",
       "acceptedKey", "acceptedName", "kingdom", "taxonRank",
       "countryCode", "occurrenceStatus", "establishmentMeans",
       "degreeOfEstablishment", "pathway", "eventDate", "source", "action"
@@ -160,7 +160,7 @@ filter_data <- function(taxa, distributions,
   taxa_filtered <-
     df_filtered |>
     dplyr::select(
-      "taxonKey", "taxonID", "scientificName", "kingdom", "taxonRank"
+      "taxonKey", "nubKey", "taxonID", "scientificName", "kingdom", "taxonRank"
     ) |>
     dplyr::distinct()
 

@@ -11,6 +11,7 @@
 #' @section Taxa details:
 #' `get_taxa()` returns a `tibble` with 8 columns:
 #' - `taxonKey`: GBIF taxon key of `scientificName`.
+#' - `nubKey`: GBIF backbone taxon key
 #' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
 #' `scientificName`, as provided in the checklist.
 #' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Original
@@ -21,7 +22,8 @@
 #' - [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID): GBIF
 #' taxon key of the accepted taxon, if the source `scientificName` is a synonym.
 #' - [`acceptedName`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsage):
-#' Scientific name of the accepted taxon.
+#' Scientific name of the accepted taxon. Is equal to `nubKey` if
+#' `scientificName` is the accepted name in the GBIF backbone.
 #' - [`acceptedKingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the
 #' accepted taxon.
 #' - [`acceptedTaxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic
@@ -88,8 +90,8 @@ get_taxa <- function(datasetKey) {
       acceptedKingdom = dplyr::coalesce(.data$accepted_kingdom, .data$kingdom)
     ) |>
     dplyr::select(
-      "taxonKey", "taxonID", "scientificName", "taxonomicStatus", "acceptedKey",
-      "acceptedName", "acceptedTaxonRank", "acceptedKingdom"
+      "taxonKey", "nubKey", "taxonID", "scientificName", "taxonomicStatus",
+      "acceptedKey", "acceptedName", "acceptedTaxonRank", "acceptedKingdom"
       ) |>
     dplyr::as_tibble()
 }

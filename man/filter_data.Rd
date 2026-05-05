@@ -41,8 +41,7 @@ Possible values are "native", "introduced", "nativeReintroduced",
 
 Taxa are removed if
 \itemize{
-\item they are not matched with the GBIF backbone (i.e., \code{taxonomicStatus} is
-\code{NA}),
+\item they are not matched with the GBIF backbone (i.e., \code{nubKey} is \code{NA}),
 \item they do not have a matching distribution (i.e., \code{taxonKey} is not in
 \code{distributions$taxonKey}),
 \item they do not have a matching distribution with \code{establishmentMeans} in
