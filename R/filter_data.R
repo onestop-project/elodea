@@ -5,7 +5,7 @@
 #'
 #' @param taxa Data frame as returned by [get_taxa()].
 #' @param distributions Data frame as returned by [get_distributions()].
-#' @param filter_establishmentMeans EstablishmentMeans to filter on. Only taxa
+#' @param establishment_means EstablishmentMeans to filter on. Only taxa
 #' with matching distributions with `establishmentMeans` in this vector will be
 #' retained. Default is "introduced".
 #'
@@ -29,7 +29,7 @@
 #' - they do not have a matching distribution (i.e., `taxonKey` is not in
 #' `distributions$taxonKey`),
 #' - they do not have a matching distribution with `establishmentMeans` in
-#' `filter_establishmentMeans`.
+#' `establishment_means`.
 #'
 #' Synonyms are replaced by the accepted taxa they are synonyms of (i.e.,
 #' `taxonomicStatus` is either "synonym", "ambiguous synonym",
@@ -57,7 +57,7 @@
 #' distributions <- get_distributions(datasetKey, taxa)
 #' filter_data(taxa, distributions)
 filter_data <- function(taxa, distributions,
-                        filter_establishmentMeans = "introduced") {
+                        establishment_means = "introduced") {
 
   check_taxa(taxa)
   #check_distributions(distributions)
@@ -67,12 +67,12 @@ filter_data <- function(taxa, distributions,
     "introducedAssistedColonisation", "vagrant", "uncertain", "nativeEndemic"
   )
 
-  if (!is.null(filter_establishmentMeans)) {
-    if (!all(filter_establishmentMeans %in% establishmentMeans_values)) {
+  if (!is.null(establishment_means)) {
+    if (!all(establishment_means %in% establishmentMeans_values)) {
       cli::cli_abort(
         c(
-          "x" = "Invalid {.arg filter_establishmentMeans} value.",
-          "i" = "{.arg filter_establishmentMeans} must be NULL or a vector of the
+          "x" = "Invalid {.arg establishment_means} value.",
+          "i" = "{.arg establishment_means} must be NULL or a vector of the
          following: {establishmentMeans_values}."
         ),
         class = "elodea_error_invalid_establishmentMeans"
@@ -100,8 +100,8 @@ filter_data <- function(taxa, distributions,
         !(.data$taxonKey %in% distributions$taxonKey) ~
           "no_matching_distribution",
         .data$taxonomicStatus %in% synonyms ~ "merged_with_accepted",
-        !(.data$establishmentMeans %in% filter_establishmentMeans) &
-          !is.null(filter_establishmentMeans) ~
+        !(.data$establishmentMeans %in% establishment_means) &
+          !is.null(establishment_means) ~
           "filtered_on_establishmentMeans",
         .data$scientificName != .data$acceptedName ~
           "scientificName_replaced_by_backbone_name"

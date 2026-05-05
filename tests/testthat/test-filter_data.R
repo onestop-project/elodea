@@ -8,7 +8,7 @@ test_that("filter_data() returns error on invalid `establishmentMeans`", {
 
   expect_error(
     filter_data(
-      taxa, distributions, filter_establishmentMeans = "native introduced"
+      taxa, distributions, establishment_means = "native introduced"
       ),
      class = "elodea_error_invalid_establishmentMeans"
   )
@@ -22,7 +22,7 @@ test_that("filter_data() returns error on invalid `establishmentMeans`", {
 
   expect_error(
     filter_data(
-      taxa, distributions, filter_establishmentMeans = NA_character_
+      taxa, distributions, establishment_means = NA_character_
     ),
     class = "elodea_error_invalid_establishmentMeans"
   )
@@ -39,14 +39,14 @@ test_that("filter_data() filters on establishmentMeans", {
   expect_no_error(filter_data(taxa, distributions))
   expect_no_error(
     filter_data(
-      taxa, distributions, filter_establishmentMeans = c("introduced", "native")
+      taxa, distributions, establishment_means = c("introduced", "native")
       )
   )
   expect_no_error(
-    filter_data(taxa, distributions, filter_establishmentMeans = "native")
+    filter_data(taxa, distributions, establishment_means = "native")
   )
   expect_no_error(
-    filter_data(taxa, distributions, filter_establishmentMeans = NULL)
+    filter_data(taxa, distributions, establishment_means = NULL)
   )
 })
 
@@ -376,13 +376,13 @@ test_that("filter_data() filters on establishmentMeans", {
   taxa <- get_taxa(datasetKey)
   distributions <- get_distributions(datasetKey, taxa)
   output_native <- filter_data(
-    taxa, distributions, filter_establishmentMeans = c("native")
+    taxa, distributions, establishment_means = c("native")
   )
   output_native_and_introduced <- filter_data(
-    taxa, distributions, filter_establishmentMeans = c("native", "introduced")
+    taxa, distributions, establishment_means = c("native", "introduced")
   )
   output_null <- filter_data(
-    taxa, distributions, filter_establishmentMeans = NULL
+    taxa, distributions, establishment_means = NULL
   )
 
   expect_equal(unique(output_native$distributions$establishmentMeans), "native")
