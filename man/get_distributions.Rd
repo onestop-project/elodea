@@ -46,7 +46,7 @@ the described resource is derived.
 }
 
 \examples{
-Checklist of non-native freshwater fishes in Flanders, Belgium
+# Checklist of non-native freshwater fishes in Flanders, Belgium
 get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
 }
 \seealso{

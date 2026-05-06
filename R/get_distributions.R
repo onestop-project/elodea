@@ -30,7 +30,7 @@
 #' - [`source`](http://purl.org/dc/terms/source): A related resource from which
 #' the described resource is derived.
 #' @examples
-#' Checklist of non-native freshwater fishes in Flanders, Belgium
+#' # Checklist of non-native freshwater fishes in Flanders, Belgium
 #' get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
 get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   taxon_keys <- dplyr::pull(taxa, "taxonKey")
@@ -132,9 +132,9 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
       ) |>
       # Remove unwanted duplicated rows with pathway = NA when there are other
       # rows with the same taxonKey and countryCode but with a non-NA pathway
-      dplyr::group_by(across(-pathway)) |>
+      dplyr::group_by(dplyr::across(-.data$pathway)) |>
       dplyr::filter(
-        !(dplyr::n() > 1 & is.na(pathway) & any(!is.na(pathway)))
+        !(dplyr::n() > 1 & is.na(.data$pathway) & any(!is.na(.data$pathway)))
         ) |>
       dplyr::ungroup() |>
       dplyr::as_tibble()
