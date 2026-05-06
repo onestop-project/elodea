@@ -126,6 +126,23 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
             "pathway"
           ),
           tolower
+        ),
+        occurrenceStatus = dplyr::recode_values(
+          .data$occurrenceStatus,
+          "present" ~ "present",
+          "absent" ~ "absent",
+          "doubtful" ~ "doubtful",
+          default = ""
+        ),
+        establishmentMeans = dplyr::recode_values(
+          .data$establishmentMeans,
+          "native" ~ "native",
+          "nativeReintroduced" ~ "nativeReintroduced",
+          "introduced" ~ "introduced",
+          "alien" ~ "introduced",
+          "introducedAssistedColonisation" ~ "introducedAssistedColonisation",
+          "vagrant" ~ "vagrant",
+          "uncertain" ~ "uncertain"
         )
       ) |>
       # Remove unwanted duplicated rows with pathway = NA when there are other
