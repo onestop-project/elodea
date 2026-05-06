@@ -44,17 +44,37 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   # Download distributions with progress bar
   progressr::with_progress({
     progress_bar <- progressr::progressor(steps = length(taxon_keys))
-    distributions <-
+    verbatim_info <-
       purrr::map(
-        taxon_keys,
-        function(x) {
-          progress_bar()
-          rgbif::name_usage(
-            key = x,
-            data = "distribution"
-          )$data
+        taxa$taxonKey,
+        ~rgbif::name_usage(key = ., data = "verbatim"),
+        .progress = "verbatim"
+      )
+    names(verbatim_info) <- taxa$taxonKey
+
+    distribution_extension_path <- "http://rs.gbif.org/terms/1.0/Distribution"
+
+    distributions <- purrr::imap(
+      verbatim_info,
+      function(x, i) {
+        if (!distribution_extension_path %in% names(x$data$extensions)) {
+          return(NULL)
         }
-      ) |>
+        x$data$extensions[[distribution_extension_path]] |>
+          # Make a data.frame for each taxon
+          purrr::map(function(x) {
+            dplyr::as_tibble(x) |>
+              # Rename all columns by taking the characters after the very last backslash
+              dplyr::rename_with(~ sub(".*\\/", "", .x))
+          }) |>
+          # Bind all rows together
+          purrr::list_rbind() |>
+          # Add taxon key as a new column `taxonKey`
+          dplyr::mutate(taxonKey = as.integer(i)) |>
+          # Relocate `taxonKey` to first column
+          dplyr::relocate(taxonKey)
+      }
+    ) |>
       purrr::list_rbind()
   })
   if (length(distributions) == 0) {
