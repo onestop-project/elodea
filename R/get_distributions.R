@@ -101,8 +101,8 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
         distributions |>
         dplyr::rename(countryCode = "country")
     }
-    distributions <-
-      distributions |>
+
+    distributions |>
       dplyr::left_join(invasiveness, by = "taxonKey") |>
       mutate_when_missing(occurrenceStatus = "present") |>
       mutate_when_missing(establishmentMeans = NA_character_) |>
@@ -130,8 +130,13 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
           tolower
         )
       ) |>
+      # Remove unwanted duplicated rows with pathway = NA when there are other
+      # rows with the same taxonKey and countryCode but with a non-NA pathway
+      dplyr::group_by(across(-pathway)) |>
+      dplyr::filter(
+        !(dplyr::n() > 1 & is.na(pathway) & any(!is.na(pathway)))
+        ) |>
+      dplyr::ungroup() |>
       dplyr::as_tibble()
-
-    return(distributions)
   }
 }
