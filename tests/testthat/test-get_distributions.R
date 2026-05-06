@@ -1,8 +1,8 @@
 test_that("get_distributions() returns correct distributions data frame", {
   skip_if_offline()
-  vcr::local_cassette("distributions_fishes")
+  vcr::local_cassette("distributions-ants")
 
-  distributions <- get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
+  distributions <- get_distributions("32afaa9d-a27f-4885-b30c-ce08c34e1efb")
 
   # The returned output is of type list
   expect_type(distributions, "list")

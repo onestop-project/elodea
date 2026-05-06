@@ -1,69 +1,254 @@
 taxonKey,countryCode,occurrenceStatus,establishmentMeans,degreeOfEstablishment,pathway,eventDate,source
-141117231,BE,present,introduced,cultivated,,1980/2008,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117231,BE,present,introduced,cultivated,aquaculturemariculture,1980/2008,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117232,BE,present,introduced,invasive,,1201/2023,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117232,BE,present,introduced,invasive,aquaculturemariculture,1201/2023,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117233,BE,present,introduced,invasive,ballastwater,2012/2024,VIS
-141117233,BE,present,introduced,invasive,waterwaysbasinsseas,2012/2024,VIS
-141117234,BE,present,introduced,casual,aquaculturemariculture,2001/2019,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117234,BE,present,introduced,casual,pet,2001/2019,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117235,BE,present,introduced,casual,,1975/2020,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117235,BE,present,introduced,casual,biologicalcontrol,1975/2020,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117236,BE,present,introduced,widespreadinvasive,aquaculturemariculture,1601/2023,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117236,BE,present,introduced,widespreadinvasive,othertransport,1601/2023,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117237,BE,present,introduced,colonising,livefoodlivebait,1984/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x | https://doi.org/10.1080/14634988.2019.1685849
-141117237,BE,present,introduced,colonising,pet,1984/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x | https://doi.org/10.1080/14634988.2019.1685849
-141117238,BE,present,introduced,colonising,,1984/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117238,BE,present,introduced,colonising,fisheryinthewild,1984/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117240,BE,present,introduced,casual,,1601/2009,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117240,BE,present,introduced,casual,pet,1601/2009,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117241,BE,present,introduced,established,ballastwater,2015/2024,VIS
-141117241,BE,present,introduced,established,waterwaysbasinsseas,2015/2024,VIS
-141117242,BE,present,introduced,invasive,aquaculturemariculture,1890/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117242,BE,present,introduced,invasive,fisheryinthewild,1890/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117243,BE,present,introduced,invasive,,1885/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117243,BE,present,introduced,invasive,pet,1885/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117244,BE,present,introduced,invasive,aquaculturemariculture,1871/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117244,BE,present,introduced,invasive,fisheryinthewild,1871/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117245,BE,present,introduced,casual,,1884/2015,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117245,BE,present,introduced,casual,aquaculturemariculture,1884/2015,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117246,BE,present,introduced,casual,fisheryinthewild,2016/2016,
-141117246,BE,present,introduced,casual,othertransport,2016/2016,
-141117247,BE,present,introduced,widespreadinvasive,ballastwater,2010/2024,http://dx.doi.org/10.3391/ai.2014.9.3.06
-141117247,BE,present,introduced,widespreadinvasive,waterwaysbasinsseas,2010/2024,http://dx.doi.org/10.3391/ai.2014.9.3.06
-141117248,BE,present,introduced,failing,aquaculturemariculture,1884/2001,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117248,BE,present,introduced,failing,fisheryinthewild,1884/2001,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117249,BE,present,introduced,casual,,1975/,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117249,BE,present,introduced,casual,biologicalcontrol,1975/,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117250,BE,present,introduced,casual,aquaculturemariculture,2005/,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117250,BE,present,introduced,casual,pet,2005/,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117251,BE,present,introduced,cultivated,,1990/1990,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117251,BE,present,introduced,cultivated,aquaculturemariculture,1990/1990,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117252,BE,present,introduced,widespreadinvasive,livefoodlivebait,1992/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117252,BE,present,introduced,widespreadinvasive,othertransport,1992/2024,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117253,BE,present,introduced,invasive,aquaculturemariculture,1920/2024,DOI 10.3391/ai.2010.5.1
-141117253,BE,present,introduced,invasive,livefoodlivebait,1920/2024,DOI 10.3391/ai.2010.5.1
-141117254,BE,present,introduced,casual,,1967/2013,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117254,BE,present,introduced,casual,biologicalcontrol,1967/2013,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117255,BE,present,introduced,casual,aquaculturemariculture,2000/,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-141117255,BE,present,introduced,casual,pet,2000/,https://doi.org/10.1111/j.1095-8649.2007.01679.x
-143611964,BE,present,introduced,invasive,ballastwater,2010/2024,http://dx.doi.org/10.3391/ai.2014.9.3.06
-143611964,BE,present,introduced,invasive,waterwaysbasinsseas,2010/2024,http://dx.doi.org/10.3391/ai.2014.9.3.06
-236182319,BE,present,introduced,established,aquaculturemariculture,1880/2024,
-236182319,BE,present,introduced,established,fisheryinthewild,1880/2024,
-236182325,BE,present,introduced,failing,,2016/2016,https://doi.org/10.1016/j.ecss.2016.12.025
-236182325,BE,present,introduced,failing,ballastwater,2016/2016,https://doi.org/10.1016/j.ecss.2016.12.025
-236182330,BE,present,introduced,failing,,2018/2018,https://doi.org/10.1016/j.ecss.2019.04.028
-236182330,BE,present,introduced,failing,ballastwater,2018/2018,https://doi.org/10.1016/j.ecss.2019.04.028
-236182333,BE,present,introduced,failing,,1998/2005,https://doi.org/10.1111/j.1095-8649.2004.00369.x
-236182333,BE,present,introduced,failing,ballastwater,1998/2005,https://doi.org/10.1111/j.1095-8649.2004.00369.x
-236182338,BE,present,introduced,established,ballastwater,2024/2024,VIS
-236182338,BE,present,introduced,established,waterwaysbasinsseas,2024/2024,VIS
-236182341,BE,present,introduced,reproducing,,2018/2021,https://doi.org/10.3750/AIEP/02688
-236182341,BE,present,introduced,reproducing,ballastwater,2018/2021,https://doi.org/10.3750/AIEP/02688
-236182345,BE,present,introduced,invasive,,2022/2024,https://doi.org/10.1111/jfb.15362
-236182345,BE,present,introduced,invasive,ballastwater,2022/2024,https://doi.org/10.1111/jfb.15362
-236182352,BE,present,introduced,reproducing,,2020/2020,
-236182352,BE,present,introduced,reproducing,fisheryinthewild,2020/2020,
-236182361,BE,present,introduced,colonising,otherintentionalrelease,2019/2024,Brys et al. (2020) Oriental Weather Loach: a new invasive fish species in Flanders that remains no longer invisible via its eDNA. Natuur.focus 19(2): 70-74 [in Dutch].
-236182361,BE,present,introduced,colonising,pet,2019/2024,Brys et al. (2020) Oriental Weather Loach: a new invasive fish species in Flanders that remains no longer invisible via its eDNA. Natuur.focus 19(2): 70-74 [in Dutch].
+221054829,BE,present,native,native,,1938/2020,FORMIDABEL Databank
+221054831,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054831,BE,present,native,native,,1915/2023,FORMIDABEL Databank
+221054831,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054833,BE,present,native,native,,2017/2017,FORMIDABEL Databank
+221054833,BE,present,native,native,,1942/2023,FORMIDABEL Databank
+221054835,BE,present,native,native,,2005/2023,FORMIDABEL Databank
+221054835,BE,present,native,native,,1977/2023,FORMIDABEL Databank
+221054835,BE,present,native,native,,1905/2023,FORMIDABEL Databank
+221054837,BE,present,introduced,failing,,1920/1920,"https://www.gbif.org/occurrence/3025815716 | https://ants.biology.utah.edu/genera/Pheidole/species/anastasii/anastasii.html | Boer, P., Vierbergen, B., 2008. Exotic ants in The Netherlands"
+221054837,BE,present,introduced,failing,,1933/1933,"https://www.gbif.org/occurrence/3025815716 | https://ants.biology.utah.edu/genera/Pheidole/species/anastasii/anastasii.html | Boer, P., Vierbergen, B., 2008. Exotic ants in The Netherlands"
+221054838,BE,present,introduced,failing,,1911/1911,"https://www.antweb.org/description.do?genus=pheidole&species=bilimeki&rank=species&project=allantwebants | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165335&cat=162 | Sarnat, E. M. et al., 2015. Introduced Pheidole of the world: taxonomy, biology and distribution. ZooKeys (543): 1–109. | https://hal.archives-ouvertes.fr/hal-02109530/document"
+221054839,BE,present,native,native,,1943/2022,FORMIDABEL Databank
+221054839,BE,doubtful,native,native,,1918/1918,FORMIDABEL Databank
+221054840,BE,present,native,native,,2000/2023,FORMIDABEL Databank
+221054841,BE,present,native,native,,1908/2023,FORMIDABEL Databank
+221054841,BE,present,native,native,,1912/2023,FORMIDABEL Databank
+221054841,BE,present,native,native,,1912/2023,FORMIDABEL Databank
+221054842,BE,present,native,native,,2000/2022,FORMIDABEL Databank
+221054842,BE,present,native,native,,1905/2022,"Wegnez P, De Greef S, Degache S, Ignace D & Dekoninck W, 2011. Observations récentes de la fourmi Formicoxenus nitidulus (Nylander, 1846) en Belgique et en France (Hyménoptère Formicidae). Bulletin S.R.B.E./K.B.V.E., 147: 20-27."
+221054843,BE,present,native,native,,1872/2023,FORMIDABEL Databank
+221054843,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054843,BE,present,native,native,,1870/2023,FORMIDABEL Databank
+221054845,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054846,BE,present,native,native,,1874/2023,FORMIDABEL Databank
+221054846,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054846,BE,present,native,native,,1876/2023,FORMIDABEL Databank
+221054847,BE,present,native,native,,1976/2023,FORMIDABEL Databank
+221054848,BE,present,native,native,,2005/2005,FORMIDABEL Databank
+221054848,BE,present,native,native,,1987/2023,FORMIDABEL Databank
+221054848,BE,present,native,native,,2013/2013,FORMIDABEL Databank
+221054849,BE,present,native,native,,1915/2023,FORMIDABEL Databank
+221054849,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054849,BE,present,native,native,,1900/2023,FORMIDABEL Databank
+221054850,BE,present,native,native,,1973/1973,FORMIDABEL Databank
+221054850,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054850,BE,present,native,native,,1878/2023,FORMIDABEL Databank
+221054851,BE,present,native,native,,1937/2023,FORMIDABEL Databank
+221054852,BE,present,native,native,,2001/2012,FORMIDABEL Databank
+221054853,BE,present,native,native,,1987/2023,FORMIDABEL Databank
+221054853,BE,present,native,native,,1982/2023,FORMIDABEL Databank
+221054855,BE,present,introduced,casual,contaminantnursery,1909/1910,FORMIDABEL Databank
+221054855,BE,present,introduced,casual,contaminantonplants,1909/1910,FORMIDABEL Databank
+221054855,BE,present,introduced,casual,publicgardenzooaquaria,1909/1910,FORMIDABEL Databank
+221054855,BE,present,introduced,casual,transportationhabitatmaterial,1909/1910,FORMIDABEL Databank
+221054855,BE,present,introduced,casual,contaminantnursery,2003/2023,"Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | https://waarnemingen.be/observation/230387619/ | http://www.formicidae.be/linehumi.htm | Boer P., Brooks M., 2009. Succesvolle buitenshuis vestigingen van de Argentijnse mier"
+221054855,BE,present,introduced,casual,contaminantonplants,2003/2023,"Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | https://waarnemingen.be/observation/230387619/ | http://www.formicidae.be/linehumi.htm | Boer P., Brooks M., 2009. Succesvolle buitenshuis vestigingen van de Argentijnse mier"
+221054855,BE,present,introduced,casual,publicgardenzooaquaria,2003/2023,"Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | https://waarnemingen.be/observation/230387619/ | http://www.formicidae.be/linehumi.htm | Boer P., Brooks M., 2009. Succesvolle buitenshuis vestigingen van de Argentijnse mier"
+221054855,BE,present,introduced,casual,transportationhabitatmaterial,2003/2023,"Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | https://waarnemingen.be/observation/230387619/ | http://www.formicidae.be/linehumi.htm | Boer P., Brooks M., 2009. Succesvolle buitenshuis vestigingen van de Argentijnse mier"
+221054856,BE,present,native,native,,1912/2023,FORMIDABEL Databank
+221054858,BE,present,introduced,casual,othertransport,2022/2023,"Dekoninck W, De Ketelaere A, Vandenberghe M & Vankerkhoven F, 2022. First outdoor record of Crematogaster scutellaris in Belgium (Hymenoptera: Formicidae). Bulletin SRBE/KBVE, 158: 175-182"
+221054860,BE,present,introduced,failing,,2003/2003,"Dekoninck W, Hendrickx F, Dethier M, & Maelfait J-P, 2010. Spontaneous afforestation endangers the special ant fauna of abandoned quarries along the river Meuse (Wallonia, Belgium). Restoration Ecology, 18(5): 681-690. | Boer, P., 2015. Mieren van de Benelux. | Dekoninck, W., Maelfait, J-P., Vankerkhoven, F., Baugnée, J-Y., and Grootaert, P., 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | http://www.formicidae.be/tetralla.htm | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054861,BE,present,native,native,,1895/2023,FORMIDABEL Databank
+221054861,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054861,BE,present,native,native,,1905/2023,FORMIDABEL Databank
+221054862,BE,absent,native,native,,1918/1918,FORMIDABEL Databank
+221054863,BE,present,native,native,,1879/2005,FORMIDABEL Databank
+221054863,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054863,BE,present,native,native,,1874/2023,FORMIDABEL Databank
+221054864,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054864,BE,present,native,native,,1973/2023,FORMIDABEL Databank
+221054864,BE,present,native,native,,1905/2023,FORMIDABEL Databank
+221054865,BE,present,native,native,,1922/2023,FORMIDABEL Databank
+221054865,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054866,BE,present,native,native,,1985/2023,FORMIDABEL Databank
+221054867,BE,present,native,native,,1908/2023,FORMIDABEL Databank
+221054867,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054867,BE,present,native,native,,1920/2023,FORMIDABEL Databank
+221054868,BE,present,native,native,,1964/2011,FORMIDABEL Databank
+221054870,BE,present,introduced,invasive,contaminantnursery,1978/2023,"Dekoninck, W, Lock, K, and Janssens, F., 2007. Eur. J. Entomol. 104, 159-161. | Dekoninck W, De Baere C, Mertens J & Maelfait J-P, 2002. On the arrival of the Asian invader ant Lasius neglectus in Belgium (Hymenoptera: Formicidae). Bulletin S.R.B.E./K.B.V.E., 138: 45-48. | https://www.vrt.be/vrtnws/nl/2018/11/22/al-19-hectare-gents-grondgebied-ondergraven-door-de-plaagmier/ | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | Boer, P., 2015. Mieren van de Benelux. | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165245&cat=162 | http://www.formicidae-atlas.be/ | Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | https://hal.archives-ouvertes.fr/hal-02109530/document"
+221054870,BE,present,introduced,invasive,contaminantonplants,1978/2023,"Dekoninck, W, Lock, K, and Janssens, F., 2007. Eur. J. Entomol. 104, 159-161. | Dekoninck W, De Baere C, Mertens J & Maelfait J-P, 2002. On the arrival of the Asian invader ant Lasius neglectus in Belgium (Hymenoptera: Formicidae). Bulletin S.R.B.E./K.B.V.E., 138: 45-48. | https://www.vrt.be/vrtnws/nl/2018/11/22/al-19-hectare-gents-grondgebied-ondergraven-door-de-plaagmier/ | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | Boer, P., 2015. Mieren van de Benelux. | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165245&cat=162 | http://www.formicidae-atlas.be/ | Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | https://hal.archives-ouvertes.fr/hal-02109530/document"
+221054870,BE,present,introduced,invasive,transportationhabitatmaterial,1978/2023,"Dekoninck, W, Lock, K, and Janssens, F., 2007. Eur. J. Entomol. 104, 159-161. | Dekoninck W, De Baere C, Mertens J & Maelfait J-P, 2002. On the arrival of the Asian invader ant Lasius neglectus in Belgium (Hymenoptera: Formicidae). Bulletin S.R.B.E./K.B.V.E., 138: 45-48. | https://www.vrt.be/vrtnws/nl/2018/11/22/al-19-hectare-gents-grondgebied-ondergraven-door-de-plaagmier/ | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | Boer, P., 2015. Mieren van de Benelux. | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165245&cat=162 | http://www.formicidae-atlas.be/ | Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | https://hal.archives-ouvertes.fr/hal-02109530/document"
+221054870,BE,present,introduced,invasive,contaminantnursery,2008/2023,FORMIDABEL Databank
+221054870,BE,present,introduced,invasive,contaminantonplants,2008/2023,FORMIDABEL Databank
+221054870,BE,present,introduced,invasive,transportationhabitatmaterial,2008/2023,FORMIDABEL Databank
+221054871,BE,present,native,native,,1977/2023,FORMIDABEL Databank
+221054871,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054872,BE,present,native,native,,2015/2015,FORMIDABEL Databank
+221054872,BE,present,native,native,,1918/2023,FORMIDABEL Databank
+221054872,BE,present,native,native,,2008/2008,FORMIDABEL Databank
+221054873,BE,present,native,native,,1911/2023,FORMIDABEL Databank
+221054873,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054873,BE,present,native,native,,1912/2023,FORMIDABEL Databank
+221054874,BE,present,native,native,,1833/2023,FORMIDABEL Databank
+221054874,BE,present,native,native,,1883/2023,FORMIDABEL Databank
+221054874,BE,present,native,native,,1870/2023,FORMIDABEL Databank
+221054875,BE,present,native,native,,2011/2020,"Stevens I, Vankerkhoven F, Vanormelingen P & Dekoninck W, 2020. New observations of the social parasitic ant Myrmica karavajevi (Arnoldi, 1930) in Belgium (Formicidae, Hymenoptera). Bulletin S.R.B.E./K.B.V.E., 156: 113-121."
+221054875,BE,doubtful,native,native,,1951/1951,FORMIDABEL Databank
+221054876,BE,absent,native,native,,1918/1918,FORMIDABEL Databank
+221054877,BE,present,native,native,,1987/2023,FORMIDABEL Databank
+221054877,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054878,BE,present,native,native,,1997/2023,FORMIDABEL Databank
+221054879,BE,present,native,native,,1987/2023,FORMIDABEL Databank
+221054879,BE,present,native,native,,1920/2023,FORMIDABEL Databank
+221054880,BE,present,native,native,,2009/2009,FORMIDABEL Databank
+221054880,BE,present,native,native,,1987/2023,FORMIDABEL Databank
+221054880,BE,present,native,native,,1920/2011,FORMIDABEL Databank
+221054881,BE,present,native,native,,1908/2023,FORMIDABEL Databank
+221054881,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054881,BE,present,native,native,,1896/2023,FORMIDABEL Databank
+221054882,BE,present,native,native,,1997/2023,FORMIDABEL Databank
+221054882,BE,present,native,native,,2004/2023,FORMIDABEL Databank
+221054883,BE,present,native,native,,1920/2023,FORMIDABEL Databank
+221054883,BE,present,native,native,,1920/2023,FORMIDABEL Databank
+221054883,BE,present,native,native,,1905/2023,FORMIDABEL Databank
+221054884,BE,absent,native,native,,1918/1918,FORMIDABEL Databank
+221054885,BE,present,native,native,,1949/2023,FORMIDABEL Databank
+221054886,BE,present,native,native,,1884/2023,FORMIDABEL Databank
+221054886,BE,present,native,native,,1867/2023,FORMIDABEL Databank
+221054886,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054887,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054887,BE,present,native,native,,1928/2023,FORMIDABEL Databank
+221054887,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054889,BE,present,introduced,established,contaminantnursery,1994/2023,FORMIDABEL Databank
+221054889,BE,present,introduced,established,naturaldispersal,1994/2023,FORMIDABEL Databank
+221054889,BE,present,introduced,established,othertransport,1994/2023,FORMIDABEL Databank
+221054889,BE,present,introduced,established,contaminantnursery,1918/2023,"www.formicidae.be/hypopunc.htm | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | Boer P., Blommaart J., Huijbregts H., van Nunen F., and Vorst O., 2006. De compostmier Hypoponera punctatissima in het vrije veld. Entomologische Berichten Amsterdam 66(2), 56-57. | waarnemingen.be/observation/203905484/ | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | Loneux, M., Walravens, E., 2002. Présence de fourmis Hypoponera punctatissima en Belgique, Bulletin S.R.B.E. 72, 189-191. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054889,BE,present,introduced,established,naturaldispersal,1918/2023,"www.formicidae.be/hypopunc.htm | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | Boer P., Blommaart J., Huijbregts H., van Nunen F., and Vorst O., 2006. De compostmier Hypoponera punctatissima in het vrije veld. Entomologische Berichten Amsterdam 66(2), 56-57. | waarnemingen.be/observation/203905484/ | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | Loneux, M., Walravens, E., 2002. Présence de fourmis Hypoponera punctatissima en Belgique, Bulletin S.R.B.E. 72, 189-191. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054889,BE,present,introduced,established,othertransport,1918/2023,"www.formicidae.be/hypopunc.htm | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | Boer P., Blommaart J., Huijbregts H., van Nunen F., and Vorst O., 2006. De compostmier Hypoponera punctatissima in het vrije veld. Entomologische Berichten Amsterdam 66(2), 56-57. | waarnemingen.be/observation/203905484/ | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | Loneux, M., Walravens, E., 2002. Présence de fourmis Hypoponera punctatissima en Belgique, Bulletin S.R.B.E. 72, 189-191. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054889,BE,present,introduced,established,publicgardenzooaquaria,1918/2023,"www.formicidae.be/hypopunc.htm | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | Boer P., Blommaart J., Huijbregts H., van Nunen F., and Vorst O., 2006. De compostmier Hypoponera punctatissima in het vrije veld. Entomologische Berichten Amsterdam 66(2), 56-57. | waarnemingen.be/observation/203905484/ | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the checklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | Loneux, M., Walravens, E., 2002. Présence de fourmis Hypoponera punctatissima en Belgique, Bulletin S.R.B.E. 72, 189-191. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054889,BE,present,introduced,established,contaminantnursery,1905/2023,FORMIDABEL Databank
+221054889,BE,present,introduced,established,naturaldispersal,1905/2023,FORMIDABEL Databank
+221054889,BE,present,introduced,established,othertransport,1905/2023,FORMIDABEL Databank
+221054889,BE,present,introduced,established,publicgardenzooaquaria,1905/2023,FORMIDABEL Databank
+221054891,BE,present,introduced,casual,contaminantnursery,2020/2021,"VAN DIJCK T, JACOBS, J, ARTOIS T, DEKONINCK W & VANKERKHOVEN F, 2023. Hypoponera eduardi (Forel, 1894) (Hymenoptera: Formicidae) on extensive green roofs in the Province of Antwerp: a new species for the Belgian ant fauna. Bulletin SRBE/KBVE, 158: 225-231."
+221054891,BE,present,introduced,casual,othertransport,2020/2021,"VAN DIJCK T, JACOBS, J, ARTOIS T, DEKONINCK W & VANKERKHOVEN F, 2023. Hypoponera eduardi (Forel, 1894) (Hymenoptera: Formicidae) on extensive green roofs in the Province of Antwerp: a new species for the Belgian ant fauna. Bulletin SRBE/KBVE, 158: 225-231."
+221054892,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054892,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054892,BE,present,native,native,,1874/2023,FORMIDABEL Databank
+221054894,BE,present,native,native,,1958/2022,"Vankerkhoven F & Dekoninck W, 2022. The socially parasitic ants of the Tetramorium caespitum/impurum complex: an overview of the observations in Belgium (Hymenoptera: Formicidae). Bulletin SRBE/KBVE, 158: 68-78."
+221054894,BE,present,native,native,,1974/2022,"Vankerkhoven F & Dekoninck W, 2022. The socially parasitic ants of the Tetramorium caespitum/impurum complex: an overview of the observations in Belgium (Hymenoptera: Formicidae). Bulletin SRBE/KBVE, 158: 68-78."
+221054895,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054896,BE,present,native,native,,1977/2023,FORMIDABEL Databank
+221054896,BE,doubtful,native,native,,1910/1910,FORMIDABEL Databank
+221054897,BE,present,native,native,,2007/2008,"Dekoninck W, Wegnez P & Cournault L, 2009. A list of ant species collected in the surrounding area of Rocher Frédericq (Hockai) with the first record of Leptothorax gredleri Mayr, 1855 for Belgium. Bulletin S.R.B.E./K.B.V.E., 145: 22-24."
+221054899,BE,present,native,native,,1912/2023,"Dekoninck W, Verdin A, Verdin L, Vankerkhoven F, 2024. Rediscovery of Camponotus herculeanus (Linnaeus, 1758) in Belgium after 85 years (Hymenoptera, Formicidae). Bulletin SRBE/KBVE, 160: x-y"
+221054900,BE,present,native,native,,1881/2023,FORMIDABEL Databank
+221054901,BE,present,native,native,,1998/2012,FORMIDABEL Databank
+221054902,BE,present,introduced,casual,contaminantnursery,1998/2023,"Dekoninck, W., Pauly, A., 2002. Camponotus vagus Scopoli, 1763 (Hymenoptera Formicidae) a new ant species for Belgium? Bulletin de la Société royale belge d'Entomologie; 138:29-30. | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België."
+221054902,BE,present,introduced,casual,timbertrade,1998/2023,"Dekoninck, W., Pauly, A., 2002. Camponotus vagus Scopoli, 1763 (Hymenoptera Formicidae) a new ant species for Belgium? Bulletin de la Société royale belge d'Entomologie; 138:29-30. | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België."
+221054902,BE,present,introduced,casual,transportationhabitatmaterial,1998/2023,"Dekoninck, W., Pauly, A., 2002. Camponotus vagus Scopoli, 1763 (Hymenoptera Formicidae) a new ant species for Belgium? Bulletin de la Société royale belge d'Entomologie; 138:29-30. | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België."
+221054903,BE,present,native,native,,1977/1987,FORMIDABEL Databank
+221054903,BE,present,native,native,,1918/1918,FORMIDABEL Databank
+221054904,BE,present,native,native,,2004/2022,FORMIDABEL Databank
+221054904,BE,present,native,native,,1881/2023,FORMIDABEL Databank
+221054905,BE,present,native,native,,2006/2006,FORMIDABEL Databank
+221054906,BE,present,native,native,,1987/2017,FORMIDABEL Databank
+221054906,BE,present,native,native,,1910/2010,FORMIDABEL Databank
+221054908,BE,absent,native,native,,1910/1910,FORMIDABEL Databank
+221054908,BE,absent,native,native,,1899/1918,FORMIDABEL Databank
+221054910,BE,present,introduced,established,contaminantnursery,2009/2023,"Dekoninck, W., Ignace, D. & Wegnez, P., 2010. Records of a new pest ant species in Belgium, Technomyrmex vitiensis Mann, 1921. Bulletin S.R.B.E./K.B.V.E., 146: 83-90. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165355&cat=162 | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054910,BE,present,introduced,established,contaminantonplants,2009/2023,"Dekoninck, W., Ignace, D. & Wegnez, P., 2010. Records of a new pest ant species in Belgium, Technomyrmex vitiensis Mann, 1921. Bulletin S.R.B.E./K.B.V.E., 146: 83-90. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165355&cat=162 | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054910,BE,present,introduced,established,transportationhabitatmaterial,2009/2023,"Dekoninck, W., Ignace, D. & Wegnez, P., 2010. Records of a new pest ant species in Belgium, Technomyrmex vitiensis Mann, 1921. Bulletin S.R.B.E./K.B.V.E., 146: 83-90. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165355&cat=162 | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054910,BE,present,introduced,established,contaminantnursery,2008/2023,"Dekoninck, W., Ignace, D. & Wegnez, P., 2010. Records of a new pest ant species in Belgium, Technomyrmex vitiensis Mann, 1921. Bulletin S.R.B.E./K.B.V.E., 146: 83-90. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165355&cat=162 | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054910,BE,present,introduced,established,contaminantonplants,2008/2023,"Dekoninck, W., Ignace, D. & Wegnez, P., 2010. Records of a new pest ant species in Belgium, Technomyrmex vitiensis Mann, 1921. Bulletin S.R.B.E./K.B.V.E., 146: 83-90. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165355&cat=162 | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054910,BE,present,introduced,established,transportationhabitatmaterial,2008/2023,"Dekoninck, W., Ignace, D. & Wegnez, P., 2010. Records of a new pest ant species in Belgium, Technomyrmex vitiensis Mann, 1921. Bulletin S.R.B.E./K.B.V.E., 146: 83-90. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165355&cat=162 | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054911,BE,absent,native,native,,1910/1920,FORMIDABEL Databank
+221054912,BE,present,native,native,,2011/2023,"DEKONINCK W, WEGNEZ P & VANKERKHOVEN F, 2022. First records for Belgium of the ant species Myrmica vandeli Bondroit, 1920 (Hymenoptera: Formicidae). Bulletin SRBE/KBVE, 158: 19-24."
+221054913,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054913,BE,present,native,native,,1917/2023,FORMIDABEL Databank
+221054913,BE,present,native,native,,1896/2023,FORMIDABEL Databank
+221054914,BE,absent,native,native,,1918/1918,FORMIDABEL Databank
+221054915,BE,present,native,native,,2001/2011,FORMIDABEL Databank
+221054915,BE,present,native,native,,2002/2011,FORMIDABEL Databank
+221054916,BE,present,native,native,,2009/2009,FORMIDABEL Databank
+221054917,BE,present,native,native,,1905/2023,FORMIDABEL Databank
+221054919,BE,present,introduced,invasive,contaminantnursery,2014/2023,"Dekoninck, W., Parmentier, T. & Seifert, B., 2016. First records of a supercolonial species of the Tapinoma nigerrimumcomplex in Belgium (Hymenoptera : Formicidae).Bulletin S.R.B.E./K.B.V.E, 151: 206-209. | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=180539&cat=162 | Noordijk, J., 2016. Leefwijze van Tapinoma nigerrimum (Hymenoptera: Formicidae), een nieuwe exotische mier in Nederland. entomologische berichten 76 (3). | FORMIDABEL Databank"
+221054919,BE,present,introduced,invasive,contaminantonplants,2014/2023,"Dekoninck, W., Parmentier, T. & Seifert, B., 2016. First records of a supercolonial species of the Tapinoma nigerrimumcomplex in Belgium (Hymenoptera : Formicidae).Bulletin S.R.B.E./K.B.V.E, 151: 206-209. | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=180539&cat=162 | Noordijk, J., 2016. Leefwijze van Tapinoma nigerrimum (Hymenoptera: Formicidae), een nieuwe exotische mier in Nederland. entomologische berichten 76 (3). | FORMIDABEL Databank"
+221054919,BE,present,introduced,invasive,transportationhabitatmaterial,2014/2023,"Dekoninck, W., Parmentier, T. & Seifert, B., 2016. First records of a supercolonial species of the Tapinoma nigerrimumcomplex in Belgium (Hymenoptera : Formicidae).Bulletin S.R.B.E./K.B.V.E, 151: 206-209. | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=180539&cat=162 | Noordijk, J., 2016. Leefwijze van Tapinoma nigerrimum (Hymenoptera: Formicidae), een nieuwe exotische mier in Nederland. entomologische berichten 76 (3). | FORMIDABEL Databank"
+221054920,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054920,BE,present,native,native,,1949/2023,FORMIDABEL Databank
+221054920,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054922,BE,present,introduced,casual,contaminantnursery,2010/2022,"Dekoninck W. & Brouckaert D., 2011. Paratrechina longicornis an introduced ant in a subtropicaswimming pool infrastructure in Belgium. Bulletin S.R.B.E./K.B.V.E., 147: 99-101. | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165297 | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054922,BE,present,introduced,casual,contaminantonplants,2010/2022,"Dekoninck W. & Brouckaert D., 2011. Paratrechina longicornis an introduced ant in a subtropicaswimming pool infrastructure in Belgium. Bulletin S.R.B.E./K.B.V.E., 147: 99-101. | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165297 | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054922,BE,present,introduced,casual,transportationhabitatmaterial,2010/2022,"Dekoninck W. & Brouckaert D., 2011. Paratrechina longicornis an introduced ant in a subtropicaswimming pool infrastructure in Belgium. Bulletin S.R.B.E./K.B.V.E., 147: 99-101. | Dekoninck W., Ignace D., Vankerkhoven F., Wegnez P., 2012. Verspreidingsatlas van de mieren in België. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165297 | https://hal.archives-ouvertes.fr/hal-02109530/document | FORMIDABEL Databank"
+221054923,BE,present,native,native,,2009/2009,FORMIDABEL Databank
+221054923,BE,present,native,native,,1977/2023,FORMIDABEL Databank
+221054923,BE,present,native,native,,1867/2023,FORMIDABEL Databank
+221054924,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054924,BE,present,native,native,,1950/2023,FORMIDABEL Databank
+221054924,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054925,BE,present,native,native,,1964/2023,FORMIDABEL Databank
+221054925,BE,present,native,native,,1964/2023,FORMIDABEL Databank
+221054926,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054926,BE,present,native,native,,1871/2023,FORMIDABEL Databank
+221054927,BE,doubtful,native,native,,1966/1966,FORMIDABEL Databank
+221054927,BE,present,native,native,,1939/2023,FORMIDABEL Databank
+221054927,BE,present,native,native,,1877/2023,FORMIDABEL Databank
+221054929,BE,present,introduced,casual,contaminantonplants,2007/2007,"Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | Boer, P., Noordwijk, J., Brooks, M., van Loon, A. 2017. Invasieve mieren vragen een gecoördineerde aanpak. De levende natuur 134-135. | FORMIDABEL Databank"
+221054930,BE,present,native,native,,2011/2011,FORMIDABEL Databank
+221054930,BE,present,native,native,,1899/2023,FORMIDABEL Databank
+221054931,BE,present,native,native,,1870/2023,FORMIDABEL Databank
+221054931,BE,present,native,native,,1866/2023,FORMIDABEL Databank
+221054931,BE,present,native,native,,1877/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,containerbulk,1869/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,foodcontaminant,1869/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,people,1869/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,transportationhabitatmaterial,1869/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,containerbulk,1937/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,foodcontaminant,1937/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,hitchhikersairplane,1937/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,hitchhikersship,1937/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,machineryequipment,1937/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,people,1937/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,transportationhabitatmaterial,1937/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,containerbulk,1964/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,foodcontaminant,1964/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,hitchhikersairplane,1964/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,hitchhikersship,1964/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,machineryequipment,1964/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,people,1964/2023,FORMIDABEL Databank
+221054933,BE,present,introduced,established,transportationhabitatmaterial,1964/2023,FORMIDABEL Databank
+221054934,BE,present,native,native,,2007/2023,FORMIDABEL Databank
+221054934,BE,present,native,native,,1939/2023,FORMIDABEL Databank
+221054934,BE,present,native,native,,1881/2023,FORMIDABEL Databank
+221054935,BE,absent,native,native,,1920/1920,FORMIDABEL Databank
+221054936,BE,doubtful,native,native,,1977/1977,FORMIDABEL Databank
+221054937,BE,present,native,native,,2007/2020,"Vankerkhoven F, Evens J & Dekoninck W, 2008. First observation of Myrmica gallienii, Bondroit 1920 for Belgium (Hymenoptera, Formicidae). Bulletin S.R.B.E./K.B.V.E., 144: 35-42."
+221054938,BE,present,native,native,,1945/2023,FORMIDABEL Databank
+221054938,BE,present,native,native,,1937/2023,FORMIDABEL Databank
+221054938,BE,present,native,native,,1905/2023,FORMIDABEL Databank
+221054939,BE,present,native,native,,1900/2023,FORMIDABEL Databank
+221054939,BE,present,native,native,,1878/2023,FORMIDABEL Databank
+221054940,BE,present,native,native,,1909/2023,FORMIDABEL Databank
+221054940,BE,present,native,native,,1881/2023,FORMIDABEL Databank
+221054940,BE,present,native,native,,1910/2023,FORMIDABEL Databank
+221054941,BE,present,native,native,,1987/1987,FORMIDABEL Databank
+221054941,BE,present,native,native,,1899/2023,FORMIDABEL Databank
+221054941,BE,present,native,native,,1870/2023,FORMIDABEL Databank
+221054942,BE,present,native,native,,1908/1972,FORMIDABEL Databank
+221054942,BE,present,native,native,,2001/2023,FORMIDABEL Databank
+221054942,BE,present,native,native,,1905/2023,FORMIDABEL Databank
+221234573,BE,present,introduced,established,,2022/2023,FORMIDABEL Databank
+221234574,BE,present,introduced,established,contaminantnursery,2011/2022,FORMIDABEL Databank
+221234574,BE,present,introduced,established,contaminantonplants,2011/2022,FORMIDABEL Databank
+221234574,BE,present,introduced,established,transportationhabitatmaterial,2011/2022,FORMIDABEL Databank
+221234574,BE,present,introduced,established,contaminantnursery,2005/2006,"Dekoninck, W., Wegnez, P., Espadaler, X. & Grootaert, P., 2006. First record of infestation of the ghost ant Tapinoma melanocephalum (Fabricius, 1793) in Belgium (Hymenoptera, Formicidae) – a new indoor pest problem for the country? Bulletin S.R.B.E./K.B.V.E., 142: 25-28. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165266 | Boer, P., 2015. Mieren van de Benelux. | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | http://www.formicidae.be/tapimela.htm | https://hal.archives-ouvertes.fr/hal-02109530/document"
+221234574,BE,present,introduced,established,contaminantonplants,2005/2006,"Dekoninck, W., Wegnez, P., Espadaler, X. & Grootaert, P., 2006. First record of infestation of the ghost ant Tapinoma melanocephalum (Fabricius, 1793) in Belgium (Hymenoptera, Formicidae) – a new indoor pest problem for the country? Bulletin S.R.B.E./K.B.V.E., 142: 25-28. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165266 | Boer, P., 2015. Mieren van de Benelux. | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | http://www.formicidae.be/tapimela.htm | https://hal.archives-ouvertes.fr/hal-02109530/document"
+221234574,BE,present,introduced,established,transportationhabitatmaterial,2005/2006,"Dekoninck, W., Wegnez, P., Espadaler, X. & Grootaert, P., 2006. First record of infestation of the ghost ant Tapinoma melanocephalum (Fabricius, 1793) in Belgium (Hymenoptera, Formicidae) – a new indoor pest problem for the country? Bulletin S.R.B.E./K.B.V.E., 142: 25-28. | http://www.formicidae-atlas.be/ | https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=165266 | Boer, P., 2015. Mieren van de Benelux. | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | http://www.formicidae.be/tapimela.htm | https://hal.archives-ouvertes.fr/hal-02109530/document"
+221234579,BE,present,native,native,,2017/2018,"VANKERKHOVEN F, JACOBS M, CRÈVECOEUR L & DEKONINCK W, 2018. Camponotus fallax (Nylander, 1856), an expexted species finally discovered in Belgium (Hymenoptera: Formicidae). Bulletin SRBE/KBVE, 145(1): 27-30."
+221234596,BE,present,introduced,established,contaminantnursery,1920/2023,FORMIDABEL Databank
+221234596,BE,present,introduced,established,othertransport,1920/2023,FORMIDABEL Databank
+221234596,BE,present,introduced,established,contaminantnursery,1911/2023,"Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the clecklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41."
+221234596,BE,present,introduced,established,othertransport,1911/2023,"Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the clecklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41."
+221234596,BE,present,introduced,established,publicgardenzooaquaria,1911/2023,"Dekoninck, W, Maelfait, J-P, Vankerkhoven, F, Baugnée, J-Y, and Grootaert, P, 2006. An update of the clecklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41."
+221234596,BE,present,introduced,established,contaminantnursery,2005/2023,FORMIDABEL Databank
+221234596,BE,present,introduced,established,othertransport,2005/2023,FORMIDABEL Databank
+221234596,BE,present,introduced,established,publicgardenzooaquaria,2005/2023,FORMIDABEL Databank
+221234599,BE,present,introduced,established,contaminantnursery,2004/2023,"Dekoninck, W., Maelfait, J-P., Vankerkhoven, F., Baugnée, J-Y., and Grootaert, P., 2006. An update of the clecklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | Dekoninck W. & Brouckaert D., 2011. Paratrechina longicornis an introduced ant in a subtropicaswimming pool infrastructure in Belgium. Bulletin S.R.B.E./K.B.V.E., 147: 99-101. | FORMIDABEL Databank"
+221234599,BE,present,introduced,established,contaminantonplants,2004/2023,"Dekoninck, W., Maelfait, J-P., Vankerkhoven, F., Baugnée, J-Y., and Grootaert, P., 2006. An update of the clecklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | Dekoninck W. & Brouckaert D., 2011. Paratrechina longicornis an introduced ant in a subtropicaswimming pool infrastructure in Belgium. Bulletin S.R.B.E./K.B.V.E., 147: 99-101. | FORMIDABEL Databank"
+221234599,BE,present,introduced,established,transportationhabitatmaterial,2004/2023,"Dekoninck, W., Maelfait, J-P., Vankerkhoven, F., Baugnée, J-Y., and Grootaert, P., 2006. An update of the clecklist of the Belgian ant fauna with comments on new species for the country (Hymenoptera, Formicidae). Belgian Journal of Entomology 8, 27-41. | Boer, P., 2015. Mieren van de Benelux. | http://www.formicidae-atlas.be/ | Dekoninck, W., Ignace, D., Vankerkhoven, F., Wegnez, P., 2012. Verspreidingsatlas van de mieren in België. | https://hal.archives-ouvertes.fr/hal-02109530/document | Dekoninck W. & Brouckaert D., 2011. Paratrechina longicornis an introduced ant in a subtropicaswimming pool infrastructure in Belgium. Bulletin S.R.B.E./K.B.V.E., 147: 99-101. | FORMIDABEL Databank"
+221234604,BE,present,introduced,casual,contaminantonplants,2023/2023,"Noordijk J, 2023. Wijdverspreide vestiging in Nederland en eerste melding voor België van de gewone dikkop Pheidole pallidula (Hymenoptera: Formicidae). Forum Formicidarum 24(1)."
+221234604,BE,present,introduced,casual,horticulture,2023/2023,"Noordijk J, 2023. Wijdverspreide vestiging in Nederland en eerste melding voor België van de gewone dikkop Pheidole pallidula (Hymenoptera: Formicidae). Forum Formicidarum 24(1)."
