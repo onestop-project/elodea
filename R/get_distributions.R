@@ -58,15 +58,13 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
           # Make a data.frame for each taxon
           purrr::map(function(x) {
             dplyr::as_tibble(x) |>
-              # Rename all columns by taking the characters after the very last backslash
+              # Rename all columns by taking the characters after the very last
+              # backslash
               dplyr::rename_with(~ sub(".*\\/", "", .x))
           }) |>
-          # Bind all rows together
           purrr::list_rbind() |>
           # Add taxon key as a new column `taxonKey`
-          dplyr::mutate(taxonKey = as.integer(i)) |>
-          # Relocate `taxonKey` to first column
-          dplyr::relocate(taxonKey)
+          dplyr::mutate(taxonKey = as.integer(i))
       }
     ) |>
       purrr::list_rbind()
