@@ -29,8 +29,9 @@
 #' - [`acceptedTaxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic
 #' rank of the accepted taxon.
 #' @examples
-#' # Global Register of Introduced and Invasive Species - Cyprus
-#' get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
+#' # Global Register of Introduced and Invasive Species - Sovereign Base Areas
+#' # of Cyprus, Cyprus
+#' get_taxa("497fa25f-6a32-4a2a-8f42-d01d8a0b7c22")
 get_taxa <- function(datasetKey) {
   regex <- "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
   if (!grepl(regex, datasetKey)) {

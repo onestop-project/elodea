@@ -39,5 +39,4 @@ test_that("get_distributions() returns message when distributions are missing", 
     get_distributions(datasetKey),
     paste("No distributions found for dataset", datasetKey)
   )
-
 })

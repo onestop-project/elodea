@@ -43,8 +43,9 @@ rank of the accepted taxon.
 }
 
 \examples{
-# Global Register of Introduced and Invasive Species - Cyprus
-get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
+# Global Register of Introduced and Invasive Species - Sovereign Base Areas
+# of Cyprus, Cyprus
+get_taxa("497fa25f-6a32-4a2a-8f42-d01d8a0b7c22")
 }
 \seealso{
 Other download functions: 

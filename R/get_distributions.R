@@ -30,14 +30,8 @@
 #' - [`source`](http://purl.org/dc/terms/source): A related resource from which
 #' the described resource is derived.
 #' @examples
-#' # Cyprus
-#' distributions_CY <- get_distributions("2f7ea7d1-a73f-46f6-b790-7339126a999f")
-#' # Andorra
-#' distributions_AD <- get_distributions("016c16c3-d907-4c88-97dd-97ad62c8130e")
-#' \dontrun{
-#' # Belgium
-#' distributions_BE <- get_distributions("6d9e952f-948c-4483-9807-575348147c7e")
-#' }
+#' Checklist of non-native freshwater fishes in Flanders, Belgium
+#' get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
 get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   taxon_keys <- dplyr::pull(taxa, "taxonKey")
 

@@ -75,10 +75,12 @@ the taxon.
 }
 
 \examples{
-# Andorra
-datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
+\dontrun{
+# Updated checklist of the ants in Belgium
+datasetKey <- "32afaa9d-a27f-4885-b30c-ce08c34e1efb"
 taxa <- get_taxa(datasetKey)
 distributions <- get_distributions(datasetKey, taxa)
 filter_data(taxa, distributions, establishment_means = "introduced" )
+}
 }
 \concept{filter functions}
