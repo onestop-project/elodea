@@ -134,7 +134,6 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
       dplyr::filter(
         !(dplyr::n() > 1 & is.na(.data$pathway) & any(!is.na(.data$pathway)))
         ) |>
-      dplyr::ungroup() |>
-      dplyr::as_tibble()
+      dplyr::ungroup()
   }
 }
