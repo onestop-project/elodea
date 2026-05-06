@@ -119,7 +119,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
         "source"
       ) |>
       dplyr::mutate(
-        countryCode = toupper(.data$countryCode),
+        countryCode = substr(toupper(.data$countryCode), start = 1, stop = 2),
         dplyr::across(
           c(
             "occurrenceStatus", "establishmentMeans", "degreeOfEstablishment",
@@ -133,7 +133,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
           "absent" ~ "absent",
           "doubtful" ~ "doubtful",
           "uncertain" ~ "doubtful",
-          default = .data$occurrenceStatus
+          default = ""
         ),
         establishmentMeans = dplyr::recode_values(
           .data$establishmentMeans,
