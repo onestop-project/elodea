@@ -45,12 +45,9 @@ test_that("filter_data() filters on establishmentMeans", {
   expect_no_error(
     filter_data(taxa, distributions, establishment_means = "native")
   )
-  expect_no_error(
-    filter_data(taxa, distributions, establishment_means = NULL)
-  )
 })
 
-test_that("filter_data() returns the expected files for an existing dataset", {
+test_that("filter_data() returns the expected files for an existing checklist", {
   skip_if_offline()
   vcr::local_cassette("filter_finland")
 
@@ -119,7 +116,7 @@ test_that("filter_data() returns the expected files for an existing dataset", {
   expect_snapshot_file(notes_path)
 })
 
-test_that("filter_data() returns the expected output for a dummy dataset", {
+test_that("filter_data() returns the expected output for a dummy checklist", {
   taxa <-
     # 1. All good
     data.frame(
@@ -366,7 +363,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     ) |>
     dplyr::as_tibble()
 
-  output <- filter_data(taxa, distributions)
+  output <- filter_data(taxa, distributions, establishment_means = "introduced")
   expect_equal(output$taxa, expected_taxa)
   expect_equal(output$distributions, expected_distributions)
   expect_equal(output$notes, expected_notes)

@@ -18,8 +18,8 @@
 #' @family filter functions
 #' @export
 #' @section Filter on `establishmentMeans`:
-#' Set to `NULL` to not filter on `establishmentMeans`.
-#' Possible values are "native", "introduced", "nativeReintroduced",
+#' Defaults to `NULL`, which means that no filtering on `establishmentMeans` is
+#' done. Possible values are "native", "introduced", "nativeReintroduced",
 #' "introducedAssistedColonisation", "vagrant", "uncertain" and
 #' "nativeEndemic".
 #'
@@ -55,9 +55,8 @@
 #' datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
 #' taxa <- get_taxa(datasetKey)
 #' distributions <- get_distributions(datasetKey, taxa)
-#' filter_data(taxa, distributions)
-filter_data <- function(taxa, distributions,
-                        establishment_means = "introduced") {
+#' filter_data(taxa, distributions, establishment_means = "introduced" )
+filter_data <- function(taxa, distributions, establishment_means = NULL) {
 
   check_taxa(taxa)
   #check_distributions(distributions)

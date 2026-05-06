@@ -4,7 +4,7 @@
 \alias{filter_data}
 \title{Filter data}
 \usage{
-filter_data(taxa, distributions, establishment_means = "introduced")
+filter_data(taxa, distributions, establishment_means = NULL)
 }
 \arguments{
 \item{taxa}{Data frame as returned by \code{\link[=get_taxa]{get_taxa()}}.}
@@ -31,8 +31,8 @@ notes.
 }
 \section{Filter on \code{establishmentMeans}}{
 
-Set to \code{NULL} to not filter on \code{establishmentMeans}.
-Possible values are "native", "introduced", "nativeReintroduced",
+Defaults to \code{NULL}, which means that no filtering on \code{establishmentMeans} is
+done. Possible values are "native", "introduced", "nativeReintroduced",
 "introducedAssistedColonisation", "vagrant", "uncertain" and
 "nativeEndemic".
 }
@@ -79,6 +79,6 @@ the taxon.
 datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
 taxa <- get_taxa(datasetKey)
 distributions <- get_distributions(datasetKey, taxa)
-filter_data(taxa, distributions)
+filter_data(taxa, distributions, establishment_means = "introduced" )
 }
 \concept{filter functions}
