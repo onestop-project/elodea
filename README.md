@@ -63,7 +63,7 @@ information on the filtering process. Check
 for the filter details.
 
 ``` r
-filter_data(taxa, distributions)
+filter_data(taxa, distributions, establishment_means = "introduced")
 #> $taxa
 #> # A tibble: 11 × 6
 #>     taxonKey  nubKey taxonID scientificName                    kingdom taxonRank
@@ -81,20 +81,20 @@ filter_data(taxa, distributions)
 #> 11 196397274 2643172 74011   Caulerpa taxifolia (M.Vahl) C.Ag… Plantae SPECIES  
 #> 
 #> $distributions
-#> # A tibble: 11 × 8
-#>     taxonKey countryCode occurrenceStatus establishmentMeans
-#>        <int> <chr>       <chr>            <chr>             
-#>  1 196397247 MC          present          introduced        
-#>  2 196397252 MC          present          introduced        
-#>  3 196397254 MC          present          introduced        
-#>  4 196397256 MC          present          introduced        
-#>  5 196397257 MC          present          introduced        
-#>  6   6275970 MC          present          introduced        
-#>  7   5019579 MC          present          introduced        
-#>  8 196397264 MC          present          introduced        
-#>  9 196397267 MC          present          introduced        
-#> 10 196397273 MC          present          introduced        
-#> 11 196397274 MC          present          introduced        
+#> # A tibble: 11 × 9
+#>     taxonKey  nubKey countryCode occurrenceStatus establishmentMeans
+#>        <int>   <int> <chr>       <chr>            <chr>             
+#>  1 196397247 9752149 MC          present          introduced        
+#>  2 196397252 5156102 MC          present          introduced        
+#>  3 196397254 8001222 MC          present          introduced        
+#>  4 196397256 9302212 MC          present          introduced        
+#>  5 196397257 2094171 MC          present          introduced        
+#>  6   6275970 1047502 MC          present          introduced        
+#>  7   5019579 8636797 MC          present          introduced        
+#>  8 196397264 4292054 MC          present          introduced        
+#>  9 196397267 1651430 MC          present          introduced        
+#> 10 196397273 2643093 MC          present          introduced        
+#> 11 196397274 2643172 MC          present          introduced        
 #> # ℹ 4 more variables: degreeOfEstablishment <chr>, pathway <chr>,
 #> #   eventDate <chr>, source <chr>
 #> 
