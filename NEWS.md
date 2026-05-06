@@ -1,7 +1,6 @@
 # elodea (development version)
 * `get_taxa()` now returns the taxonomic status from the GBIF backbone taxonomy (`taxonomicStatus`), and not the status from the source checklist (#19). The columns `accepted`, `kingdom`, and `taxonRank` have been replaced by `acceptedName`, `acceptedKingdom` and `acceptedTaxonRank`.
-* `filter_data()` now returns fewer columns (#19).
-* `filter_data()` has a new argument `establishment_means` that allows custom filtering taxa based on establishmentMeans (e.g. native, introduced), instead of built-in filtering on "introduced" taxa (#24).
+* `filter_data()` now returns fewer columns, and has a new argument `establishment_means` that allows custom filtering taxa based on establishmentMeans (e.g. native, introduced), instead of built-in filtering on "introduced" taxa (#19, #24).
 * `get_distributions()` now returns the verbatim distributions (#30).
 
 # elodea 0.1.0
