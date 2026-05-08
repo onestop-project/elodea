@@ -379,6 +379,9 @@ test_that("filter_data() filters on establishmentMeans", {
   output_native <- filter_data(
     taxa, distributions, establishment_means = c("native")
   )
+  output_introduced <- filter_data(
+    taxa, distributions, establishment_means = c("introduced")
+  )
   output_native_and_introduced <- filter_data(
     taxa, distributions, establishment_means = c("native", "introduced")
   )
@@ -387,6 +390,10 @@ test_that("filter_data() filters on establishmentMeans", {
   )
 
   expect_equal(unique(output_native$distributions$establishmentMeans), "native")
+  expect_equal(
+    unique(output_introduced$distributions$establishmentMeans),
+    "introduced"
+    )
   expect_equal(
     unique(output_native_and_introduced$distributions$establishmentMeans),
     c("native", "introduced")
