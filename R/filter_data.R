@@ -99,10 +99,10 @@ filter_data <- function(taxa, distributions, establishment_means = NULL) {
         is.na(.data$nubKey) ~ "not_matched_with_backbone",
         !(.data$taxonKey %in% distributions$taxonKey) ~
           "no_matching_distribution",
-        .data$taxonomicStatus %in% synonyms ~ "merged_with_accepted",
         !(.data$establishmentMeans %in% establishment_means) &
           !is.null(establishment_means) ~
           "filtered_on_establishmentMeans",
+        .data$taxonomicStatus %in% synonyms ~ "merged_with_accepted",
         .data$scientificName != .data$acceptedName ~
           "scientificName_replaced_by_backbone_name"
       )
