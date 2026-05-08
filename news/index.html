@@ -35,11 +35,11 @@
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="elodea-development-version">elodea (development version)<a class="anchor" aria-label="anchor" href="#elodea-development-version"></a></h2>
 <ul><li>
-<code><a href="../reference/get_taxa.html">get_taxa()</a></code> now returns the taxonomic status from the GBIF backbone taxonomy (<code>taxonomicStatus</code>), and not the status from the source checklist (<a href="https://github.com/onestop-project/elodea/issues/19" class="external-link">#19</a>). It does not return the column <code>nubKey</code> anymore, and the columns <code>accepted</code>, <code>kingdom</code>, and <code>taxonRank</code> have been replaced by <code>acceptedName</code>, <code>acceptedKingdom</code> and <code>acceptedTaxonRank</code>.</li>
+<code><a href="../reference/get_taxa.html">get_taxa()</a></code> now returns the taxonomic status from the GBIF backbone taxonomy (<code>taxonomicStatus</code>), and not the status from the source checklist (<a href="https://github.com/onestop-project/elodea/issues/19" class="external-link">#19</a>). The columns <code>accepted</code>, <code>kingdom</code>, and <code>taxonRank</code> have been replaced by <code>acceptedName</code>, <code>acceptedKingdom</code> and <code>acceptedTaxonRank</code>.</li>
 <li>
-<code><a href="../reference/filter_data.html">filter_data()</a></code> now returns fewer columns (<a href="https://github.com/onestop-project/elodea/issues/19" class="external-link">#19</a>).</li>
+<code><a href="../reference/filter_data.html">filter_data()</a></code> now returns fewer columns, and has a new argument <code>establishment_means</code> that allows custom filtering taxa based on establishmentMeans (e.g. native, introduced), instead of built-in filtering on “introduced” taxa (<a href="https://github.com/onestop-project/elodea/issues/19" class="external-link">#19</a>, <a href="https://github.com/onestop-project/elodea/issues/24" class="external-link">#24</a>).</li>
 <li>
-<code><a href="../reference/filter_data.html">filter_data()</a></code> has a new argument <code>filter_establishmentMeans</code> that allows custom filtering taxa based on establishmentMeans (e.g. native, introduced), instead of built-in filtering on “introduced” taxa (<a href="https://github.com/onestop-project/elodea/issues/24" class="external-link">#24</a>).</li>
+<code><a href="../reference/get_distributions.html">get_distributions()</a></code> now returns the verbatim distributions (<a href="https://github.com/onestop-project/elodea/issues/30" class="external-link">#30</a>).</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.0" id="elodea-010">elodea 0.1.0<a class="anchor" aria-label="anchor" href="#elodea-010"></a></h2>

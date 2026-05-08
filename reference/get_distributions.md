@@ -66,12 +66,23 @@ Other download functions:
 ## Examples
 
 ``` r
-# Cyprus
-distributions_CY <- get_distributions("2f7ea7d1-a73f-46f6-b790-7339126a999f")
-# Andorra
-distributions_AD <- get_distributions("016c16c3-d907-4c88-97dd-97ad62c8130e")
-if (FALSE) { # \dontrun{
-# Belgium
-distributions_BE <- get_distributions("6d9e952f-948c-4483-9807-575348147c7e")
-} # }
+# Checklist of non-native freshwater fishes in Flanders, Belgium
+get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
+#> verbatim ■■■■■■■■■■■■■■■■■■■■              62% |  ETA:  2s
+#> # A tibble: 52 × 8
+#>     taxonKey countryCode occurrenceStatus establishmentMeans
+#>        <int> <chr>       <chr>            <chr>             
+#>  1 141117231 BE          present          introduced        
+#>  2 141117232 BE          present          introduced        
+#>  3 141117233 BE          present          introduced        
+#>  4 141117233 BE          present          introduced        
+#>  5 141117234 BE          present          introduced        
+#>  6 141117234 BE          present          introduced        
+#>  7 141117235 BE          present          introduced        
+#>  8 141117236 BE          present          introduced        
+#>  9 141117236 BE          present          introduced        
+#> 10 141117237 BE          present          introduced        
+#> # ℹ 42 more rows
+#> # ℹ 4 more variables: degreeOfEstablishment <chr>, pathway <chr>,
+#> #   eventDate <chr>, source <chr>
 ```

@@ -5,18 +5,19 @@
 - [`get_taxa()`](https://onestop-project.github.io/elodea/reference/get_taxa.md)
   now returns the taxonomic status from the GBIF backbone taxonomy
   (`taxonomicStatus`), and not the status from the source checklist
-  ([\#19](https://github.com/onestop-project/elodea/issues/19)). It does
-  not return the column `nubKey` anymore, and the columns `accepted`,
-  `kingdom`, and `taxonRank` have been replaced by `acceptedName`,
-  `acceptedKingdom` and `acceptedTaxonRank`.
+  ([\#19](https://github.com/onestop-project/elodea/issues/19)). The
+  columns `accepted`, `kingdom`, and `taxonRank` have been replaced by
+  `acceptedName`, `acceptedKingdom` and `acceptedTaxonRank`.
 - [`filter_data()`](https://onestop-project.github.io/elodea/reference/filter_data.md)
-  now returns fewer columns
-  ([\#19](https://github.com/onestop-project/elodea/issues/19)).
-- [`filter_data()`](https://onestop-project.github.io/elodea/reference/filter_data.md)
-  has a new argument `filter_establishmentMeans` that allows custom
-  filtering taxa based on establishmentMeans (e.g. native, introduced),
-  instead of built-in filtering on “introduced” taxa
-  ([\#24](https://github.com/onestop-project/elodea/issues/24)).
+  now returns fewer columns, and has a new argument
+  `establishment_means` that allows custom filtering taxa based on
+  establishmentMeans (e.g. native, introduced), instead of built-in
+  filtering on “introduced” taxa
+  ([\#19](https://github.com/onestop-project/elodea/issues/19),
+  [\#24](https://github.com/onestop-project/elodea/issues/24)).
+- [`get_distributions()`](https://onestop-project.github.io/elodea/reference/get_distributions.md)
+  now returns the verbatim distributions
+  ([\#30](https://github.com/onestop-project/elodea/issues/30)).
 
 ## elodea 0.1.0
 

@@ -28,6 +28,8 @@ A `tibble` with taxonomic information of the dataset.
 
 - `taxonKey`: GBIF taxon key of `scientificName`.
 
+- `nubKey`: GBIF backbone taxon key
+
 - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
   `scientificName`, as provided in the checklist.
 
@@ -43,7 +45,8 @@ A `tibble` with taxonomic information of the dataset.
   is a synonym.
 
 - [`acceptedName`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsage):
-  Scientific name of the accepted taxon.
+  Scientific name of the accepted taxon. `scientificName` is the
+  accepted name in the GBIF backbone.
 
 - [`acceptedKingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of
   the accepted taxon.
@@ -59,21 +62,32 @@ Other download functions:
 ## Examples
 
 ``` r
-# Global Register of Introduced and Invasive Species - Cyprus
-get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
-#> # A tibble: 632 × 8
-#>     taxonKey taxonID scientificName     taxonomicStatus acceptedKey acceptedName
-#>        <int> <chr>   <chr>              <chr>                 <int> <chr>       
-#>  1 148692903 20667   Eriophyes pyri (H… ACCEPTED            5774728 Eriophyes p…
-#>  2 148692906 21008   Stypopodium schim… ACCEPTED            3200580 Stypopodium…
-#>  3 148692918 20939   Rhizosolenia calc… ACCEPTED            5421948 Rhizosoleni…
-#>  4 148692921 20917   Pseudosolenia cal… ACCEPTED            3194102 Pseudosolen…
-#>  5 148692922 21062   Xiphinema brevico… ACCEPTED            4554475 Xiphinema b…
-#>  6 148692923 21063   Xiphinema index T… ACCEPTED            4554493 Xiphinema i…
-#>  7 148692924 21064   Xiphinema italiae… ACCEPTED            4554459 Xiphinema i…
-#>  8 148692930 20794   Meloidogyne arena… ACCEPTED            4556299 Meloidogyne…
-#>  9 148692935 20795   Meloidogyne hapla… ACCEPTED            2283982 Meloidogyne…
-#> 10 148692936 20881   Phytophthora citr… ACCEPTED            3203668 Phytophthor…
-#> # ℹ 622 more rows
-#> # ℹ 2 more variables: acceptedTaxonRank <chr>, acceptedKingdom <chr>
+# Global Register of Introduced and Invasive Species - Sovereign Base Areas
+# of Cyprus, Cyprus
+get_taxa("497fa25f-6a32-4a2a-8f42-d01d8a0b7c22")
+#> # A tibble: 20 × 9
+#>     taxonKey  nubKey taxonID scientificName          taxonomicStatus acceptedKey
+#>        <int>   <int> <chr>   <chr>                   <chr>                 <int>
+#>  1 163732873 2264597 120115  Rhopilema nomadica Gal… ACCEPTED            2264597
+#>  2 163732878 2334433 120114  Pterois miles (Bennett… ACCEPTED            2334433
+#>  3 163732881 2407271 120112  Torquigener flavimacul… ACCEPTED            2407271
+#>  4 163732882 2407271 120117  Torquigener flavimacul… ACCEPTED            2407271
+#>  5 163732885 2356802 120108  Sargocentron rubrum (F… ACCEPTED            2356802
+#>  6 163732886 2356802 120116  Sargocentron rubrum (F… ACCEPTED            2356802
+#>  7 163732889 2350570 120106  Gambusia holbrooki Gir… ACCEPTED            2350570
+#>  8 163732892 2390262 120109  Siganus luridus (RÃ¼pp… ACCEPTED            2390262
+#>  9 163732893 2390185 120110  Siganus rivulatus Fors… ACCEPTED            2390185
+#> 10 163732895 2396749 120107  Parupeneus forsskali (… ACCEPTED            2396749
+#> 11 163732898      NA 120113  Fistularia commersonii… NA                       NA
+#> 12 163732899      NA 120105  Fistularia commersonii… NA                       NA
+#> 13 163732903 2441502 120119  Testudo marginata Scho… ACCEPTED            2441502
+#> 14 163732904 2441461 120118  Testudo graeca Linnaeu… ACCEPTED            2441461
+#> 15 163732911 3151764 120111  Symphyotrichum squamat… ACCEPTED            3151764
+#> 16 163732914 3176197 120103  Eucalyptus camaldulens… DOUBTFUL            3176197
+#> 17 163732915 3176772 120104  Eucalyptus gomphocepha… ACCEPTED            3176772
+#> 18 163732918 5421144 120102  Dodonaea viscosa Jacq.  ACCEPTED            5421144
+#> 19 163732921 2891932 120101  Casuarina cunninghamia… ACCEPTED            2891932
+#> 20 163732924 2978552 120100  Acacia saligna (Labill… ACCEPTED            2978552
+#> # ℹ 3 more variables: acceptedName <chr>, acceptedTaxonRank <chr>,
+#> #   acceptedKingdom <chr>
 ```

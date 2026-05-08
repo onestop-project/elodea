@@ -94,14 +94,25 @@ the described resource is derived.</p></li>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Cyprus</span></span></span>
-<span class="r-in"><span><span class="va">distributions_CY</span> <span class="op">&lt;-</span> <span class="fu">get_distributions</span><span class="op">(</span><span class="st">"2f7ea7d1-a73f-46f6-b790-7339126a999f"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="co"># Andorra</span></span></span>
-<span class="r-in"><span><span class="va">distributions_AD</span> <span class="op">&lt;-</span> <span class="fu">get_distributions</span><span class="op">(</span><span class="st">"016c16c3-d907-4c88-97dd-97ad62c8130e"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="co"># Belgium</span></span></span>
-<span class="r-in"><span><span class="va">distributions_BE</span> <span class="op">&lt;-</span> <span class="fu">get_distributions</span><span class="op">(</span><span class="st">"6d9e952f-948c-4483-9807-575348147c7e"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Checklist of non-native freshwater fishes in Flanders, Belgium</span></span></span>
+<span class="r-in"><span><span class="fu">get_distributions</span><span class="op">(</span><span class="st">"98940a79-2bf1-46e6-afd6-ba2e85a26f9f"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> verbatim <span style="color: #00BB00;">■■■■■■■■■■■■■■■■■■■■            </span>  62% |  ETA:  2s</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 52 × 8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     taxonKey countryCode occurrenceStatus establishmentMeans</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 141<span style="text-decoration: underline;">117</span>231 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 141<span style="text-decoration: underline;">117</span>232 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 141<span style="text-decoration: underline;">117</span>233 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 141<span style="text-decoration: underline;">117</span>233 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 141<span style="text-decoration: underline;">117</span>234 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 141<span style="text-decoration: underline;">117</span>234 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 141<span style="text-decoration: underline;">117</span>235 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 141<span style="text-decoration: underline;">117</span>236 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 141<span style="text-decoration: underline;">117</span>236 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 141<span style="text-decoration: underline;">117</span>237 BE          present          introduced        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 42 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: degreeOfEstablishment &lt;chr&gt;, pathway &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   eventDate &lt;chr&gt;, source &lt;chr&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

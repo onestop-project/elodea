@@ -42,7 +42,7 @@ notes.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">filter_data</span><span class="op">(</span><span class="va">taxa</span>, <span class="va">distributions</span>, filter_establishmentMeans <span class="op">=</span> <span class="st">"introduced"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">filter_data</span><span class="op">(</span><span class="va">taxa</span>, <span class="va">distributions</span>, establishment_means <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -57,7 +57,7 @@ notes.</p>
 <dd><p>Data frame as returned by <code><a href="get_distributions.html">get_distributions()</a></code>.</p></dd>
 
 
-<dt id="arg-filter-establishmentmeans">filter_establishmentMeans<a class="anchor" aria-label="anchor" href="#arg-filter-establishmentmeans"></a></dt>
+<dt id="arg-establishment-means">establishment_means<a class="anchor" aria-label="anchor" href="#arg-establishment-means"></a></dt>
 <dd><p>EstablishmentMeans to filter on. Only taxa
 with matching distributions with <code>establishmentMeans</code> in this vector will be
 retained. Default is "introduced".</p></dd>
@@ -75,21 +75,19 @@ in the filtered data.</p></li>
     <h2 id="filter-on-establishmentmeans">Filter on <code>establishmentMeans</code><a class="anchor" aria-label="anchor" href="#filter-on-establishmentmeans"></a></h2>
 
 
-<p>Set to <code>NULL</code> to not filter on <code>establishmentMeans</code>.
-Possible values are "native", "introduced", "nativeReintroduced",
-"introducedAssistedColonisation", "vagrant", "uncertain" and
-"nativeEndemic".</p>
+<p>Defaults to <code>NULL</code>, which means no filter on establishmentMeans. Possible
+values are "native", "introduced", "nativeReintroduced",
+"introducedAssistedColonisation", "vagrant", "uncertain" and "nativeEndemic".</p>
     </div>
     <div class="section level2">
     <h2 id="filter-details">Filter details<a class="anchor" aria-label="anchor" href="#filter-details"></a></h2>
 
 
-<p>Taxa are removed if</p><ul><li><p>they are not matched with the GBIF backbone (i.e., <code>taxonomicStatus</code> is
-<code>NA</code>),</p></li>
+<p>Taxa are removed if</p><ul><li><p>they are not matched with the GBIF backbone (i.e., <code>nubKey</code> is <code>NA</code>),</p></li>
 <li><p>they do not have a matching distribution (i.e., <code>taxonKey</code> is not in
 <code>distributions$taxonKey</code>),</p></li>
 <li><p>they do not have a matching distribution with <code>establishmentMeans</code> in
-<code>filter_establishmentMeans</code>.</p></li>
+<code>establishment_means</code>.</p></li>
 </ul><p>Synonyms are replaced by the accepted taxa they are synonyms of (i.e.,
 <code>taxonomicStatus</code> is either "synonym", "ambiguous synonym",
 "heterotypic synonym", "homotypic synonym", "misapplied" or
@@ -101,8 +99,9 @@ backbone.</p>
     <h2 id="taxa-details">Taxa details<a class="anchor" aria-label="anchor" href="#taxa-details"></a></h2>
 
 
-<p>The <code>taxa</code> data frame in the output list has 5 variables:</p><ul><li><p><code>taxonKey</code>: GBIF taxon key of <code>scientificName</code>. This value is replaced with
+<p>The <code>taxa</code> data frame in the output list has 6 variables:</p><ul><li><p><code>taxonKey</code>: GBIF taxon key of <code>scientificName</code>. This value is replaced with
 <code>acceptedKey</code> if the taxon is a synonym of an accepted taxon.</p></li>
+<li><p><code>nubKey</code>: GBIF backbone taxon key.</p></li>
 <li><p><a href="http://rs.tdwg.org/dwc/terms/taxonID" class="external-link"><code>taxonID</code></a>: Taxon ID of
 <code>scientificName</code>, as provided in the checklist.</p></li>
 <li><p><a href="http://rs.tdwg.org/dwc/terms/scientificName" class="external-link"><code>scientificName</code></a>: Scientific
@@ -114,60 +113,13 @@ the taxon.</p></li>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Andorra</span></span></span>
-<span class="r-in"><span><span class="va">datasetKey</span> <span class="op">&lt;-</span> <span class="st">"016c16c3-d907-4c88-97dd-97ad62c8130e"</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span><span class="co"># Updated checklist of the ants in Belgium</span></span></span>
+<span class="r-in"><span><span class="va">datasetKey</span> <span class="op">&lt;-</span> <span class="st">"32afaa9d-a27f-4885-b30c-ce08c34e1efb"</span></span></span>
 <span class="r-in"><span><span class="va">taxa</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_taxa.html">get_taxa</a></span><span class="op">(</span><span class="va">datasetKey</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">distributions</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_distributions.html">get_distributions</a></span><span class="op">(</span><span class="va">datasetKey</span>, <span class="va">taxa</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">filter_data</span><span class="op">(</span><span class="va">taxa</span>, <span class="va">distributions</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $taxa</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     taxonKey taxonID scientificName                            kingdom taxonRank</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 148<span style="text-decoration: underline;">674</span>352 20012   Trachyopella straminea Roháček &amp; Marshal… Animal… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 148<span style="text-decoration: underline;">674</span>355 20009   Monochamus sutor (Linnaeus, 1758)         Animal… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   1<span style="text-decoration: underline;">179</span>369 20006   Pentarthrum confine Broun, 1881           Animal… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 148<span style="text-decoration: underline;">674</span>360 20008   Leptinotarsa decemlineata (Say, 1824)     Animal… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 148<span style="text-decoration: underline;">674</span>361 20004   Callosobruchus chinensis (Linnaeus, 1758) Animal… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 148<span style="text-decoration: underline;">674</span>362 20001   Bruchus pisorum Linnaeus, 1758            Animal… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 148<span style="text-decoration: underline;">674</span>363 20002   Bruchus rufimanus Boheman, 1833           Animal… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 148<span style="text-decoration: underline;">674</span>364 20000   Acanthoscelides obtectus (Say, 1831)      Animal… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   3<span style="text-decoration: underline;">204</span>007 20010   Pseudoperonospora cubensis (Berk. &amp; M.A.… Chromi… SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 148<span style="text-decoration: underline;">674</span>377 20005   Entoleuca mammata (Wahlenb.) J.D.Rogers … Fungi   SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 148<span style="text-decoration: underline;">674</span>383 20011   Senecio inaequidens DC.                   Plantae SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 148<span style="text-decoration: underline;">674</span>386 20007   Impatiens balfourii Hook.fil.             Plantae SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 148<span style="text-decoration: underline;">674</span>389 20003   Buddleja davidii Franch.                  Plantae SPECIES  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $distributions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     taxonKey countryCode occurrenceStatus establishmentMeans</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 148<span style="text-decoration: underline;">674</span>352 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 148<span style="text-decoration: underline;">674</span>355 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   1<span style="text-decoration: underline;">179</span>369 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 148<span style="text-decoration: underline;">674</span>360 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 148<span style="text-decoration: underline;">674</span>361 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 148<span style="text-decoration: underline;">674</span>362 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 148<span style="text-decoration: underline;">674</span>363 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 148<span style="text-decoration: underline;">674</span>364 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   3<span style="text-decoration: underline;">204</span>007 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 148<span style="text-decoration: underline;">674</span>377 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 148<span style="text-decoration: underline;">674</span>383 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 148<span style="text-decoration: underline;">674</span>386 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 148<span style="text-decoration: underline;">674</span>389 AD          present          introduced        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: degreeOfEstablishment &lt;chr&gt;, pathway &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   eventDate &lt;chr&gt;, source &lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $notes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   taxonID  taxonKey scientificName               action acceptedKey acceptedName</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 20012   148<span style="text-decoration: underline;">674</span>352 Trachyopella straminea Roha… scien…     1<span style="text-decoration: underline;">589</span>999 Trachyopell…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 20009   148<span style="text-decoration: underline;">674</span>355 Monochamus sutor (LinnÃ©, 1… scien…     8<span style="text-decoration: underline;">411</span>684 Monochamus …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 20006   148<span style="text-decoration: underline;">674</span>358 Euophryum confine (Broun, 1… merge…     1<span style="text-decoration: underline;">179</span>369 Pentarthrum…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 20001   148<span style="text-decoration: underline;">674</span>362 Bruchus pisorum (Linnaeus, … scien…     5<span style="text-decoration: underline;">752</span>155 Bruchus pis…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 20010   148<span style="text-decoration: underline;">674</span>371 Pseudoperonospora humuli (M… merge…     3<span style="text-decoration: underline;">204</span>007 Pseudoperon…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 20007   148<span style="text-decoration: underline;">674</span>386 Impatiens balfourii Hook.f.  scien…     2<span style="text-decoration: underline;">891</span>783 Impatiens b…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span><span class="fu">filter_data</span><span class="op">(</span><span class="va">taxa</span>, <span class="va">distributions</span>, establishment_means <span class="op">=</span> <span class="st">"introduced"</span> <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

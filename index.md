@@ -15,10 +15,12 @@ To get started, see:
 You can install the development version of elodea from
 [GitHub](https://github.com/) with:
 
+Install the development version from [GitHub](https://github.com/) with:
+
 ``` r
 
-# install.packages("remotes")
-remotes::install_github("onestop-project/elodea")
+# install.packages("pak")
+pak::pak("onestop-project/elodea")
 ```
 
 ## Usage
@@ -51,38 +53,38 @@ for the filter details.
 
 ``` r
 
-filter_data(taxa, distributions)
+filter_data(taxa, distributions, establishment_means = "introduced")
 #> $taxa
-#> # A tibble: 11 × 5
-#>     taxonKey taxonID scientificName                            kingdom taxonRank
-#>        <int> <chr>   <chr>                                     <chr>   <chr>    
-#>  1 196397247 74020   Phasianus colchicus Linnaeus, 1758        Animal… SPECIES  
-#>  2 196397252 74016   Leptoglossus occidentalis Heidemann, 1910 Animal… SPECIES  
-#>  3 196397254 74019   Corythauma ayyari (Drake, 1933)           Animal… SPECIES  
-#>  4 196397256 74017   Phenacoccus peruvianus Granara de Willin… Animal… SPECIES  
-#>  5 196397257 74015   Crisicoccus pini (Kuwana, 1902)           Animal… SPECIES  
-#>  6   6275970 74013   Dactylispa pallidipennis (Motschulsky, 1… Animal… SPECIES  
-#>  7   5019579 74018   Xyleborus compactus Eichhoff, 1875        Animal… SPECIES  
-#>  8 196397264 74014   Trachyphloeosoma advena Zimmerman, 1956   Animal… SPECIES  
-#>  9 196397267 74010   Aedes albopictus (Skuse, 1894)            Animal… SPECIES  
-#> 10 196397273 74012   Caulerpa racemosa (Forssk.) J.Agardh      Plantae SPECIES  
-#> 11 196397274 74011   Caulerpa taxifolia (M.Vahl) C.Agardh      Plantae SPECIES  
+#> # A tibble: 11 × 6
+#>     taxonKey  nubKey taxonID scientificName                    kingdom taxonRank
+#>        <int>   <int> <chr>   <chr>                             <chr>   <chr>    
+#>  1 196397247 9752149 74020   Phasianus colchicus Linnaeus, 17… Animal… SPECIES  
+#>  2 196397252 5156102 74016   Leptoglossus occidentalis Heidem… Animal… SPECIES  
+#>  3 196397254 8001222 74019   Corythauma ayyari (Drake, 1933)   Animal… SPECIES  
+#>  4 196397256 9302212 74017   Phenacoccus peruvianus Granara d… Animal… SPECIES  
+#>  5 196397257 2094171 74015   Crisicoccus pini (Kuwana, 1902)   Animal… SPECIES  
+#>  6   6275970 1047502 74013   Dactylispa pallidipennis (Motsch… Animal… SPECIES  
+#>  7   5019579 8636797 74018   Xyleborus compactus Eichhoff, 18… Animal… SPECIES  
+#>  8 196397264 4292054 74014   Trachyphloeosoma advena Zimmerma… Animal… SPECIES  
+#>  9 196397267 1651430 74010   Aedes albopictus (Skuse, 1894)    Animal… SPECIES  
+#> 10 196397273 2643093 74012   Caulerpa racemosa (Forssk.) J.Ag… Plantae SPECIES  
+#> 11 196397274 2643172 74011   Caulerpa taxifolia (M.Vahl) C.Ag… Plantae SPECIES  
 #> 
 #> $distributions
-#> # A tibble: 11 × 8
-#>     taxonKey countryCode occurrenceStatus establishmentMeans
-#>        <int> <chr>       <chr>            <chr>             
-#>  1 196397247 MC          present          introduced        
-#>  2 196397252 MC          present          introduced        
-#>  3 196397254 MC          present          introduced        
-#>  4 196397256 MC          present          introduced        
-#>  5 196397257 MC          present          introduced        
-#>  6   6275970 MC          present          introduced        
-#>  7   5019579 MC          present          introduced        
-#>  8 196397264 MC          present          introduced        
-#>  9 196397267 MC          present          introduced        
-#> 10 196397273 MC          present          introduced        
-#> 11 196397274 MC          present          introduced        
+#> # A tibble: 11 × 9
+#>     taxonKey  nubKey countryCode occurrenceStatus establishmentMeans
+#>        <int>   <int> <chr>       <chr>            <chr>             
+#>  1 196397247 9752149 MC          present          introduced        
+#>  2 196397252 5156102 MC          present          introduced        
+#>  3 196397254 8001222 MC          present          introduced        
+#>  4 196397256 9302212 MC          present          introduced        
+#>  5 196397257 2094171 MC          present          introduced        
+#>  6   6275970 1047502 MC          present          introduced        
+#>  7   5019579 8636797 MC          present          introduced        
+#>  8 196397264 4292054 MC          present          introduced        
+#>  9 196397267 1651430 MC          present          introduced        
+#> 10 196397273 2643093 MC          present          introduced        
+#> 11 196397274 2643172 MC          present          introduced        
 #> # ℹ 4 more variables: degreeOfEstablishment <chr>, pathway <chr>,
 #> #   eventDate <chr>, source <chr>
 #> 
