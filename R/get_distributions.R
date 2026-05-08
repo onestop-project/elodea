@@ -149,7 +149,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
       ) |>
       # Remove unwanted duplicated rows with pathway = NA when there are other
       # rows with the same taxonKey and countryCode but with a non-NA pathway
-      dplyr::group_by(dplyr::across(-pathway)) |>
+      dplyr::group_by(dplyr::across(-"pathway")) |>
       dplyr::filter(
         !(dplyr::n() > 1 & is.na(.data$pathway) & any(!is.na(.data$pathway)))
         ) |>
