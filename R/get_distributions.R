@@ -30,31 +30,43 @@
 #' - [`source`](http://purl.org/dc/terms/source): A related resource from which
 #' the described resource is derived.
 #' @examples
-#' # Cyprus
-#' distributions_CY <- get_distributions("2f7ea7d1-a73f-46f6-b790-7339126a999f")
-#' # Andorra
-#' distributions_AD <- get_distributions("016c16c3-d907-4c88-97dd-97ad62c8130e")
-#' \dontrun{
-#' # Belgium
-#' distributions_BE <- get_distributions("6d9e952f-948c-4483-9807-575348147c7e")
-#' }
+#' # Checklist of non-native freshwater fishes in Flanders, Belgium
+#' get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
 get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
   taxon_keys <- dplyr::pull(taxa, "taxonKey")
 
   # Download distributions with progress bar
   progressr::with_progress({
     progress_bar <- progressr::progressor(steps = length(taxon_keys))
-    distributions <-
+    verbatim_info <-
       purrr::map(
-        taxon_keys,
-        function(x) {
-          progress_bar()
-          rgbif::name_usage(
-            key = x,
-            data = "distribution"
-          )$data
+        taxa$taxonKey,
+        ~rgbif::name_usage(key = ., data = "verbatim"),
+        .progress = "verbatim"
+      )
+    names(verbatim_info) <- taxa$taxonKey
+
+    distribution_extension_path <- "http://rs.gbif.org/terms/1.0/Distribution"
+
+    distributions <- purrr::imap(
+      verbatim_info,
+      function(x, i) {
+        if (!distribution_extension_path %in% names(x$data$extensions)) {
+          return(NULL)
         }
-      ) |>
+        x$data$extensions[[distribution_extension_path]] |>
+          # Make a data.frame for each taxon
+          purrr::map(function(x) {
+            dplyr::as_tibble(x) |>
+              # Rename all columns by taking the characters after the very last
+              # backslash
+              dplyr::rename_with(~ sub(".*\\/", "", .x))
+          }) |>
+          purrr::list_rbind() |>
+          # Add taxon key as a new column `taxonKey`
+          dplyr::mutate(taxonKey = as.integer(i))
+      }
+    ) |>
       purrr::list_rbind()
   })
   if (length(distributions) == 0) {
@@ -87,8 +99,8 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
         distributions |>
         dplyr::rename(countryCode = "country")
     }
-    distributions <-
-      distributions |>
+
+    distributions |>
       dplyr::left_join(invasiveness, by = "taxonKey") |>
       mutate_when_missing(occurrenceStatus = "present") |>
       mutate_when_missing(establishmentMeans = NA_character_) |>
@@ -107,17 +119,40 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
         "source"
       ) |>
       dplyr::mutate(
-        countryCode = toupper(.data$countryCode),
+        countryCode = substr(toupper(.data$countryCode), start = 1, stop = 2),
         dplyr::across(
           c(
             "occurrenceStatus", "establishmentMeans", "degreeOfEstablishment",
             "pathway"
           ),
           tolower
+        ),
+        occurrenceStatus = dplyr::recode_values(
+          .data$occurrenceStatus,
+          "present" ~ "present",
+          "absent" ~ "absent",
+          "doubtful" ~ "doubtful",
+          "uncertain" ~ "doubtful",
+          default = ""
+        ),
+        establishmentMeans = dplyr::recode_values(
+          .data$establishmentMeans,
+          "native" ~ "native",
+          "nativeReintroduced" ~ "nativeReintroduced",
+          "introduced" ~ "introduced",
+          "alien" ~ "introduced",
+          "introducedAssistedColonisation" ~ "introducedAssistedColonisation",
+          "vagrant" ~ "vagrant",
+          "uncertain" ~ "uncertain",
+          default = ""
         )
       ) |>
-      dplyr::as_tibble()
-
-    return(distributions)
+      # Remove unwanted duplicated rows with pathway = NA when there are other
+      # rows with the same taxonKey and countryCode but with a non-NA pathway
+      dplyr::group_by(dplyr::across(-"pathway")) |>
+      dplyr::filter(
+        !(dplyr::n() > 1 & is.na(.data$pathway) & any(!is.na(.data$pathway)))
+        ) |>
+      dplyr::ungroup()
   }
 }

@@ -4,14 +4,14 @@
 \alias{filter_data}
 \title{Filter data}
 \usage{
-filter_data(taxa, distributions, filter_establishmentMeans = "introduced")
+filter_data(taxa, distributions, establishment_means = NULL)
 }
 \arguments{
 \item{taxa}{Data frame as returned by \code{\link[=get_taxa]{get_taxa()}}.}
 
 \item{distributions}{Data frame as returned by \code{\link[=get_distributions]{get_distributions()}}.}
 
-\item{filter_establishmentMeans}{EstablishmentMeans to filter on. Only taxa
+\item{establishment_means}{EstablishmentMeans to filter on. Only taxa
 with matching distributions with \code{establishmentMeans} in this vector will be
 retained. Default is "introduced".}
 }
@@ -31,22 +31,20 @@ notes.
 }
 \section{Filter on \code{establishmentMeans}}{
 
-Set to \code{NULL} to not filter on \code{establishmentMeans}.
-Possible values are "native", "introduced", "nativeReintroduced",
-"introducedAssistedColonisation", "vagrant", "uncertain" and
-"nativeEndemic".
+Defaults to \code{NULL}, which means no filter on establishmentMeans. Possible
+values are "native", "introduced", "nativeReintroduced",
+"introducedAssistedColonisation", "vagrant", "uncertain" and "nativeEndemic".
 }
 
 \section{Filter details}{
 
 Taxa are removed if
 \itemize{
-\item they are not matched with the GBIF backbone (i.e., \code{taxonomicStatus} is
-\code{NA}),
+\item they are not matched with the GBIF backbone (i.e., \code{nubKey} is \code{NA}),
 \item they do not have a matching distribution (i.e., \code{taxonKey} is not in
 \code{distributions$taxonKey}),
 \item they do not have a matching distribution with \code{establishmentMeans} in
-\code{filter_establishmentMeans}.
+\code{establishment_means}.
 }
 
 Synonyms are replaced by the accepted taxa they are synonyms of (i.e.,
@@ -60,10 +58,11 @@ backbone.
 
 \section{Taxa details}{
 
-The \code{taxa} data frame in the output list has 5 variables:
+The \code{taxa} data frame in the output list has 6 variables:
 \itemize{
 \item \code{taxonKey}: GBIF taxon key of \code{scientificName}. This value is replaced with
 \code{acceptedKey} if the taxon is a synonym of an accepted taxon.
+\item \code{nubKey}: GBIF backbone taxon key.
 \item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
 \code{scientificName}, as provided in the checklist.
 \item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Scientific
@@ -75,10 +74,12 @@ the taxon.
 }
 
 \examples{
-# Andorra
-datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
+\dontrun{
+# Updated checklist of the ants in Belgium
+datasetKey <- "32afaa9d-a27f-4885-b30c-ce08c34e1efb"
 taxa <- get_taxa(datasetKey)
 distributions <- get_distributions(datasetKey, taxa)
-filter_data(taxa, distributions)
+filter_data(taxa, distributions, establishment_means = "introduced" )
+}
 }
 \concept{filter functions}

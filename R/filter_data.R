@@ -5,7 +5,7 @@
 #'
 #' @param taxa Data frame as returned by [get_taxa()].
 #' @param distributions Data frame as returned by [get_distributions()].
-#' @param filter_establishmentMeans EstablishmentMeans to filter on. Only taxa
+#' @param establishment_means EstablishmentMeans to filter on. Only taxa
 #' with matching distributions with `establishmentMeans` in this vector will be
 #' retained. Default is "introduced".
 #'
@@ -18,19 +18,17 @@
 #' @family filter functions
 #' @export
 #' @section Filter on `establishmentMeans`:
-#' Set to `NULL` to not filter on `establishmentMeans`.
-#' Possible values are "native", "introduced", "nativeReintroduced",
-#' "introducedAssistedColonisation", "vagrant", "uncertain" and
-#' "nativeEndemic".
+#' Defaults to `NULL`, which means no filter on establishmentMeans. Possible
+#' values are "native", "introduced", "nativeReintroduced",
+#' "introducedAssistedColonisation", "vagrant", "uncertain" and "nativeEndemic".
 #'
 #' @section Filter details:
 #' Taxa are removed if
-#' - they are not matched with the GBIF backbone (i.e., `taxonomicStatus` is
-#' `NA`),
+#' - they are not matched with the GBIF backbone (i.e., `nubKey` is `NA`),
 #' - they do not have a matching distribution (i.e., `taxonKey` is not in
 #' `distributions$taxonKey`),
 #' - they do not have a matching distribution with `establishmentMeans` in
-#' `filter_establishmentMeans`.
+#' `establishment_means`.
 #'
 #' Synonyms are replaced by the accepted taxa they are synonyms of (i.e.,
 #' `taxonomicStatus` is either "synonym", "ambiguous synonym",
@@ -40,9 +38,10 @@
 #' `scientificName` is replaced with the scientific name matching the GBIF
 #' backbone.
 #' @section Taxa details:
-#' The `taxa` data frame in the output list has 5 variables:
+#' The `taxa` data frame in the output list has 6 variables:
 #' - `taxonKey`: GBIF taxon key of `scientificName`. This value is replaced with
 #' `acceptedKey` if the taxon is a synonym of an accepted taxon.
+#' - `nubKey`: GBIF backbone taxon key.
 #' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
 #' `scientificName`, as provided in the checklist.
 #' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Scientific
@@ -51,13 +50,14 @@
 #' - [`taxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic rank of
 #' the taxon.
 #' @examples
-#' # Andorra
-#' datasetKey <- "016c16c3-d907-4c88-97dd-97ad62c8130e"
+#' \dontrun{
+#' # Updated checklist of the ants in Belgium
+#' datasetKey <- "32afaa9d-a27f-4885-b30c-ce08c34e1efb"
 #' taxa <- get_taxa(datasetKey)
 #' distributions <- get_distributions(datasetKey, taxa)
-#' filter_data(taxa, distributions)
-filter_data <- function(taxa, distributions,
-                        filter_establishmentMeans = "introduced") {
+#' filter_data(taxa, distributions, establishment_means = "introduced" )
+#' }
+filter_data <- function(taxa, distributions, establishment_means = NULL) {
 
   check_taxa(taxa)
   #check_distributions(distributions)
@@ -67,12 +67,12 @@ filter_data <- function(taxa, distributions,
     "introducedAssistedColonisation", "vagrant", "uncertain", "nativeEndemic"
   )
 
-  if (!is.null(filter_establishmentMeans)) {
-    if (!all(filter_establishmentMeans %in% establishmentMeans_values)) {
+  if (!is.null(establishment_means)) {
+    if (!all(establishment_means %in% establishmentMeans_values)) {
       cli::cli_abort(
         c(
-          "x" = "Invalid {.arg filter_establishmentMeans} value.",
-          "i" = "{.arg filter_establishmentMeans} must be NULL or a vector of the
+          "x" = "Invalid {.arg establishment_means} value.",
+          "i" = "{.arg establishment_means} must be NULL or a vector of the
          following: {establishmentMeans_values}."
         ),
         class = "elodea_error_invalid_establishmentMeans"
@@ -96,13 +96,13 @@ filter_data <- function(taxa, distributions,
     ) |>
     dplyr::mutate(
       action = dplyr::case_when(
-        is.na(.data$taxonomicStatus) ~ "not_matched_with_backbone",
+        is.na(.data$nubKey) ~ "not_matched_with_backbone",
         !(.data$taxonKey %in% distributions$taxonKey) ~
           "no_matching_distribution",
-        .data$taxonomicStatus %in% synonyms ~ "merged_with_accepted",
-        !(.data$establishmentMeans %in% filter_establishmentMeans) &
-          !is.null(filter_establishmentMeans) ~
+        !(.data$establishmentMeans %in% establishment_means) &
+          !is.null(establishment_means) ~
           "filtered_on_establishmentMeans",
+        .data$taxonomicStatus %in% synonyms ~ "merged_with_accepted",
         .data$scientificName != .data$acceptedName ~
           "scientificName_replaced_by_backbone_name"
       )
@@ -112,7 +112,7 @@ filter_data <- function(taxa, distributions,
       taxonRank = "acceptedTaxonRank"
     ) |>
     dplyr::select(
-      "taxonKey", "taxonID", "scientificName", "taxonomicStatus",
+      "taxonKey", "nubKey", "taxonID", "scientificName", "taxonomicStatus",
       "acceptedKey", "acceptedName", "kingdom", "taxonRank",
       "countryCode", "occurrenceStatus", "establishmentMeans",
       "degreeOfEstablishment", "pathway", "eventDate", "source", "action"
@@ -151,7 +151,7 @@ filter_data <- function(taxa, distributions,
   distributions_filtered <-
     df_filtered |>
     dplyr::select(
-      "taxonKey", "countryCode", "occurrenceStatus", "establishmentMeans",
+      "taxonKey", "nubKey", "countryCode", "occurrenceStatus", "establishmentMeans",
       "degreeOfEstablishment", "pathway", "eventDate", "source"
     ) |>
     dplyr::distinct()
@@ -160,7 +160,7 @@ filter_data <- function(taxa, distributions,
   taxa_filtered <-
     df_filtered |>
     dplyr::select(
-      "taxonKey", "taxonID", "scientificName", "kingdom", "taxonRank"
+      "taxonKey", "nubKey", "taxonID", "scientificName", "kingdom", "taxonRank"
     ) |>
     dplyr::distinct()
 

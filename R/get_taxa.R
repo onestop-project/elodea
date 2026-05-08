@@ -11,6 +11,7 @@
 #' @section Taxa details:
 #' `get_taxa()` returns a `tibble` with 8 columns:
 #' - `taxonKey`: GBIF taxon key of `scientificName`.
+#' - `nubKey`: GBIF backbone taxon key
 #' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
 #' `scientificName`, as provided in the checklist.
 #' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Original
@@ -22,13 +23,15 @@
 #' taxon key of the accepted taxon, if the source `scientificName` is a synonym.
 #' - [`acceptedName`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsage):
 #' Scientific name of the accepted taxon.
+#' `scientificName` is the accepted name in the GBIF backbone.
 #' - [`acceptedKingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the
 #' accepted taxon.
 #' - [`acceptedTaxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic
 #' rank of the accepted taxon.
 #' @examples
-#' # Global Register of Introduced and Invasive Species - Cyprus
-#' get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
+#' # Global Register of Introduced and Invasive Species - Sovereign Base Areas
+#' # of Cyprus, Cyprus
+#' get_taxa("497fa25f-6a32-4a2a-8f42-d01d8a0b7c22")
 get_taxa <- function(datasetKey) {
   regex <- "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
   if (!grepl(regex, datasetKey)) {
@@ -88,8 +91,8 @@ get_taxa <- function(datasetKey) {
       acceptedKingdom = dplyr::coalesce(.data$accepted_kingdom, .data$kingdom)
     ) |>
     dplyr::select(
-      "taxonKey", "taxonID", "scientificName", "taxonomicStatus", "acceptedKey",
-      "acceptedName", "acceptedTaxonRank", "acceptedKingdom"
+      "taxonKey", "nubKey", "taxonID", "scientificName", "taxonomicStatus",
+      "acceptedKey", "acceptedName", "acceptedTaxonRank", "acceptedKingdom"
       ) |>
     dplyr::as_tibble()
 }

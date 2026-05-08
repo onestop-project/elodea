@@ -22,6 +22,7 @@ removed. The function \code{rgbif::name_usage()} is used under the hood.
 \code{get_taxa()} returns a \code{tibble} with 8 columns:
 \itemize{
 \item \code{taxonKey}: GBIF taxon key of \code{scientificName}.
+\item \code{nubKey}: GBIF backbone taxon key
 \item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
 \code{scientificName}, as provided in the checklist.
 \item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Original
@@ -33,6 +34,7 @@ not matched with the backbone.
 taxon key of the accepted taxon, if the source \code{scientificName} is a synonym.
 \item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsage}{\code{acceptedName}}:
 Scientific name of the accepted taxon.
+\code{scientificName} is the accepted name in the GBIF backbone.
 \item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{acceptedKingdom}}: Kingdom of the
 accepted taxon.
 \item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{acceptedTaxonRank}}: Taxonomic
@@ -41,8 +43,9 @@ rank of the accepted taxon.
 }
 
 \examples{
-# Global Register of Introduced and Invasive Species - Cyprus
-get_taxa("2f7ea7d1-a73f-46f6-b790-7339126a999f")
+# Global Register of Introduced and Invasive Species - Sovereign Base Areas
+# of Cyprus, Cyprus
+get_taxa("497fa25f-6a32-4a2a-8f42-d01d8a0b7c22")
 }
 \seealso{
 Other download functions: 

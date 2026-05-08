@@ -36,9 +36,11 @@ To get started, see:
 
 You can install the development version of elodea from [GitHub](https://github.com/) with:
 
+Install the development version from [GitHub](https://github.com/) with:
+
 ```{r, eval = FALSE}
-# install.packages("remotes")
-remotes::install_github("onestop-project/elodea")
+# install.packages("pak")
+pak::pak("onestop-project/elodea")
 ```
 
 ## Usage
@@ -59,7 +61,7 @@ distributions <- get_distributions(datasetKey, taxa)
 Then you can **filter**/standardise both taxa and distributions with `filter_data()`, which will return a list with three data frames: `taxa`, `distributions` and `notes`. The first two data frames are the filtered taxa and distributions, while the `notes` data frame contains information on the filtering process. Check [`filter_data()`](https://onestop-project.github.io/elodea/reference/filter_data.html) for the filter details.
 
 ``` {r}
-filter_data(taxa, distributions)
+filter_data(taxa, distributions, establishment_means = "introduced")
 ```
 
 The notes can help improve the source checklist. The standardised taxa and distribution data can be used to build unified checklists by combining multiple checklists into a single checklist.

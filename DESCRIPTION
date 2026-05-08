@@ -19,7 +19,7 @@ RoxygenNote: 7.3.3
 BugReports: https://github.com/onestop-project/elodea/issues
 Imports: 
     cli,
-    dplyr,
+    dplyr (>= 1.2.0),
     httr,
     jsonlite,
     progressr,

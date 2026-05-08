@@ -8,7 +8,7 @@ test_that("filter_data() returns error on invalid `establishmentMeans`", {
 
   expect_error(
     filter_data(
-      taxa, distributions, filter_establishmentMeans = "native introduced"
+      taxa, distributions, establishment_means = "native introduced"
       ),
      class = "elodea_error_invalid_establishmentMeans"
   )
@@ -22,7 +22,7 @@ test_that("filter_data() returns error on invalid `establishmentMeans`", {
 
   expect_error(
     filter_data(
-      taxa, distributions, filter_establishmentMeans = NA_character_
+      taxa, distributions, establishment_means = NA_character_
     ),
     class = "elodea_error_invalid_establishmentMeans"
   )
@@ -39,18 +39,15 @@ test_that("filter_data() filters on establishmentMeans", {
   expect_no_error(filter_data(taxa, distributions))
   expect_no_error(
     filter_data(
-      taxa, distributions, filter_establishmentMeans = c("introduced", "native")
+      taxa, distributions, establishment_means = c("introduced", "native")
       )
   )
   expect_no_error(
-    filter_data(taxa, distributions, filter_establishmentMeans = "native")
-  )
-  expect_no_error(
-    filter_data(taxa, distributions, filter_establishmentMeans = NULL)
+    filter_data(taxa, distributions, establishment_means = "native")
   )
 })
 
-test_that("filter_data() returns the expected files for an existing dataset", {
+test_that("filter_data() returns the expected files for an existing checklist", {
   skip_if_offline()
   vcr::local_cassette("filter_finland")
 
@@ -71,6 +68,7 @@ test_that("filter_data() returns the expected files for an existing dataset", {
   # Check that taxa has the expected columns
   taxa_expected_columns <- c(
     "taxonKey",
+    "nubKey",
     "taxonID",
     "scientificName",
     "kingdom",
@@ -81,6 +79,7 @@ test_that("filter_data() returns the expected files for an existing dataset", {
   # Check that distributions has the expected columns
   distributions_expected_columns <- c(
     "taxonKey",
+    "nubKey",
     "countryCode",
     "occurrenceStatus",
     "establishmentMeans",
@@ -117,11 +116,12 @@ test_that("filter_data() returns the expected files for an existing dataset", {
   expect_snapshot_file(notes_path)
 })
 
-test_that("filter_data() returns the expected output for a dummy dataset", {
+test_that("filter_data() returns the expected output for a dummy checklist", {
   taxa <-
-    # 1. All good, nubkey = 1047536
+    # 1. All good
     data.frame(
       taxonKey = 148674360,
+      nubKey = 1047536,
       taxonID = "all_good",
       scientificName = "Leptinotarsa decemlineata (Say, 1824)",
       taxonomicStatus = "ACCEPTED",
@@ -131,9 +131,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedTaxonRank= "species"
     ) |>
     # 2. `scientificName` need to be replaced with correct backbone name
-    # nubkey = 8411684
     dplyr::add_row(
       taxonKey = 148674355,
+      nubKey = 8411684,
       taxonID = "scientificname_different_from_backbone",
       scientificName = "Monochamus sutor (LinnÃ©, 1758)",
       taxonomicStatus = "ACCEPTED",
@@ -143,9 +143,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedTaxonRank= "species"
     ) |>
     # 3. `key`s and `scientificName` need to be replaced with accepted values
-    # nubkey = 3204008
     dplyr::add_row(
       taxonKey = 148674371,
+      nubKey = 3204007,
       taxonID = "synonym",
       scientificName = "Pseudoperonospora humuli (Miyabe & Takah.) G.W.Wilson",
       taxonomicStatus = "SYNONYM",
@@ -158,6 +158,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # nubkey = NA
     dplyr::add_row(
       taxonKey = 148746536,
+      nubKey = NA,
       taxonID = "nubkey_missing",
       scientificName = "Pinus strobus",
       taxonomicStatus = NA_character_,
@@ -167,9 +168,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedTaxonRank= "species"
     ) |>
     # 5. Record needs to be removed because there is no matching distribution,
-    # nubkey = 5265718
     dplyr::add_row(
       taxonKey = 148746476,
+      nubKey = 5265718,
       taxonID = "establishmentMeans_not_introduced",
       scientificName = "Synchytrium endobioticum (Schilb.) Percival",
       taxonomicStatus = "ACCEPTED",
@@ -179,9 +180,9 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
       acceptedTaxonRank= "species"
     ) |>
     # 6. Record needs to be removed because there is no matching distribution
-    # nubkey = 2284723
     dplyr::add_row(
       taxonKey = 148746414,
+      nubKey = 2284723,
       taxonID = "distribution_missing",
       scientificName = "Urnatella gracilis Leidy, 1851",
       taxonomicStatus = "ACCEPTED",
@@ -253,6 +254,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 1. All good
     data.frame(
       taxonKey = 148674360,
+      nubKey = 1047536,
       taxonID = "all_good",
       scientificName = "Leptinotarsa decemlineata (Say, 1824)",
       kingdom = "Animalia",
@@ -261,6 +263,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 2. `scientificName` is replaced with correct backbone name
     dplyr::add_row(
       taxonKey = 148674355,
+      nubKey = 8411684,
       taxonID = "scientificname_different_from_backbone",
       scientificName = "Monochamus sutor (Linnaeus, 1758)",
       kingdom = "Animalia",
@@ -269,6 +272,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 3. `key`s and `scientificName` are replaced with accepted values
     dplyr::add_row(
       taxonKey = 3204007,
+      nubKey = 3204007,
       taxonID = "synonym",
       scientificName =
         "Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev",
@@ -281,6 +285,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 1. All good
     data.frame(
       taxonKey = 148674360,
+      nubKey = 1047536,
       countryCode = "AD",
       occurrenceStatus = "present",
       establishmentMeans = "introduced",
@@ -292,6 +297,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 2. All good
     dplyr::add_row(
       taxonKey = 148674355,
+      nubKey = 8411684,
       countryCode = "AD",
       occurrenceStatus = "present",
       establishmentMeans = "introduced",
@@ -303,6 +309,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     # 3. `taxonKey` is replaced by `acceptedKey`
     dplyr::add_row(
       taxonKey = 3204007,
+      nubKey = 3204007,
       countryCode = "AD",
       occurrenceStatus = "present",
       establishmentMeans = "introduced",
@@ -356,7 +363,7 @@ test_that("filter_data() returns the expected output for a dummy dataset", {
     ) |>
     dplyr::as_tibble()
 
-  output <- filter_data(taxa, distributions)
+  output <- filter_data(taxa, distributions, establishment_means = "introduced")
   expect_equal(output$taxa, expected_taxa)
   expect_equal(output$distributions, expected_distributions)
   expect_equal(output$notes, expected_notes)
@@ -370,16 +377,23 @@ test_that("filter_data() filters on establishmentMeans", {
   taxa <- get_taxa(datasetKey)
   distributions <- get_distributions(datasetKey, taxa)
   output_native <- filter_data(
-    taxa, distributions, filter_establishmentMeans = c("native")
+    taxa, distributions, establishment_means = c("native")
+  )
+  output_introduced <- filter_data(
+    taxa, distributions, establishment_means = c("introduced")
   )
   output_native_and_introduced <- filter_data(
-    taxa, distributions, filter_establishmentMeans = c("native", "introduced")
+    taxa, distributions, establishment_means = c("native", "introduced")
   )
   output_null <- filter_data(
-    taxa, distributions, filter_establishmentMeans = NULL
+    taxa, distributions, establishment_means = NULL
   )
 
   expect_equal(unique(output_native$distributions$establishmentMeans), "native")
+  expect_equal(
+    unique(output_introduced$distributions$establishmentMeans),
+    "introduced"
+    )
   expect_equal(
     unique(output_native_and_introduced$distributions$establishmentMeans),
     c("native", "introduced")
