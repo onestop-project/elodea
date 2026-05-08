@@ -18,10 +18,9 @@
 #' @family filter functions
 #' @export
 #' @section Filter on `establishmentMeans`:
-#' Defaults to `NULL`, which means that no filtering on `establishmentMeans` is
-#' done. Possible values are "native", "introduced", "nativeReintroduced",
-#' "introducedAssistedColonisation", "vagrant", "uncertain" and
-#' "nativeEndemic".
+#' Defaults to `NULL`, which means no filter on establishmentMeans. Possible
+#' values are "native", "introduced", "nativeReintroduced",
+#' "introducedAssistedColonisation", "vagrant", "uncertain" and "nativeEndemic".
 #'
 #' @section Filter details:
 #' Taxa are removed if

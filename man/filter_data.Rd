@@ -31,10 +31,9 @@ notes.
 }
 \section{Filter on \code{establishmentMeans}}{
 
-Defaults to \code{NULL}, which means that no filtering on \code{establishmentMeans} is
-done. Possible values are "native", "introduced", "nativeReintroduced",
-"introducedAssistedColonisation", "vagrant", "uncertain" and
-"nativeEndemic".
+Defaults to \code{NULL}, which means no filter on establishmentMeans. Possible
+values are "native", "introduced", "nativeReintroduced",
+"introducedAssistedColonisation", "vagrant", "uncertain" and "nativeEndemic".
 }
 
 \section{Filter details}{

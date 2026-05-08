@@ -22,7 +22,7 @@
 #' - [`acceptedKey`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID): GBIF
 #' taxon key of the accepted taxon, if the source `scientificName` is a synonym.
 #' - [`acceptedName`](https://dwc.tdwg.org/list/#dwc_acceptedNameUsage):
-#' Scientific name of the accepted taxon. Is equal to `nubKey` if
+#' Scientific name of the accepted taxon.
 #' `scientificName` is the accepted name in the GBIF backbone.
 #' - [`acceptedKingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the
 #' accepted taxon.

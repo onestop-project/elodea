@@ -33,7 +33,7 @@ not matched with the backbone.
 \item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID}{\code{acceptedKey}}: GBIF
 taxon key of the accepted taxon, if the source \code{scientificName} is a synonym.
 \item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsage}{\code{acceptedName}}:
-Scientific name of the accepted taxon. Is equal to \code{nubKey} if
+Scientific name of the accepted taxon.
 \code{scientificName} is the accepted name in the GBIF backbone.
 \item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{acceptedKingdom}}: Kingdom of the
 accepted taxon.
