@@ -3,6 +3,9 @@
 * `filter_data()` now returns fewer columns, and has a new argument `establishment_means` that allows custom filtering taxa based on establishmentMeans (e.g. native, introduced), instead of built-in filtering on "introduced" taxa (#19, #24).
 * `get_distributions()` now returns the verbatim distributions (#30).
 
+* New example_checklist CSV file with 10 taxa, including some with misspelled names and some with names that are not in the GBIF backbone taxonomy (#4).
+* New function `check_names()` checks the names of taxa in a checklist.csv against the GBIF backbone taxonomy (#).
+
 # elodea 0.1.0
 
 * New function `get_taxa()` gets the taxa from a GBIF checklist (#4).
