@@ -7,36 +7,35 @@
 get_taxa(datasetKey)
 }
 \arguments{
-\item{datasetKey}{GBIF dataset key.}
+\item{datasetKey}{Checklistbank dataset key. It can be deducted from the
+URL of a checklist, e.g. \verb{https://www.checklistbank.org/dataset/22856}}
 }
 \value{
 A \code{tibble} with taxonomic information of the dataset.
 }
 \description{
-Gets taxonomic information of a GBIF checklist and matching GBIF backbone
-taxonomy. Only source taxa are kept, denormed higher classification taxa are
-removed. The function \code{rgbif::name_usage()} is used under the hood.
+Gets taxonomic information of a
+\href{https://www.checklistbank.org/}{Checklistbank} checklist and matches the
+\href{https://www.catalogueoflife.org/}{Catalogue of Life} (COL)  taxonomy. Only
+source taxa are kept, denormed higher classification taxa are removed.
 }
 \section{Taxa details}{
 
-\code{get_taxa()} returns a \code{tibble} with 8 columns:
+\code{get_taxa()} returns a \code{tibble} with 7 columns:
 \itemize{
-\item \code{taxonKey}: GBIF taxon key of \code{scientificName}.
-\item \code{nubKey}: GBIF backbone taxon key
+\item \code{usage_id}: COL taxon key
 \item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
 \code{scientificName}, as provided in the checklist.
 \item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Original
 scientific name of the taxon in the checklist.
-\item \code{taxonomicStatus}: Taxonomic status of the taxon in the GBIF backbone
-taxonomy. It can be \code{accepted}, \code{synonym}, \code{doubtful} or \code{NA} if the taxon is
-not matched with the backbone.
-\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID}{\code{acceptedKey}}: GBIF
+\item \code{taxonomicStatus}: Taxonomic status of the taxon in COL. It can be
+\code{accepted}, \code{synonym}, \code{doubtful} or \code{NA} if the taxon is not matched with
+COL.
+\item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsageID}{\code{acceptedKey}}: COL
 taxon key of the accepted taxon, if the source \code{scientificName} is a synonym.
 \item \href{https://dwc.tdwg.org/list/#dwc_acceptedNameUsage}{\code{acceptedName}}:
 Scientific name of the accepted taxon.
 \code{scientificName} is the accepted name in the GBIF backbone.
-\item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{acceptedKingdom}}: Kingdom of the
-accepted taxon.
 \item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{acceptedTaxonRank}}: Taxonomic
 rank of the accepted taxon.
 }
@@ -45,10 +44,10 @@ rank of the accepted taxon.
 \examples{
 # Global Register of Introduced and Invasive Species - Sovereign Base Areas
 # of Cyprus, Cyprus
-get_taxa("497fa25f-6a32-4a2a-8f42-d01d8a0b7c22")
+get_taxa(22856)
 }
 \seealso{
-Other download functions: 
-\code{\link{get_distributions}()}
+Other download functions:
+\code{\link[=get_distributions]{get_distributions()}}
 }
 \concept{download functions}
