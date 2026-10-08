@@ -15,7 +15,6 @@ Description: Clean and standardise published GBIF checklists. With `elodea` you
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 BugReports: https://github.com/onestop-project/elodea/issues
 Imports: 
     cli,
@@ -35,3 +34,4 @@ Config/testthat/edition: 3
 Depends: 
     R (>= 4.1.0)
 URL: https://github.com/onestop-project/elodea
+Config/roxygen2/version: 8.1.0
