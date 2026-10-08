@@ -23,6 +23,7 @@ Imports:
     jsonlite,
     progressr,
     purrr,
+    rcol,
     rgbif,
     rlang
 Suggests: 
