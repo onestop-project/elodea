@@ -19,30 +19,6 @@ mutate_when_missing <- function(.data, ...){
   return(.data)
 }
 
-#' Gets GBIF backbone names based on a list of `nubKey`s
-#'
-#' @param nub_keys A vector of GBIF backbone taxon keys
-#'
-#' @return A data frame with `key`, `taxonomicStatus`, `acceptedKey`,
-#' `accepted`, `rank` and `kingdom` columns, if available.
-#' @noRd
-#' @examples
-#' nub_keys <- c(1589999, 8411684, 4465638, 1047536, 1047341, 5752155, NA,
-#' 5752143, 1047525, 3204008, 2576553, 3109086, 2891783, 3173338)
-#' get_backbone_names(nub_keys)
-get_backbone_names <- function(nub_keys) {
-  nub_keys |>
-    purrr::discard(is.na) |>
-    purrr::map(~ rgbif::name_usage(key = .x)$data) |>
-    purrr::list_rbind() |>
-    mutate_when_missing("acceptedKey" = NA_integer_) |>
-    mutate_when_missing("accepted" = NA_character_) |>
-    dplyr::select(dplyr::any_of(c(
-      "key", "scientificName", "taxonomicStatus", "acceptedKey", "accepted",
-      "rank", "kingdom"
-    )))
-}
-
 #' Get invasiveness status from species profile
 #'
 #' Sends a request to the GBIF API to fetch verbatim species data. It extracts
