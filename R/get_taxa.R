@@ -86,6 +86,7 @@ get_taxa <- function(datasetKey) {
   accepted_keys <- dplyr::pull(taxa, "acceptedKey") |> unique()
   accepted_data <-
     accepted_keys |>
+    purrr::discard(is.na) |>
     purrr::map(~ rcol::col_usage(id = .x)) |>
     purrr::list_rbind() |>
     dplyr::select("id", "rank") |>
