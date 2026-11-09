@@ -47,7 +47,7 @@ get_distributions <- function(datasetKey, taxa = get_taxa(datasetKey)) {
     distributions <- dplyr::bind_rows(distribution_list, .id = "taxonID")
   })
 
-  if (length(distributions) == 0) {
+  if (nrow(distributions) == 0) {
     cli::cli_alert_warning(
       "No distributions found for dataset {datasetKey}."
     )
