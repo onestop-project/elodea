@@ -2,7 +2,7 @@ test_that("get_distributions() returns correct distributions data frame", {
   skip_if_offline()
   vcr::local_cassette("distributions-ants")
 
-  distributions <- get_distributions("32afaa9d-a27f-4885-b30c-ce08c34e1efb")
+  distributions <- get_distributions(287027)
 
   # The returned output is of type list
   expect_type(distributions, "list")
@@ -10,9 +10,8 @@ test_that("get_distributions() returns correct distributions data frame", {
   expect_equal(class(distributions), c("tbl_df", "tbl", "data.frame"))
   # Check that the output has the expected columns
   expected_columns <- c(
-    "taxonKey",
+    "taxonID",
     "countryCode",
-    "occurrenceStatus",
     "establishmentMeans",
     "degreeOfEstablishment",
     "pathway",
@@ -22,7 +21,7 @@ test_that("get_distributions() returns correct distributions data frame", {
   expect_equal(expected_columns, names(distributions))
 
   # Write output for snapshot
-  directory <- withr::local_tempdir(pattern = "andorra")
+  directory <- withr::local_tempdir(pattern = "ants")
   path <- file.path(directory, "distributions.csv")
   readr::write_csv(distributions, path, na = "")
 
@@ -34,7 +33,7 @@ test_that("get_distributions() returns message when distributions are missing", 
   vcr::local_cassette("distributions_union")
 
   # Species of Union concern
-  datasetKey <- "79d65658-526c-4c78-9d24-1870d67f8439"
+  datasetKey <- 58406
   expect_message(
     get_distributions(datasetKey),
     paste("No distributions found for dataset", datasetKey)
