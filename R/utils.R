@@ -18,33 +18,3 @@ mutate_when_missing <- function(.data, ...){
   if (!rlang::is_empty(columns_to_add)){.data <- dplyr::mutate(.data,...)}
   return(.data)
 }
-
-#' Get invasiveness status from species profile
-#'
-#' Sends a request to the GBIF API to fetch verbatim species data. It extracts
-#' the 'isInvasive' field from the SpeciesProfile extension if present. If the
-#' information is not available, it returns NA.
-#'
-#' @param taxonKey GBIF taxon key.
-#' @return A data frame with 2 columns: taxonKey and is_invasive.
-#' @noRd
-#' @examples
-#' \dontrun{
-#'   get_is_invasive(2435099)
-#'   get_is_invasive("2435099")
-#' }
-get_is_invasive <- function(taxonKey) {
-  url <- paste0("https://api.gbif.org/v1/species/", taxonKey, "/verbatim")
-  resp <- httr::GET(url)
-  data <- jsonlite::fromJSON(
-    httr::content(resp, as = "text", encoding = "UTF-8")
-    )
-  is_invasive <- data$extensions$`http://rs.gbif.org/terms/1.0/SpeciesProfile`$`http://rs.gbif.org/terms/1.0/isInvasive`
-  if (is.null(is_invasive)){is_invasive <- NA}
-  df <- data.frame(taxonKey = taxonKey) |>
-    dplyr::mutate(
-      is_invasive = is_invasive,
-      taxonKey = as.integer(taxonKey)
-    )
-  return(df)
-}
