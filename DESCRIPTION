@@ -31,6 +31,8 @@ Suggests:
     testthat (>= 3.0.0),
     vcr,
     withr
+Remotes: 
+    CatalogueOfLife/rcol
 Config/testthat/edition: 3
 Depends: 
     R (>= 4.1.0)
