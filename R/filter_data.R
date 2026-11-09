@@ -56,10 +56,6 @@
 #' filter_data(taxa, distributions, establishment_means = "introduced")
 #' }
 filter_data <- function(taxa, distributions, establishment_means = NULL) {
-
-  # check_taxa(taxa)
-  #check_distributions(distributions)
-
   establishmentMeans_values <- c(
     "native", "introduced", "nativeReintroduced",
     "introducedAssistedColonisation", "vagrant", "uncertain", "nativeEndemic"
