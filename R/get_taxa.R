@@ -6,7 +6,8 @@
 #' source taxa are kept, denormed higher classification taxa are removed.
 #'
 #' @param datasetKey Checklistbank dataset key. It can be deducted from the
-#' URL of a checklist, e.g. `https://www.checklistbank.org/dataset/22856`
+#' URL of a checklist, e.g. `22856` for
+#' `https://www.checklistbank.org/dataset/22856`
 #' @return A `tibble` with taxonomic information of the dataset.
 #' @family download functions
 #' @export

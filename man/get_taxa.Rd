@@ -8,7 +8,8 @@ get_taxa(datasetKey)
 }
 \arguments{
 \item{datasetKey}{Checklistbank dataset key. It can be deducted from the
-URL of a checklist, e.g. \verb{https://www.checklistbank.org/dataset/22856}}
+URL of a checklist, e.g. \code{22856} for
+\verb{https://www.checklistbank.org/dataset/22856}}
 }
 \value{
 A \code{tibble} with taxonomic information of the dataset.
