@@ -40,7 +40,7 @@ values are "native", "introduced", "nativeReintroduced",
 
 Taxa are removed if
 \itemize{
-\item they are not matched with the GBIF backbone (i.e., \code{nubKey} is \code{NA}),
+\item they are not matched with the Catalogue of Life (i.e., \code{usage_id} is \code{NA}),
 \item they do not have a matching distribution (i.e., \code{taxonKey} is not in
 \code{distributions$taxonKey}),
 \item they do not have a matching distribution with \code{establishmentMeans} in
@@ -60,14 +60,12 @@ backbone.
 
 The \code{taxa} data frame in the output list has 6 variables:
 \itemize{
-\item \code{taxonKey}: GBIF taxon key of \code{scientificName}. This value is replaced with
+\item \code{taxonKey}: COL  taxon key of \code{scientificName}. This value is replaced with
 \code{acceptedKey} if the taxon is a synonym of an accepted taxon.
-\item \code{nubKey}: GBIF backbone taxon key.
 \item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
 \code{scientificName}, as provided in the checklist.
 \item \href{http://rs.tdwg.org/dwc/terms/scientificName}{\code{scientificName}}: Scientific
 name of the taxon. This value is replaced with \code{acceptedName} for all records.
-\item \href{http://rs.tdwg.org/dwc/terms/kingdom}{\code{kingdom}}: Kingdom of the taxon.
 \item \href{http://rs.tdwg.org/dwc/terms/taxonRank}{\code{taxonRank}}: Taxonomic rank of
 the taxon.
 }
@@ -76,10 +74,10 @@ the taxon.
 \examples{
 \dontrun{
 # Updated checklist of the ants in Belgium
-datasetKey <- "32afaa9d-a27f-4885-b30c-ce08c34e1efb"
+datasetKey <- 287027
 taxa <- get_taxa(datasetKey)
 distributions <- get_distributions(datasetKey, taxa)
-filter_data(taxa, distributions, establishment_means = "introduced" )
+filter_data(taxa, distributions, establishment_means = "introduced")
 }
 }
 \concept{filter functions}
