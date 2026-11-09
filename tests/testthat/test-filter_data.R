@@ -2,7 +2,7 @@ test_that("filter_data() returns error on invalid `establishmentMeans`", {
   skip_if_offline()
   vcr::local_cassette("filter_finland")
 
-  datasetKey_finland <- "b79c5ba3-d447-4a73-bcbf-557f3241eeb2"
+  datasetKey_finland <- 24497
   taxa <- get_taxa(datasetKey_finland)
   distributions <- get_distributions(datasetKey_finland, taxa)
 
@@ -32,7 +32,7 @@ test_that("filter_data() filters on establishmentMeans", {
   skip_if_offline()
   vcr::local_cassette("filter_finland")
 
-  datasetKey_finland <- "b79c5ba3-d447-4a73-bcbf-557f3241eeb2"
+  datasetKey_finland <- 24497
   taxa <- get_taxa(datasetKey_finland)
   distributions <- get_distributions(datasetKey_finland, taxa)
 
@@ -51,7 +51,7 @@ test_that("filter_data() returns the expected files for an existing checklist", 
   skip_if_offline()
   vcr::local_cassette("filter_finland")
 
-  datasetKey_finland <- "b79c5ba3-d447-4a73-bcbf-557f3241eeb2"
+  datasetKey_finland <- 24497
   taxa <- get_taxa(datasetKey_finland)
   distributions <- get_distributions(datasetKey_finland, taxa)
   output <- filter_data(taxa, distributions)
@@ -373,7 +373,7 @@ test_that("filter_data() filters on establishmentMeans", {
   skip_if_offline()
   vcr::local_cassette("filter_ants")
 
-  datasetKey <- "32afaa9d-a27f-4885-b30c-ce08c34e1efb"
+  datasetKey <- 287027
   taxa <- get_taxa(datasetKey)
   distributions <- get_distributions(datasetKey, taxa)
   output_native <- filter_data(
