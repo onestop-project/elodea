@@ -1,14 +1,27 @@
-taxonKey,nubKey,taxonID,scientificName,taxonomicStatus,acceptedKey,acceptedName,acceptedTaxonRank,acceptedKingdom
-148674352,1589999,20012,"Trachyopella straminea Rohacek & Marshall, 1985",ACCEPTED,1589999,"Trachyopella straminea Roháček & Marshall, 1985",SPECIES,Animalia
-148674355,8411684,20009,"Monochamus sutor (LinnÃ©, 1758)",ACCEPTED,8411684,"Monochamus sutor (Linnaeus, 1758)",SPECIES,Animalia
-148674358,4465638,20006,"Euophryum confine (Broun, 1880)",HOMOTYPIC_SYNONYM,1179369,"Pentarthrum confine Broun, 1881",SPECIES,Animalia
-148674360,1047536,20008,"Leptinotarsa decemlineata (Say, 1824)",ACCEPTED,1047536,"Leptinotarsa decemlineata (Say, 1824)",SPECIES,Animalia
-148674361,1047341,20004,"Callosobruchus chinensis (Linnaeus, 1758)",ACCEPTED,1047341,"Callosobruchus chinensis (Linnaeus, 1758)",SPECIES,Animalia
-148674362,5752155,20001,"Bruchus pisorum (Linnaeus, 1758)",ACCEPTED,5752155,"Bruchus pisorum Linnaeus, 1758",SPECIES,Animalia
-148674363,5752143,20002,"Bruchus rufimanus Boheman, 1833",ACCEPTED,5752143,"Bruchus rufimanus Boheman, 1833",SPECIES,Animalia
-148674364,1047525,20000,"Acanthoscelides obtectus (Say, 1831)",ACCEPTED,1047525,"Acanthoscelides obtectus (Say, 1831)",SPECIES,Animalia
-148674371,3204008,20010,Pseudoperonospora humuli (Miyabe & Takah.) G.W.Wilson,SYNONYM,3204007,Pseudoperonospora cubensis (Berk. & M.A.Curtis) Rostovzev,SPECIES,Chromista
-148674377,2576553,20005,Entoleuca mammata (Wahlenb.) J.D.Rogers & Y.M.Ju,ACCEPTED,2576553,Entoleuca mammata (Wahlenb.) J.D.Rogers & Y.M.Ju,SPECIES,Fungi
-148674383,3109086,20011,Senecio inaequidens DC.,ACCEPTED,3109086,Senecio inaequidens DC.,SPECIES,Plantae
-148674386,2891783,20007,Impatiens balfourii Hook.f.,ACCEPTED,2891783,Impatiens balfourii Hook.fil.,SPECIES,Plantae
-148674389,3173338,20003,Buddleja davidii Franch.,ACCEPTED,3173338,Buddleja davidii Franch.,SPECIES,Plantae
+usage_id,taxonID,scientificName,taxonomicStatus,acceptedKey,acceptedName,acceptedTaxonRank
+LXNTM,1001,"Acanthoscelides obtectus (Say, 1831)",accepted,LXNTM,"Acanthoscelides obtectus (Say, 1831)",species
+M8RTV,1002,"Bruchus pisorum (Linnaeus, 1758)",accepted,M8RTV,"Bruchus pisorum Linnaeus, 1758",species
+M8RZ9,1003,"Bruchus rufimanus Boheman, 1833",accepted,M8RZ9,"Bruchus rufimanus Boheman, 1833",species
+NN2L,1004,Buddleja davidii,accepted,NN2L,Buddleja davidii Franch.,species
+MDDLF,1005,"Callosobruchus chinensis (Linnaeus, 1758)",accepted,MDDLF,"Callosobruchus chinensis (Linnaeus, 1758)",species
+5XCVW,1006,Castanea sativa,accepted,5XCVW,Castanea sativa Mill.,species
+VJT32,1007,Sarothamnus scoparius,synonym,VJT32,Sarothamnus scoparius (L.) Wimm. ex W.D.J.Koch,species
+39YX8,1008,"Entoleuca mammata (Wahlenb.) J.D.Rogers & Y.M.Ju, 1996",accepted,39YX8,Entoleuca mammata (Wahlenb.) J.D. Rogers & Y.M. Ju,species
+5H5JC,1009,Eragrostis mexicana subsp. virescens,synonym,5H5JC,Eragrostis mexicana subsp. virescens (J.Presl) S.D.Koch & Sánchez Vega,subspecies
+6HVJJ,1010,Ficus carica,accepted,6HVJJ,Ficus carica L.,species
+3PJFZ,1011,Impatiens balfourii,accepted,3PJFZ,Impatiens balfourii Hook.fil.,species
+Q9SPH,1012,"Leptinotarsa decemlineata (Say, 1824)",accepted,Q9SPH,"Leptinotarsa decemlineata (Say, 1824)",species
+6PGH9,1013,Leptoglossus occidentalis,accepted,6PGH9,"Leptoglossus occidentalis Heidemann, 1910",species
+44646,1014,"Monochamus sutor (Linné, 1758)",accepted,44646,"Monochamus sutor (Linné, 1758)",species
+49L68,1015,Onobrychis viciifolia,accepted,49L68,Onobrychis viciifolia Scop.,species
+NQGGB,1016,"Euophryum confine (Broun, 1880)",synonym,NQGGB,"Euophryum confine (Broun, 1881)",species
+6V8D2,1017,Petroselinum crispum,accepted,6V8D2,Petroselinum crispum (Mill.) Fuss,species
+4FRDZ,1018,Phalaris arundinacea,accepted,4FRDZ,Phalaris arundinacea L.,species
+4FWMN,1019,Phasianus colchicus,accepted,4FWMN,"Phasianus colchicus Linnaeus, 1758",species
+4J27Y,1020,Pinus halepensis,accepted,4J27Y,Pinus halepensis Mill.,species
+4P6HS,1021,Pseudoperonospora humuli,synonym,4P6HS,Pseudoperonospora humuli (Miyabe & Takah.) G.W. Wilson,species
+6YGST,1022,Senecio inaequidens,accepted,6YGST,Senecio inaequidens DC.,species
+4WLD8,1023,Senecio jacobaea,ambiguous synonym,4WLD8,Senecio jacobaea L.,species
+4Y369,1024,Solanum lycopersicum,accepted,4Y369,Solanum lycopersicum L.,species
+8FGWY,1025,"Trachyopella straminea Rohacek & Marshall, 1985",accepted,8FGWY,"Trachyopella (Trachyopella) straminea Roháček & Marshall, 1985",species
+5CCZ9,1026,Xerolenta obvia,accepted,5CCZ9,"Xerolenta obvia (Menke, 1828)",species
