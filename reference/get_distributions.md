@@ -145,6 +145,7 @@ get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
+#> verbatim ■■■■■■■■■                         26% |  ETA:  4s
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
@@ -156,7 +157,6 @@ get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
-#> verbatim ■■■■■■■■■■■■■■■■■■■               59% |  ETA:  2s
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
@@ -165,6 +165,7 @@ get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
+#> verbatim ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% |  ETA:  1s
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.
 #> Warning: name_usage() works by default with the out-of-date GBIF Backbone Taxonomy. Consider using rcol::col_usage() instead.

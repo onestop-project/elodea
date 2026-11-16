@@ -1,5 +1,7 @@
 # Changelog
 
+## elodea (development version)
+
 ## elodea 0.2.0
 
 - [`get_taxa()`](https://onestop-project.github.io/elodea/reference/get_taxa.md)
