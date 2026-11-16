@@ -24,7 +24,7 @@
 #'
 #' @section Filter details:
 #' Taxa are removed if
-#' - they are not matched with the GBIF backbone (i.e., `nubKey` is `NA`),
+#' - they are not matched with the Catalogue of Life (i.e., `usage_id` is `NA`),
 #' - they do not have a matching distribution (i.e., `taxonKey` is not in
 #' `distributions$taxonKey`),
 #' - they do not have a matching distribution with `establishmentMeans` in
@@ -39,29 +39,23 @@
 #' backbone.
 #' @section Taxa details:
 #' The `taxa` data frame in the output list has 6 variables:
-#' - `taxonKey`: GBIF taxon key of `scientificName`. This value is replaced with
+#' - `taxonKey`: COL  taxon key of `scientificName`. This value is replaced with
 #' `acceptedKey` if the taxon is a synonym of an accepted taxon.
-#' - `nubKey`: GBIF backbone taxon key.
 #' - [`taxonID`](http://rs.tdwg.org/dwc/terms/taxonID): Taxon ID of
 #' `scientificName`, as provided in the checklist.
 #' - [`scientificName`](http://rs.tdwg.org/dwc/terms/scientificName): Scientific
 #' name of the taxon. This value is replaced with `acceptedName` for all records.
-#' - [`kingdom`](http://rs.tdwg.org/dwc/terms/kingdom): Kingdom of the taxon.
 #' - [`taxonRank`](http://rs.tdwg.org/dwc/terms/taxonRank): Taxonomic rank of
 #' the taxon.
 #' @examples
 #' \dontrun{
 #' # Updated checklist of the ants in Belgium
-#' datasetKey <- "32afaa9d-a27f-4885-b30c-ce08c34e1efb"
+#' datasetKey <- 287027
 #' taxa <- get_taxa(datasetKey)
 #' distributions <- get_distributions(datasetKey, taxa)
-#' filter_data(taxa, distributions, establishment_means = "introduced" )
+#' filter_data(taxa, distributions, establishment_means = "introduced")
 #' }
 filter_data <- function(taxa, distributions, establishment_means = NULL) {
-
-  check_taxa(taxa)
-  #check_distributions(distributions)
-
   establishmentMeans_values <- c(
     "native", "introduced", "nativeReintroduced",
     "introducedAssistedColonisation", "vagrant", "uncertain", "nativeEndemic"
@@ -81,23 +75,23 @@ filter_data <- function(taxa, distributions, establishment_means = NULL) {
   }
 
   synonyms <- c(
-    "AMBIGUOUS_SYNONYM", "HETEROTYPIC_SYNONYM", "HOMOTYPIC_SYNONYM",
-    "MISAPPLIED", "PROPARTE_SYNONYM", "SYNONYM"
+    "ambiguous synonym", "heterotypic synonym", "homotypic synonym",
+    "misapplied", "proparte synonym", "synonym"
     )
 
   # Join taxa and distributions
   df_full_join <- taxa |>
     dplyr::full_join(
       distributions,
-      by = c("taxonKey"),
+      by = c("taxonID"),
       keep = FALSE,
       multiple = "all",
       relationship = "many-to-many"
     ) |>
     dplyr::mutate(
       action = dplyr::case_when(
-        is.na(.data$nubKey) ~ "not_matched_with_backbone",
-        !(.data$taxonKey %in% distributions$taxonKey) ~
+        is.na(.data$usage_id) ~ "not_matched_with_COL",
+        !(.data$taxonID %in% distributions$taxonID) ~
           "no_matching_distribution",
         !(.data$establishmentMeans %in% establishment_means) &
           !is.null(establishment_means) ~
@@ -107,14 +101,11 @@ filter_data <- function(taxa, distributions, establishment_means = NULL) {
           "scientificName_replaced_by_backbone_name"
       )
     ) |>
-    dplyr::rename(
-      kingdom = "acceptedKingdom",
-      taxonRank = "acceptedTaxonRank"
-    ) |>
+    dplyr::rename(taxonRank = "acceptedTaxonRank") |>
     dplyr::select(
-      "taxonKey", "nubKey", "taxonID", "scientificName", "taxonomicStatus",
-      "acceptedKey", "acceptedName", "kingdom", "taxonRank",
-      "countryCode", "occurrenceStatus", "establishmentMeans",
+      "usage_id", "taxonID", "scientificName", "taxonomicStatus",
+      "acceptedKey", "acceptedName", "taxonRank",
+      "countryCode", "establishmentMeans",
       "degreeOfEstablishment", "pathway", "eventDate", "source", "action"
     )
 
@@ -128,7 +119,7 @@ filter_data <- function(taxa, distributions, establishment_means = NULL) {
       )
     ) |>
     dplyr::select(
-      "taxonID", "taxonKey", "scientificName", "action", "acceptedKey",
+      "taxonID", "usage_id", "scientificName", "action", "acceptedKey",
       "acceptedName"
     )
 
@@ -142,7 +133,7 @@ filter_data <- function(taxa, distributions, establishment_means = NULL) {
       ) |>
     dplyr::mutate(
       taxonKey = dplyr::if_else(
-        .data$taxonomicStatus != "ACCEPTED", .data$acceptedKey, .data$taxonKey
+        .data$taxonomicStatus != "accepted", .data$acceptedKey, .data$usage_id
       ),
       scientificName = .data$acceptedName
     )
@@ -151,8 +142,8 @@ filter_data <- function(taxa, distributions, establishment_means = NULL) {
   distributions_filtered <-
     df_filtered |>
     dplyr::select(
-      "taxonKey", "nubKey", "countryCode", "occurrenceStatus", "establishmentMeans",
-      "degreeOfEstablishment", "pathway", "eventDate", "source"
+      "taxonID", "taxonKey", "countryCode", "establishmentMeans", "degreeOfEstablishment",
+      "pathway", "eventDate", "source"
     ) |>
     dplyr::distinct()
 
@@ -160,7 +151,7 @@ filter_data <- function(taxa, distributions, establishment_means = NULL) {
   taxa_filtered <-
     df_filtered |>
     dplyr::select(
-      "taxonKey", "nubKey", "taxonID", "scientificName", "kingdom", "taxonRank"
+      "taxonID", "taxonKey", "scientificName", "taxonRank"
     ) |>
     dplyr::distinct()
 

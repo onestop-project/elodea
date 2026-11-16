@@ -7,7 +7,9 @@
 get_distributions(datasetKey, taxa = get_taxa(datasetKey))
 }
 \arguments{
-\item{datasetKey}{GBIF dataset key.}
+\item{datasetKey}{Checklistbank dataset key. It can be deducted from the
+URL of a checklist, e.g. \code{22856} for
+\verb{https://www.checklistbank.org/dataset/22856}}
 
 \item{taxa}{Data frame as returned by \code{get_taxa()}. Defaults to
 \code{get_taxa(datasetKey)}}
@@ -16,19 +18,18 @@ get_distributions(datasetKey, taxa = get_taxa(datasetKey))
 A \code{tibble} with distributions.
 }
 \description{
-Gets the distributions of a GBIF dataset. The function \code{rgbif::name_usage()}
-is used under the hood.
+Gets the distributions of a
+\href{https://www.checklistbank.org/}{Checklistbank} checklist. The function
+\code{rcol::clb_distribution()} is used under the hood.
 }
 \section{Distributions details}{
 
-\code{get_distributions()} returns a \code{tibble} with 8 variables:
+\code{get_distributions()} returns a \code{tibble} with 7 variables:
 \itemize{
-\item \code{taxonKey}: GBIF taxon key
+\item \href{http://rs.tdwg.org/dwc/terms/taxonID}{\code{taxonID}}: Taxon ID of
+\code{scientificName}, as provided in the checklist.
 \item \href{http://rs.tdwg.org/dwc/terms/countryCode}{\code{countryCode}}:  ISO
 3166-1-alpha-2 country code
-\item \href{http://rs.tdwg.org/dwc/terms/occurrenceStatus}{\code{occurrenceStatus}}: A
-statement about the presence or absence of a taxon at a country. When
-\code{occurrenceStatus} is missing, it is set to \code{present}.
 \item \href{http://rs.tdwg.org/dwc/terms/establishmentMeans}{\code{establishmentMeans}}:
 Statement about whether the taxon has been introduced to a given country and
 eventDate through the direct or indirect activity of modern humans.
@@ -37,20 +38,19 @@ The degree to which a taxon survives, reproduces, and expands its range at
 the given country and eventDate.
 \item \href{http://rs.tdwg.org/dwc/terms/pathway}{\code{pathway}}: The process by which a
 taxon came to be in a given country at a given eventDate.
-\item \href{http://rs.tdwg.org/dwc/terms/eventDate}{\code{eventDate}}: The date-time or
-interval during which the \code{occurrenceStatus} is applicable for the taxon in a
-given country.
-\item \href{http://purl.org/dc/terms/source}{\code{source}}: A related resource from which
-the described resource is derived.
+\item \href{http://rs.tdwg.org/dwc/terms/eventDate}{\code{eventDate}}: The year during
+which the taxon is present in a given country.
+\item \href{http://purl.org/dc/terms/source}{\code{source}}: Source reference for each
+distribution record. Can be proper publication citation, a webpage URL, etc.
 }
 }
 
 \examples{
 # Checklist of non-native freshwater fishes in Flanders, Belgium
-get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
+get_distributions(30842)
 }
 \seealso{
-Other download functions: 
-\code{\link{get_taxa}()}
+Other download functions:
+\code{\link[=get_taxa]{get_taxa()}}
 }
 \concept{download functions}
