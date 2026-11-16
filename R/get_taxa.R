@@ -33,14 +33,6 @@
 #' # of Cyprus, Cyprus
 #' get_taxa(22856)
 get_taxa <- function(datasetKey) {
-  regex <- "^[0-9]+$"
-  if (!grepl(regex, datasetKey)) {
-    cli::cli_abort(
-      "The provided {.arg datasetKey} is not a valid ChecklistBank dataset key.",
-      class = "elodea_error_invalid_datasetkey"
-    )
-  }
-
   # Call to Checklistbank API
   taxa_raw <- rcol::clb_usage_search(dataset = datasetKey, limit = Inf)$data
 
