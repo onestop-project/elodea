@@ -50,7 +50,7 @@ the described resource is derived.
 get_distributions("98940a79-2bf1-46e6-afd6-ba2e85a26f9f")
 }
 \seealso{
-Other download functions: 
-\code{\link{get_taxa}()}
+Other download functions:
+\code{\link[=get_taxa]{get_taxa()}}
 }
 \concept{download functions}

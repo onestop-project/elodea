@@ -48,7 +48,7 @@ rank of the accepted taxon.
 get_taxa("497fa25f-6a32-4a2a-8f42-d01d8a0b7c22")
 }
 \seealso{
-Other download functions: 
-\code{\link{get_distributions}()}
+Other download functions:
+\code{\link[=get_distributions]{get_distributions()}}
 }
 \concept{download functions}
