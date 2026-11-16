@@ -19,12 +19,9 @@ BugReports: https://github.com/onestop-project/elodea/issues
 Imports: 
     cli,
     dplyr (>= 1.2.0),
-    httr,
-    jsonlite,
     progressr,
     purrr,
     rcol,
-    rgbif,
     rlang
 Suggests: 
     readr,
