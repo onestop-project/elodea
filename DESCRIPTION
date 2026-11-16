@@ -10,8 +10,7 @@ Authors@R: c(
            comment = c(ROR = "00j54wy13")),
     person("European Union", role = "fnd", comment = "https://doi.org/10.3030/101180559")
   )
-Description: Clean and standardise published GBIF checklists. With `elodea` you
-  can prepare checklists of alien species to create a unified checklist.
+Description: Retrieve taxonomic and distribution data from checklists published on the Global Biodiversity Information Facility (GBIF). Filter and standardise the data to help create a unified checklist; recorded changes support review of the source data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
