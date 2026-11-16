@@ -9,8 +9,10 @@ type: software
 license: MIT
 title: 'elodea: Clean and Standardise Published GBIF Checklists'
 version: 0.1.0.9000
-abstract: Clean and standardise published GBIF checklists. With `elodea` you can prepare
-  checklists of alien species to create a unified checklist.
+abstract: Retrieve taxonomic and distribution data from checklists published on the
+  Global Biodiversity Information Facility (GBIF). Filter and standardise the data
+  to help create a unified checklist; recorded changes support review of the source
+  data.
 authors:
 - family-names: Govaert
   given-names: Sanne
