@@ -31,8 +31,6 @@ To get started, see:
 You can install the development version of elodea from
 [GitHub](https://github.com/) with:
 
-Install the development version from [GitHub](https://github.com/) with:
-
 ``` r
 # install.packages("pak")
 pak::pak("onestop-project/elodea")
