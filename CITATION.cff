@@ -1,16 +1,16 @@
-# --------------------------------------------
-# CITATION file created with {cffr} R package
+# ------------------------------------------------
+# CITATION.cff file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# --------------------------------------------
+# ------------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "elodea" in publications use:'
 type: software
 license: MIT
-title: 'elodea: Clean and Standardise Published GBIF Checklists Checklists'
-version: 0.0.0.9000
+title: 'elodea: Clean and Standardise Published GBIF Checklists'
+version: 0.1.0.9000
 abstract: Clean and standardise published GBIF checklists. With `elodea` you can prepare
-  checklists on alien species to create a unified checklist.
+  checklists of alien species to create a unified checklist.
 authors:
 - family-names: Govaert
   given-names: Sanne
@@ -22,12 +22,18 @@ authors:
   email: damiano.oldoni@inbo.be
   orcid: https://orcid.org/0000-0003-3445-7562
   affiliation: Research Institute for Nature and Forest (INBO)
+repository-code: https://github.com/onestop-project/elodea
+url: https://github.com/onestop-project/elodea
 contact:
 - family-names: Govaert
   given-names: Sanne
   email: sanne.govaert@inbo.be
   orcid: https://orcid.org/0000-0002-8939-1305
   affiliation: Research Institute for Nature and Forest (INBO)
+keywords:
+- gbif
+- invasive-species
+- r-package
 references:
 - type: software
   title: cli
@@ -66,6 +72,7 @@ references:
     orcid: https://orcid.org/0000-0003-4777-038X
   year: '2026'
   doi: 10.32614/CRAN.package.dplyr
+  version: '>= 1.2.0'
 - type: software
   title: httr
   abstract: 'httr: Tools for Working with URLs and HTTP'
@@ -125,15 +132,18 @@ references:
   abstract: 'rgbif: Interface to the Global Biodiversity Information Facility API'
   notes: Imports
   url: https://docs.ropensci.org/rgbif/
-  repository: https://b-cubed-eu.r-universe.dev
+  repository: https://CRAN.R-project.org/package=rgbif
   authors:
   - family-names: Chamberlain
     given-names: Scott
+    orcid: https://orcid.org/0000-0003-1444-9135
   - family-names: Oldoni
     given-names: Damiano
+    orcid: https://orcid.org/0000-0003-3445-7562
   - family-names: Waller
     given-names: John
     email: jwaller@gbif.org
+    orcid: https://orcid.org/0000-0002-7302-5976
   year: '2026'
   doi: 10.32614/CRAN.package.rgbif
 - type: software
@@ -152,6 +162,24 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.rlang
 - type: software
+  title: readr
+  abstract: 'readr: Read Rectangular Text Data'
+  notes: Suggests
+  url: https://readr.tidyverse.org
+  repository: https://CRAN.R-project.org/package=readr
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  - family-names: Hester
+    given-names: Jim
+  - family-names: Bryan
+    given-names: Jennifer
+    email: jenny@posit.co
+    orcid: https://orcid.org/0000-0002-6983-2759
+  year: '2026'
+  doi: 10.32614/CRAN.package.readr
+- type: software
   title: testthat
   abstract: 'testthat: Unit Testing for R'
   notes: Suggests
@@ -164,6 +192,56 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.testthat
   version: '>= 3.0.0'
+- type: software
+  title: vcr
+  abstract: 'vcr: Record ''HTTP'' Calls to Disk'
+  notes: Suggests
+  url: https://github.com/ropensci/vcr/
+  repository: https://CRAN.R-project.org/package=vcr
+  authors:
+  - family-names: Chamberlain
+    given-names: Scott
+    email: myrmecocystus@gmail.com
+    orcid: https://orcid.org/0000-0003-1444-9135
+  - family-names: Wolen
+    given-names: Aaron
+    orcid: https://orcid.org/0000-0003-2542-2202
+  - family-names: Salmon
+    given-names: Maëlle
+    orcid: https://orcid.org/0000-0002-2815-0399
+  - family-names: Possenriede
+    given-names: Daniel
+    orcid: https://orcid.org/0000-0002-6738-9845
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  year: '2026'
+  doi: 10.32614/CRAN.package.vcr
+- type: software
+  title: withr
+  abstract: 'withr: Run Code ''With'' Temporarily Modified Global State'
+  notes: Suggests
+  url: https://withr.r-lib.org
+  repository: https://CRAN.R-project.org/package=withr
+  authors:
+  - family-names: Hester
+    given-names: Jim
+  - family-names: Henry
+    given-names: Lionel
+    email: lionel@posit.co
+  - family-names: Müller
+    given-names: Kirill
+    email: krlmlr+r@mailbox.org
+  - family-names: Ushey
+    given-names: Kevin
+    email: kevinushey@gmail.com
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  - family-names: Chang
+    given-names: Winston
+  year: '2026'
+  doi: 10.32614/CRAN.package.withr
 - type: software
   title: 'R: A Language and Environment for Statistical Computing'
   notes: Depends
